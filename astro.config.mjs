@@ -1,17 +1,11 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/serverless";
 
-// If you are not going to use vercel analytics you can delete the analytics
-// If you want to remove vercel from your project you can do npm uninstall vercel
+// ✅ Si vas a usar GitHub Pages, usá este adaptador:
+import github from "@astrojs/github/actions";
+
 export default defineConfig({
-  output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+  site: "https://francochacon.github.io/", // 🔹 Reemplazá con tu URL real
+  base: "/", // o "/nombre-del-repo/" si no es tu página principal
+  output: "static",
+  adapter: github(),
 });
-
-//If you don't have vercel the configuration will be empty
-
-//ej : export default defineConfig({});
