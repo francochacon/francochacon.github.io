@@ -1,11 +1,10 @@
 import { defineConfig } from "astro/config";
-
-// ✅ Si vas a usar GitHub Pages, usá este adaptador:
 import github from "@astrojs/github/actions";
 
+// Configuración para publicar en GitHub Pages
 export default defineConfig({
-  site: "https://francochacon.github.io/", // 🔹 Reemplazá con tu URL real
-  base: "/", // o "/nombre-del-repo/" si no es tu página principal
+  site: "https://francochacon.github.io/",
+  base: "/", // como el repo se llama igual que tu usuario, no hace falta más
   output: "static",
   adapter: github(),
 });
