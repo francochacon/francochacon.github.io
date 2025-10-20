@@ -35,8 +35,44 @@
           </li>
         </a>
       </div>
+
+      <!-- NUEVA SECCIÓN: PRECIOS DE METALES -->
+      <div class="metales-container">
+        <h3 class="metales-title">Precios de Metales en Tiempo Real</h3>
+        <div class="iframes-metales">
+          <iframe
+            src="https://tradingeconomics.com/embed/?s=gold&h=220&w=300"
+            width="300"
+            height="220"
+            frameborder="0"
+          ></iframe>
+          <iframe
+            src="https://tradingeconomics.com/embed/?s=silver&h=220&w=300"
+            width="300"
+            height="220"
+            frameborder="0"
+          ></iframe>
+          <iframe
+            src="https://tradingeconomics.com/embed/?s=copper&h=220&w=300"
+            width="300"
+            height="220"
+            frameborder="0"
+          ></iframe>
+          <iframe
+            src="https://tradingeconomics.com/embed/?s=lithium&h=220&w=300"
+            width="300"
+            height="220"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+      <!-- FIN NUEVA SECCIÓN -->
     </div>
   </section>
+
+  <div class="container-copy">
+    <p>© 2025 Franco Chacón | Portafolio Minero</p>
+  </div>
 </footer>
 
 <style>
@@ -49,11 +85,13 @@
     background: linear-gradient(to top, rgba(1, 190, 150, 0.5), #000);
     z-index: 0;
   }
+
   .section-footer {
     position: relative;
     width: 100%;
     background-color: #111111;
   }
+
   .container-footer {
     position: relative;
     width: 90%;
@@ -61,6 +99,7 @@
     padding: 20px 0;
     max-width: 1355px;
   }
+
   .title-contact {
     color: #f6f6f9;
     padding: 10px 0;
@@ -68,6 +107,7 @@
     font-weight: 700;
     scroll-margin-top: 80px;
   }
+
   .container-redes {
     position: relative;
     display: flex;
@@ -81,6 +121,7 @@
     text-decoration: none;
     color: #f6f6f9;
   }
+
   .li-contact {
     list-style: none;
     display: flex;
@@ -88,6 +129,7 @@
     align-items: center;
     transition: color 0.2s ease-in-out;
   }
+
   .li-contact i {
     font-size: 30px;
   }
@@ -95,6 +137,33 @@
   .li-contact:hover {
     color: #01be96;
   }
+
+  .metales-container {
+    margin-top: 40px;
+    text-align: center;
+    color: #f6f6f9;
+  }
+
+  .metales-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #01be96;
+    font-weight: 600;
+  }
+
+  .iframes-metales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  iframe {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+  }
+
   .container-copy {
     position: relative;
     color: #f6f6f9;
@@ -103,5 +172,7 @@
     align-items: center;
     width: 100%;
     padding: 10px 0;
+    background-color: #000;
+    font-size: 14px;
   }
 </style>
