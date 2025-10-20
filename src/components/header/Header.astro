@@ -1,3 +1,66 @@
+<!-- BarraMetales.astro -->
+<div class="metals-bar">
+  <div id="metals-prices">Cargando precios de metales...</div>
+</div>
+
+<style>
+  .metals-bar {
+    background-color: #0f0f0f;
+    color: #f6f6f9;
+    font-size: 14px;
+    padding: 6px 15px;
+    width: 100%;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #01be96;
+  }
+
+  #metals-prices {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: scroll 25s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<script>
+  async function cargarPrecios() {
+    try {
+      const respuesta = await fetch("https://api.metals.dev/v1/latest?api_key=guest");
+      const data = await respuesta.json();
+
+      const precios = {
+        oro: data.metals.gold.USD,
+        plata: data.metals.silver.USD,
+        cobre: data.metals.copper.USD,
+        hierro: data.metals.iron_ore.USD
+      };
+
+      const texto = `💰 Oro: $${precios.oro.toFixed(2)}/oz | 🪙 Plata: $${precios.plata.toFixed(2)}/oz | 🧱 Cobre: $${precios.cobre.toFixed(2)}/lb | ⚙️ Hierro: $${precios.hierro.toFixed(2)}/t`;
+      document.getElementById("metals-prices").textContent = texto;
+    } catch (error) {
+      document.getElementById("metals-prices").textContent = "No se pudieron cargar los precios.";
+      console.error("Error al cargar precios:", error);
+    }
+  }
+
+  cargarPrecios();
+  setInterval(cargarPrecios, 10 * 60 * 1000); // actualiza cada 10 minutos
+</script>
+
+
 <header class="header">
   <h1 id="inicio">Portafolio</h1>
   <nav class="nav">
