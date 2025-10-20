@@ -1,178 +1,119 @@
-<footer>
-  <section class="section-footer">
-    <div class="linear-grandient-1"></div>
-    <div class="container-footer">
-      <h2 class="title-contact" id="contacto">Contacto</h2>
-      <div class="container-redes">
-        <a href="https://wa.me/+573166026155" target="_blank">
-          <li class="li-contact">
-            <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
-            <p>Whatsapp</p>
-          </li>
-        </a>
+---
+import { Icon } from "astro-icon";
+---
 
-        <a href="https://github.com/Osnaider19" target="_blank">
-          <li class="li-contact">
-            <i class="fa-brands fa-github"></i>
-            <p>Github</p>
-          </li>
-        </a>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Franco Chacón | Portafolio</title>
+  </head>
 
-        <a href="https://www.instagram.com/osnaider_m19/" target="_blank">
-          <li class="li-contact">
-            <i class="fa-brands fa-instagram"></i>
-            <p>Instagram</p>
-          </li>
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/osnaider-mart%C3%ADnez-154b67256/"
-          target="_blank"
-        >
-          <li class="li-contact">
-            <i class="fa-brands fa-linkedin"></i>
-            <p>Linkedin</p>
-          </li>
-        </a>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Franco Chacón</h1>
+        <p>Profesor de Laboratorio | Ciencia y Tecnología</p>
       </div>
+    </header>
 
-      <!-- NUEVA SECCIÓN: PRECIOS DE METALES -->
-      <div class="metales-container">
-        <h3 class="metales-title">Precios de Metales en Tiempo Real</h3>
-        <div class="iframes-metales">
-          <iframe
-            src="https://tradingeconomics.com/embed/?s=gold&h=220&w=300"
-            width="300"
-            height="220"
-            frameborder="0"
-          ></iframe>
-          <iframe
-            src="https://tradingeconomics.com/embed/?s=silver&h=220&w=300"
-            width="300"
-            height="220"
-            frameborder="0"
-          ></iframe>
-          <iframe
-            src="https://tradingeconomics.com/embed/?s=copper&h=220&w=300"
-            width="300"
-            height="220"
-            frameborder="0"
-          ></iframe>
-          <iframe
-            src="https://tradingeconomics.com/embed/?s=lithium&h=220&w=300"
-            width="300"
-            height="220"
-            frameborder="0"
-          ></iframe>
+    <main>
+      <section id="about" class="section">
+        <div class="container">
+          <h2>Sobre mí</h2>
+          <p>
+            Soy Franco Chacón, profesor de laboratorio en el turno vespertino de colegios secundarios.
+            Me apasiona la ciencia aplicada, la tecnología educativa y el desarrollo de proyectos digitales.
+          </p>
         </div>
+      </section>
+
+      <section id="projects" class="section bg-light">
+        <div class="container">
+          <h2>Proyectos</h2>
+          <ul class="project-list">
+            <li>
+              <h3>Visualización de Datos Mineros</h3>
+              <p>Panel interactivo en Power BI sobre la industria minera argentina.</p>
+            </li>
+            <li>
+              <h3>Investigación y Análisis Químico</h3>
+              <p>Prácticas experimentales aplicadas al aula, con enfoque en materiales y reacciones.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contacto</h2>
+          <p>Podés contactarme a través de:</p>
+          <ul>
+            <li>📧 <a href="mailto:francochacon@gmail.com">francochacon@gmail.com</a></li>
+            <li>💼 <a href="https://www.linkedin.com">LinkedIn</a></li>
+            <li>📂 <a href="https://github.com/francochacon">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Franco Chacón. Todos los derechos reservados.</p>
       </div>
-      <!-- FIN NUEVA SECCIÓN -->
-    </div>
-  </section>
+    </footer>
 
-  <div class="container-copy">
-    <p>© 2025 Franco Chacón | Portafolio Minero</p>
-  </div>
-</footer>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        color: #333;
+        background-color: #fff;
+      }
 
-<style>
-  .linear-grandient-1 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(1, 190, 150, 0.5), #000);
-    z-index: 0;
-  }
+      .header {
+        background-color: #01be96;
+        color: #fff;
+        padding: 40px 0;
+        text-align: center;
+      }
 
-  .section-footer {
-    position: relative;
-    width: 100%;
-    background-color: #111111;
-  }
+      .section {
+        padding: 50px 20px;
+      }
 
-  .container-footer {
-    position: relative;
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
-    max-width: 1355px;
-  }
+      .bg-light {
+        background-color: #f6f6f9;
+      }
 
-  .title-contact {
-    color: #f6f6f9;
-    padding: 10px 0;
-    font-size: 25px;
-    font-weight: 700;
-    scroll-margin-top: 80px;
-  }
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+      }
 
-  .container-redes {
-    position: relative;
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    padding: 30px 0;
-    flex-wrap: wrap;
-  }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
 
-  .container-redes a {
-    text-decoration: none;
-    color: #f6f6f9;
-  }
+      a {
+        color: #01be96;
+        text-decoration: none;
+      }
 
-  .li-contact {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    transition: color 0.2s ease-in-out;
-  }
+      a:hover {
+        text-decoration: underline;
+      }
 
-  .li-contact i {
-    font-size: 30px;
-  }
-
-  .li-contact:hover {
-    color: #01be96;
-  }
-
-  .metales-container {
-    margin-top: 40px;
-    text-align: center;
-    color: #f6f6f9;
-  }
-
-  .metales-title {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: #01be96;
-    font-weight: 600;
-  }
-
-  .iframes-metales {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  iframe {
-    border-radius: 10px;
-    overflow: hidden;
-    background: #000;
-  }
-
-  .container-copy {
-    position: relative;
-    color: #f6f6f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-    background-color: #000;
-    font-size: 14px;
-  }
-</style>
+      .footer {
+        background-color: #0f0f0f;
+        color: #f6f6f9;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 30px;
+      }
+    </style>
+  </body>
+</html>
