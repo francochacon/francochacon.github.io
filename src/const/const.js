@@ -1,6 +1,6 @@
 export const studies = [
   {
-    title: "Ingenieria quimica,
+    title: "Ingenieria quimica",
     corporation: "Universidad Tecnologica Nacional",
     date: "02/2019 – 12/2019 01/2016 - 09/2023",
   },
