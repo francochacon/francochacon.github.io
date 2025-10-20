@@ -122,23 +122,4 @@ export const projects = [
       },
     ],
   },
-  {
-    img: "../../../img/cyberpunk.webp",
-    title: "cyberpunk",
-    link: "https://preeminent-liger-266356.netlify.app/",
-    description: `este proyecto se trata de un clon de la pagína de cyberpunk , donde
-      el ususario puede ver los tailer de él juegos y también los
-      episodios de la serie....`,
-    technologies: [
-      {
-        icon: IconKeys.html,
-      },
-      {
-        icon: IconKeys.css,
-      },
-      {
-        icon: IconKeys.javaScript,
-      },
-    ],
-  },
 ];
