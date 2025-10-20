@@ -84,9 +84,10 @@ export const skills = [
 export const projects = [
   {
     img: "../../../img/ecommerce-stripe-2.webp",
-    title: "Ecommerce Stripe",
-    link: "https://ecommerce-stripe-763m.vercel.app/",
-    description: `Proyecto FullStack de un ecommerce con pasarela de pagos stripe integrada, destalles de el product etc.  `,
+    title: "BHP sinks $555M into Olympic Dam before major decision",
+    link: "https://www.mining.com/bhp-sinks-555m-into-olympic-dam-before-major-decision/",
+    description: `BHP (ASX: BHP) is investing more than A$840 million ($555 million) in its Olympic Dam copper, gold and uranium complex 
+    in South Australia, advancing a series of growth projects ahead of a multibillion-dollar expansion decision expected in 2028.  `,
     technologies: [
       {
         icon: IconKeys.typeScript,
