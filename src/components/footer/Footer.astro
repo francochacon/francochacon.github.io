@@ -1,3 +1,68 @@
+<section class="metales">
+  <h2>Precios de Metales en Tiempo Real</h2>
+  <iframe src="https://tradingeconomics.com/embed/?s=gold, silver, copper, platinum, palladium&v=1&h=300&w=100%"
+    frameborder="0"
+    width="100%"
+    height="300"
+    scrolling="no"
+    style="border:none;">
+  </iframe>
+</section>
+
+
+<section class="criptos">
+  <h2>Precios de Criptomonedas</h2>
+  <iframe src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.html?coins=bitcoin,ethereum,ripple"
+    height="50"
+    width="100%"
+    style="border:none;">
+  </iframe>
+</section>
+
+<section class="metales-widget" style="display:flex;gap:10px;">
+  <div style="border:1px solid #ccc;padding:10px;width:150px;text-align:center;">
+    <h3>Oro</h3>
+    <p>$2,025.50</p>
+  </div>
+  <div style="border:1px solid #ccc;padding:10px;width:150px;text-align:center;">
+    <h3>Plata</h3>
+    <p>$25.30</p>
+  </div>
+  <div style="border:1px solid #ccc;padding:10px;width:150px;text-align:center;">
+    <h3>Cobre</h3>
+    <p>$3.45</p>
+  </div>
+</section>
+
+
+<section class="metales-js">
+  <h2>Precios Simulados de Metales</h2>
+  <div id="precios" style="display:flex;gap:20px;">
+    <div>Oro: <span id="oro">0</span></div>
+    <div>Plata: <span id="plata">0</span></div>
+    <div>Cobre: <span id="cobre">0</span></div>
+  </div>
+</section>
+
+<script>
+  function actualizarPrecios() {
+    document.getElementById('oro').textContent = (2000 + Math.random()*50).toFixed(2);
+    document.getElementById('plata').textContent = (25 + Math.random()*1).toFixed(2);
+    document.getElementById('cobre').textContent = (3 + Math.random()*0.1).toFixed(2);
+  }
+  actualizarPrecios();
+  setInterval(actualizarPrecios, 5000); // cada 5 segundos
+</script>
+
+<section class="ticker">
+  <marquee behavior="scroll" direction="left" style="padding:10px; background:#eee;">
+    Oro: $2025.50 &nbsp; | &nbsp; Plata: $25.30 &nbsp; | &nbsp; Cobre: $3.45 &nbsp; | &nbsp; Platino: $980.10
+  </marquee>
+</section>
+
+
+
+
 <footer>
   <section class="section-footer">
     <div class="linear-grandient-1"></div>
