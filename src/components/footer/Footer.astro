@@ -1,62 +1,18 @@
-<section class="metales" style="max-width:800px;margin:auto;">
+<section style="max-width:800px;margin:auto;">
   <h2 style="text-align:center;">Precios de Metales en Tiempo Real</h2>
-  <iframe src="https://tradingeconomics.com/embed/?s=gold,silver,copper,platinum,palladium&v=1&h=350&w=100%" 
-          frameborder="0" width="100%" height="350" scrolling="no" style="border-radius:8px; border:none;">
+  <iframe src="https://tradingeconomics.com/embed/?s=gold,silver,copper,platinum,palladium&v=1&h=300&w=100%"
+          frameborder="0" width="100%" height="300" scrolling="no" style="border-radius:8px; border:none;">
   </iframe>
 </section>
 
-<section style="max-width:900px;margin:auto;background:#f8f9fa;padding:10px;border-radius:10px;">
+
+<section style="max-width:900px;margin:auto;">
   <h2 style="text-align:center;">Criptomonedas en Tiempo Real</h2>
-  <iframe src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.html?coins=bitcoin,ethereum,ripple,litecoin,cardano"
-          height="60" width="100%" style="border:none;border-radius:10px;">
+  <iframe src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.html?coins=bitcoin,ethereum,ripple"
+          height="50" width="100%" style="border:none;border-radius:10px;">
   </iframe>
 </section>
 
-
-
-<section style="max-width:900px;margin:auto;display:flex;gap:20px;justify-content:center;">
-  <div style="padding:15px;background:#fff;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,0.1);text-align:center;">
-    <h3>Oro</h3>
-    <p id="oro">Cargando...</p>
-  </div>
-  <div style="padding:15px;background:#fff;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,0.1);text-align:center;">
-    <h3>Plata</h3>
-    <p id="plata">Cargando...</p>
-  </div>
-  <div style="padding:15px;background:#fff;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,0.1);text-align:center;">
-    <h3>Cobre</h3>
-    <p id="cobre">Cargando...</p>
-  </div>
-</section>
-
-<script>
-async function fetchMetales() {
-  const response = await fetch('https://metals-api.com/api/latest?access_key=TU_API_KEY&base=USD&symbols=XAU,XAG,CU');
-  const data = await response.json();
-  document.getElementById('oro').textContent = '$' + data.rates.XAU.toFixed(2);
-  document.getElementById('plata').textContent = '$' + data.rates.XAG.toFixed(2);
-  document.getElementById('cobre').textContent = '$' + data.rates.CU.toFixed(2);
-}
-fetchMetales();
-</script>
-
-
-<section style="background:#222;color:#fff;padding:10px;border-radius:8px;margin:20px 0;">
-  <marquee id="ticker" behavior="scroll" direction="left" scrollamount="5"></marquee>
-</section>
-
-<script>
-async function actualizarTicker() {
-  const res = await fetch('https://metals-api.com/api/latest?access_key=TU_API_KEY&base=USD&symbols=XAU,XAG,CU');
-  const data = await res.json();
-  const oro = '$' + data.rates.XAU.toFixed(2);
-  const plata = '$' + data.rates.XAG.toFixed(2);
-  const cobre = '$' + data.rates.CU.toFixed(2);
-  document.getElementById('ticker').textContent = `Oro: ${oro} | Plata: ${plata} | Cobre: ${cobre}`;
-}
-actualizarTicker();
-setInterval(actualizarTicker, 60000); // cada minuto
-</script>
 
 
 
