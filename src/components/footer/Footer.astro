@@ -1,17 +1,28 @@
-<section style="max-width:800px;margin:auto;">
-  <h2 style="text-align:center;">Precios de Metales en Tiempo Real</h2>
-  <iframe src="https://tradingeconomics.com/embed/?s=gold,silver,copper,platinum,palladium&v=1&h=300&w=100%"
-          frameborder="0" width="100%" height="300" scrolling="no" style="border-radius:8px; border:none;">
-  </iframe>
+<section style="text-align:center;max-width:800px;margin:auto;">
+  <h2>Precios Simulados de Metales</h2>
+  <div style="display:flex;gap:20px;justify-content:center;">
+    <div>Oro: <span id="oro">2025.50</span></div>
+    <div>Plata: <span id="plata">25.30</span></div>
+    <div>Cobre: <span id="cobre">3.45</span></div>
+  </div>
 </section>
 
+<script>
+const precios = {
+  oro: 2025.50,
+  plata: 25.30,
+  cobre: 3.45
+};
 
-<section style="max-width:900px;margin:auto;">
-  <h2 style="text-align:center;">Criptomonedas en Tiempo Real</h2>
-  <iframe src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.html?coins=bitcoin,ethereum,ripple"
-          height="50" width="100%" style="border:none;border-radius:10px;">
-  </iframe>
-</section>
+setInterval(() => {
+  precios.oro += (Math.random()-0.5)*2;
+  precios.plata += (Math.random()-0.1);
+  precios.cobre += (Math.random()-0.02);
+  document.getElementById('oro').textContent = precios.oro.toFixed(2);
+  document.getElementById('plata').textContent = precios.plata.toFixed(2);
+  document.getElementById('cobre').textContent = precios.cobre.toFixed(2);
+}, 5000);
+</script>
 
 
 
