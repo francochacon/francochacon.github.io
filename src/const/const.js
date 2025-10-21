@@ -81,7 +81,7 @@ export const projects = [
   {
     img: "../../../img/ecommerce-stripe-2.webp",
     title: "BHP sinks $555M into Olympic Dam before major decision",
-    link: "project.link",
+    link: "proyecto1",
     description: `BHP (ASX: BHP) is investing more than A$840 million ($555 million) in its Olympic Dam copper, gold and uranium complex 
     in South Australia, advancing a series of growth projects ahead of a multibillion-dollar expansion decision expected in 2028.  `,
     technologies: [
