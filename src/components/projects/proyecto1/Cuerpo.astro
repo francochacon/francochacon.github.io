@@ -2,13 +2,30 @@
   <div class="linear-grandient-1"></div>
   <div class="container-about">
     <div class="container-text-about">
-      <h2 class="title-about" id="sobremi">Sobre mi</h2>
+      <h2 class="title-about" id="sobremi">Sobre mí</h2>
       <p>
-        Aqui va explicacion sobre Power BI
+        Aca va info sobre Power BI
       </p>
+    </div>
 
-<!-- 🔹 Sección Power BI completa -->
+    <div class="container-svg-about">
+      <div class="container-svg">
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_sg18igu8.json"
+          background="transparent"
+          speed="1"
+          style="width: 380px; height: 380px; position:relative;"
+          loop
+          autoplay>
+        </lottie-player>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🔹 Nueva sección con Power BI -->
 <section class="section-powerbi">
+  <div class="linear-gradient-powerbi"></div>
   <div class="container-powerbi">
     <h2 class="title-powerbi">Panel de datos de minería</h2>
     <iframe 
@@ -20,68 +37,26 @@
   </div>
 </section>
 
-<style>
-  .section-powerbi {
-    position: relative;
-    background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.4));
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .container-powerbi {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .title-powerbi {
-    font-size: 28px;
-    color: #f6f6f9;
-    margin-bottom: 25px;
-    font-weight: 700;
-  }
-
-  .container-powerbi iframe {
-    width: 100%;
-    height: 700px;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
-  }
-
-  @media (max-width: 900px) {
-    .container-powerbi iframe {
-      height: 400px;
-    }
-  }
-</style>
-
-
-<script
-  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
-></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <style>
+  /* 🔸 Sección Sobre mí */
   .linear-grandient-1 {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* background: radial-gradient(at left center, rgba(1, 190, 150 , 0.5), transparent , transparent); */
     background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.5));
-    background:;
     z-index: 0;
   }
 
   .section-about {
     position: relative;
     background-color: #111111;
+    padding: 60px 0;
   }
+
   .container-about {
     position: relative;
     width: 90%;
@@ -97,6 +72,7 @@
     flex-direction: column;
     align-items: center;
   }
+
   .title-about {
     position: relative;
     display: block;
@@ -107,6 +83,7 @@
     font-weight: 800;
     scroll-margin-top: 80px;
   }
+
   .container-text-about p {
     font-size: 17px;
     color: #f6f6f9;
@@ -118,6 +95,7 @@
     position: relative;
     width: 50%;
   }
+
   .container-svg {
     position: relative;
     display: flex;
@@ -126,10 +104,51 @@
     padding-left: 100px;
   }
 
-  /*  responsive  */
+  /* 🔸 Sección Power BI */
+  .section-powerbi {
+    position: relative;
+    background-color: #0f0f0f;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+  }
 
+  .linear-gradient-powerbi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top center, rgba(1, 190, 150, 0.2), transparent 80%);
+    z-index: 0;
+  }
+
+  .container-powerbi {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .title-powerbi {
+    font-size: 28px;
+    color: #00bfa5;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 180, 0.3);
+  }
+
+  .container-powerbi iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(0, 255, 180, 0.2);
+  }
+
+  /* 🔸 Responsive */
   @media (max-width: 900px) {
-    /*Resposivo de la seccion sobre mi*/
     .container-about {
       flex-direction: column;
     }
@@ -144,6 +163,9 @@
     .container-text-about {
       width: 100%;
       padding: 10px 0;
+    }
+    .container-powerbi iframe {
+      height: 400px;
     }
   }
 </style>
