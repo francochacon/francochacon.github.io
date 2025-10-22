@@ -1,34 +1,43 @@
 <section class="section-about">
   <div class="linear-grandient-1"></div>
+
+  <!-- 🔹 Contenedor principal -->
   <div class="container-about">
+    <!-- 🔸 Texto de introducción -->
     <div class="container-text-about">
       <h2 class="title-about" id="sobremi">Sobre mí</h2>
       <p>
-        Aca va info sobre Power BI
+        Acá va info sobre Power BI
       </p>
     </div>
+  </div>
 
-<!-- 🔹 Nueva sección con Power BI -->
-<!-- <section class="section-powerbi"> -->
-<!-- <div class="linear-gradient-powerbi"></div> -->
+  <!-- 🔹 Sección Power BI independiente -->
   <div class="container-powerbi">
     <h2 class="title-powerbi">Panel de datos de minería</h2>
+
+    <!-- 🔸 Texto arriba del iframe -->
+    <p class="text-powerbi">
+      Este panel muestra información actualizada sobre proyectos mineros activos en Argentina, 
+      clasificados por provincia, tipo de mineral y nivel de avance.
+    </p>
+
+    <!-- 🔸 Iframe del Power BI -->
     <iframe 
       title="mineria"
       src="https://app.powerbi.com/view?r=eyJrIjoiYWU3MDc1YjEtMTkzOS00ZTk2LWEwOGEtMDA2OWQwOGY4Yzc5IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
       frameborder="0"
       allowfullscreen="true">
     </iframe>
+
+    <!-- 🔸 Texto abajo del iframe -->
+    <p class="text-powerbi">
+      Los datos se actualizan automáticamente desde fuentes públicas. 
+      Este panel forma parte de un proyecto personal de análisis minero desarrollado con Power BI.
+    </p>
   </div>
 
-      <p>
-        Aca va mas info sobre Power BI
-      </p>
-
-<!-- </section> -->
 </section>
-
-
 
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
@@ -84,52 +93,31 @@
     letter-spacing: 1px;
   }
 
-  .container-svg-about {
-    position: relative;
-    width: 50%;
-  }
-
-  .container-svg {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 100px;
-  }
-
-  /* 🔸 Sección Power BI */
-  .section-powerbi {
-    position: relative;
-    background-color: #0f0f0f;
-    padding: 80px 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .linear-gradient-powerbi {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top center, rgba(1, 190, 150, 0.2), transparent 80%);
-    z-index: 0;
-  }
-
+  /* 🔹 Sección Power BI */
   .container-powerbi {
     position: relative;
     z-index: 1;
     width: 90%;
     max-width: 1200px;
     text-align: center;
+    margin: 80px auto;
   }
 
   .title-powerbi {
     font-size: 28px;
     color: #00bfa5;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 255, 180, 0.3);
+  }
+
+  .text-powerbi {
+    color: rgba(246, 246, 249, 0.9);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
   }
 
   .container-powerbi iframe {
@@ -138,6 +126,8 @@
     border: none;
     border-radius: 14px;
     box-shadow: 0 0 15px rgba(0, 255, 180, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   /* 🔸 Responsive */
@@ -145,18 +135,12 @@
     .container-about {
       flex-direction: column;
     }
-    .container-svg-about {
-      width: 100%;
-    }
-    .container-svg {
-      justify-content: start;
-      align-items: end;
-      padding: 0;
-    }
+
     .container-text-about {
       width: 100%;
       padding: 10px 0;
     }
+
     .container-powerbi iframe {
       height: 400px;
     }
