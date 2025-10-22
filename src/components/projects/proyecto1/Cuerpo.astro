@@ -1,0 +1,118 @@
+<section class="section-about">
+  <div class="linear-grandient-1"></div>
+  <div class="container-about">
+    <div class="container-text-about">
+      <h2 class="title-about" id="sobremi">Sobre mi</h2>
+      <p>
+        Durante mi formación adquirí experiencia en gestión ambiental, coordinación de laboratorios y
+desarrollo de procedimientos, lo que me brindó un enfoque integral sobre la calidad, la
+seguridad y la mejora continua. También he desarrollado habilidades en software técnico
+como AutoCAD, Autodesk Fusion 360, SketchUp y SolidWorks, aplicadas en proyectos de
+modelado y diseño 3D. Actualmente me encuentro formándome en Ignition (SCADA/HMI),
+ampliando mis conocimientos hacia la automatización y el control de procesos.
+Complemento mi perfil con el curso English for Mining Industry – Level A2, finalizado en 2025,
+y con la decisión de continuar mi desarrollo académico en 2026 a través de la Tecnicatura
+Universitaria en Minería con Orientación en Higiene y Seguridad en UPATECO, con el
+propósito de especializarme en áreas clave para la gestión minera moderna.
+      </p>
+    </div>
+    <div class="container-svg-about">
+      <div class="container-svg">
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_sg18igu8.json"
+          background="transparent"
+          speed="1"
+          style="width: 380px; height: 380px; position:relative;"
+          loop
+          autoplay></lottie-player>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+></script>
+
+<style>
+  .linear-grandient-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(at left center, rgba(1, 190, 150 , 0.5), transparent , transparent); */
+    background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.5));
+    background:;
+    z-index: 0;
+  }
+
+  .section-about {
+    position: relative;
+    background-color: #111111;
+  }
+  .container-about {
+    position: relative;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1355px;
+  }
+
+  .container-text-about {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .title-about {
+    position: relative;
+    display: block;
+    font-size: 27px;
+    padding: 10px 0;
+    color: #f6f6f9;
+    width: 100%;
+    font-weight: 800;
+    scroll-margin-top: 80px;
+  }
+  .container-text-about p {
+    font-size: 17px;
+    color: #f6f6f9;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  .container-svg-about {
+    position: relative;
+    width: 50%;
+  }
+  .container-svg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+  }
+
+  /*  responsive  */
+
+  @media (max-width: 900px) {
+    /*Resposivo de la seccion sobre mi*/
+    .container-about {
+      flex-direction: column;
+    }
+    .container-svg-about {
+      width: 100%;
+    }
+    .container-svg {
+      justify-content: start;
+      align-items: end;
+      padding: 0;
+    }
+    .container-text-about {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+</style>
