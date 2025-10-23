@@ -55,7 +55,7 @@ export const skills = [
     icon: IconKeys.javaScript,
   },
   {
-    title: "Astro",
+    title: "Autocad",
     icon: IconKeys.astro,
   },
   {
