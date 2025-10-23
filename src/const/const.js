@@ -78,19 +78,7 @@ export const projects = [
     in South Australia, advancing a series of growth projects ahead of a multibillion-dollar expansion decision expected in 2028.  `,
     technologies: [
       {
-        icon: IconKeys.typeScript,
-      },
-      {
-        icon: IconKeys.nextjs,
-      },
-      {
-        icon: IconKeys.tailwind,
-      },
-      {
-        icon: IconKeys.mongodb,
-      },
-      {
-        icon: IconKeys.stripe,
+        icon: IconKeys.html,
       },
     ],
   },
