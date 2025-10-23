@@ -59,14 +59,6 @@ export const skills = [
     icon: IconKeys.astro,
   },
   {
-    title: "React Js",
-    icon: IconKeys.react,
-  },
-  {
-    title: "Next Js",
-    icon: IconKeys.nextjs,
-  },
-  {
     title: "Git",
     icon: IconKeys.git,
   },
