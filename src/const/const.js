@@ -79,6 +79,15 @@ export const projects = [
       {
         icon: IconKeys.html,
       },
+  {
+    img: "../../../img/ecommerce-stripe-2.webp",
+    title: "Exportaciones Records",
+    link: "proyecto2",
+    description: `Argentina cuenta con una rica diversidad de recursos minerales que posicionan al país como un actor relevante en la industria minera global. El país posee yacimientos de cobre, litio, oro, plata, zinc y otros minerales estratégicos, destacándose en regiones como la Puna, la Cordillera de los Andes y la Patagonia. Además, se aprovechan técnicas modernas de extracción y un marco regulatorio que fomenta la inversión sostenible.  `,
+    technologies: [
+      {
+        icon: IconKeys.html,
+      },
     ],
   },
 ];
