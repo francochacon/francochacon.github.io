@@ -1,1 +1,148 @@
+<section class="section-about">
+  <div class="linear-grandient-1"></div>
 
+  <!-- 🔹 Contenedor principal -->
+  <div class="container-about">
+    <!-- 🔸 Texto de introducción -->
+    <div class="container-text-about">
+      <h2 class="title-about" id="sobremi">Minería en Argentina</h2>
+      <p>
+        Argentina cuenta con una rica diversidad de recursos minerales que posicionan al país como un actor relevante en la industria minera global. El país posee yacimientos de cobre, litio, oro, plata, zinc y otros minerales estratégicos, destacándose en regiones como la Puna, la Cordillera de los Andes y la Patagonia. Además, se aprovechan técnicas modernas de extracción y un marco regulatorio que fomenta la inversión sostenible.
+      </p>
+    </div>
+  </div>
+
+  <!-- 🔹 Sección Power BI independiente -->
+  <div class="container-powerbi">
+    <h2 class="title-powerbi">Panel de datos de minería</h2>
+
+    <!-- 🔸 Texto arriba del iframe -->
+    <p class="text-powerbi">
+      Este panel muestra información actualizada sobre proyectos mineros activos en Argentina, 
+      clasificados por provincia, tipo de mineral y nivel de avance.
+    </p>
+
+    <!-- 🔸 Iframe del Power BI -->
+    <iframe 
+      title="mineria"
+      src="https://app.powerbi.com/view?r=eyJrIjoiYWU3MDc1YjEtMTkzOS00ZTk2LWEwOGEtMDA2OWQwOGY4Yzc5IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+      frameborder="0"
+      allowfullscreen="true">
+    </iframe>
+
+    <!-- 🔸 Texto abajo del iframe -->
+    <p class="text-powerbi">
+      Los datos se actualizan automáticamente desde fuentes públicas. 
+      Este panel forma parte de un proyecto personal de análisis minero desarrollado con Power BI.
+    </p>
+  </div>
+
+</section>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<style>
+  /* 🔸 Sección Sobre mí */
+  .linear-grandient-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.5));
+    z-index: 0;
+  }
+
+  .section-about {
+    position: relative;
+    background-color: #111111;
+    padding: 60px 0;
+  }
+
+  .container-about {
+    position: relative;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1355px;
+  }
+
+  .container-text-about {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-about {
+    position: relative;
+    display: block;
+    font-size: 27px;
+    padding: 10px 0;
+    color: #f6f6f9;
+    width: 100%;
+    font-weight: 800;
+    scroll-margin-top: 80px;
+  }
+
+  .container-text-about p {
+    font-size: 17px;
+    color: #f6f6f9;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  /* 🔹 Sección Power BI */
+  .container-powerbi {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 80px auto;
+  }
+
+  .title-powerbi {
+    font-size: 28px;
+    color: #00bfa5;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 180, 0.3);
+  }
+
+  .text-powerbi {
+    color: rgba(246, 246, 249, 0.9);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .container-powerbi iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(0, 255, 180, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* 🔸 Responsive */
+  @media (max-width: 900px) {
+    .container-about {
+      flex-direction: column;
+    }
+
+    .container-text-about {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .container-powerbi iframe {
+      height: 400px;
+    }
+  }
+</style>
