@@ -1,30 +1,35 @@
 <header class="header">
-  <h1 id="inicio">Portfolio</h1>
+  <h1 id="top">Portfolio</h1>
+
   <nav class="nav">
     <ul class="ul-nav">
-      <a href="/index.html">
-        <li class="li-nav">Inicio</li>
+      <a href="/" class="nav-home">
+        <li class="li-nav">Home</li>
       </a>
 
-      <a href="#proyectos">
-        <li class="li-nav">Proyectos</li>
+      <!-- Links que se ajustan según la página -->
+      <a class="nav-link" data-home="#proyectos" data-project="#dashboard" href="#proyectos">
+        <li class="li-nav">Projects</li>
       </a>
 
-      <a href="#skills">
-        <li class="li-nav">Habilidades</li>
-      </a>
-      <a href="#estudios">
-        <li class="li-nav">Estudios</li>
-      </a>
-      <a href="#sobremi">
-        <li class="li-nav">Sobre mi</li>
+      <a class="nav-link" data-home="#skills" data-project="#skills" href="#skills">
+        <li class="li-nav">Skills</li>
       </a>
 
-      <a href="#contacto">
-        <li class="li-nav">Contacto</li>
+      <a class="nav-link" data-home="#estudios" data-project="#overview" href="#estudios">
+        <li class="li-nav">Education</li>
+      </a>
+
+      <a class="nav-link" data-home="#sobremi" data-project="#overview" href="#sobremi">
+        <li class="li-nav">About</li>
+      </a>
+
+      <a class="nav-link" data-home="#contacto" data-project="#contacto" href="#contacto">
+        <li class="li-nav">Contact</li>
       </a>
     </ul>
   </nav>
+
   <div class="container-bnt-menu">
     <div class="btn-menu">
       <span class="linea-menu" id="linea1"></span>
@@ -36,26 +41,43 @@
   <div class="menu-drop"></div>
 
   <script>
+    // --- Mobile menu behavior ---
     const $menu = document.querySelector(".nav");
     const $menuDrop = document.querySelector(".menu-drop");
     const $btnmenu = document.querySelector(".btn-menu");
     const $linea1 = document.querySelector("#linea1");
     const $linea2 = document.querySelector("#linea2");
     const $linea3 = document.querySelector("#linea3");
-    $btnmenu.addEventListener("click", () => {
+
+    const toggleMenu = () => {
       $linea1.classList.toggle("activelinea1__bars-menu");
       $linea2.classList.toggle("activelinea2__bars-menu");
       $linea3.classList.toggle("activelinea3__bars-menu");
       $menu.classList.toggle("menu-activado");
       $menuDrop.classList.toggle("activa-menu-drop");
+    };
+
+    $btnmenu.addEventListener("click", toggleMenu);
+    $menuDrop.addEventListener("click", toggleMenu);
+
+    // --- Smart anchors: home vs project pages ---
+    // If you are on /proyecto2/ (or any /proyectoX/), we switch anchors to project ones.
+    const path = window.location.pathname;
+    const isProjectPage = path.includes("/proyecto");
+
+    document.querySelectorAll(".nav-link").forEach((a) => {
+      const homeHref = a.getAttribute("data-home");
+      const projectHref = a.getAttribute("data-project");
+      a.setAttribute("href", isProjectPage ? projectHref : homeHref);
     });
 
-    $menuDrop.addEventListener("click", () => {
-      $linea1.classList.toggle("activelinea1__bars-menu");
-      $linea2.classList.toggle("activelinea2__bars-menu");
-      $linea3.classList.toggle("activelinea3__bars-menu");
-      $menu.classList.toggle("menu-activado");
-      $menuDrop.classList.toggle("activa-menu-drop");
+    // Close menu when clicking a link (mobile UX)
+    document.querySelectorAll(".ul-nav a").forEach((a) => {
+      a.addEventListener("click", () => {
+        if (window.innerWidth <= 720 && $menu.classList.contains("menu-activado")) {
+          toggleMenu();
+        }
+      });
     });
   </script>
 </header>
@@ -127,7 +149,6 @@
   .menu-drop {
     display: none;
   }
-  /* resposive */
 
   @media (max-width: 720px) {
     .menu-drop {
@@ -139,15 +160,11 @@
     .header {
       position: fixed;
       display: flex;
-
       justify-items: center;
       justify-content: space-between;
       top: 0;
       left: 0;
       z-index: 100;
-      /* background: rgba(255,255,255,0.1);
-        -webkit-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px); */
     }
     h1 {
       display: inline-block;
@@ -196,11 +213,10 @@
       text-align: center;
       width: 100%;
       margin: 0;
-      
     }
     .li-nav:hover {
       background-color: #01be96;
-      color : #000
+      color: #000;
     }
     .li-nav:hover::before {
       content: "";
