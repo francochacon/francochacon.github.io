@@ -1,48 +1,74 @@
 <section class="section-about">
   <div class="linear-grandient-1"></div>
 
-  <!-- 🔹 Contenedor principal -->
+  <!-- Main intro container -->
   <div class="container-about">
-    <!-- 🔸 Texto de introducción -->
     <div class="container-text-about">
-      <h2 class="title-about" id="sobremi">Minería en Argentina</h2>
-      <p>
-        Argentina cuenta con una rica diversidad de recursos minerales que posicionan al país como un actor relevante en la industria minera global. El país posee yacimientos de cobre, litio, oro, plata, zinc y otros minerales estratégicos, destacándose en regiones como la Puna, la Cordillera de los Andes y la Patagonia. Además, se aprovechan técnicas modernas de extracción y un marco regulatorio que fomenta la inversión sostenible.
+      <h2 class="title-about" id="overview">Mining in Argentina</h2>
+
+      <p class="p-lead">
+        Argentina has a diverse mineral endowment that positions the country as a relevant player in
+        the global mining industry. Key resources include copper, lithium, gold, silver, zinc, and
+        other strategic minerals—mainly across the Puna region, the Andes range, and Patagonia.
       </p>
+
+      <p>
+        This project showcases an interactive Power BI dashboard focused on mining exports and
+        industry structure. The goal is to highlight trends, concentration, and the main drivers
+        behind historical export peaks.
+      </p>
+
+      <div class="pill-row" aria-label="Project stack">
+        <span class="pill">Power BI</span>
+        <span class="pill">DAX</span>
+        <span class="pill">Data Modeling</span>
+        <span class="pill">Mining Analytics</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="https://github.com/francochacon/argentina-mining-dashboard" target="_blank" rel="noopener">
+          View repository
+        </a>
+        <a class="btn-secondary" href="https://francochacon.github.io/proyecto2/" target="_blank" rel="noopener">
+          Open project page
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- 🔹 Sección Power BI independiente -->
-  <div class="container-powerbi">
-    <h2 class="title-powerbi">Panel de datos de minería</h2>
+  <!-- Power BI section -->
+  <div class="container-powerbi" id="dashboard">
+    <h2 class="title-powerbi">Mining Data Dashboard (Power BI)</h2>
 
-    <!-- 🔸 Texto arriba del iframe -->
     <p class="text-powerbi">
-      Este panel muestra información actualizada sobre proyectos mineros activos en Argentina, 
-      clasificados por provincia, tipo de mineral y nivel de avance.
+      The dashboard summarizes mining exports in Argentina and helps answer questions such as:
     </p>
 
-    <!-- 🔸 Iframe del Power BI -->
-    <iframe 
-      title="mineria"
-      src="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
-      frameborder="0"
-      allowfullscreen="true">
-    </iframe>
+    <ul class="insights-list">
+      <li>Which year reached the highest export value (FOB)?</li>
+      <li>What is the dominant sector and its share?</li>
+      <li>Which mineral leads exports and how concentrated is the structure?</li>
+      <li>How has gold evolved over the last years?</li>
+    </ul>
 
-    <!-- 🔸 Texto abajo del iframe -->
+    <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
+      <iframe
+        title="Argentina mining dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+        frameborder="0"
+        allowfullscreen="true"
+      ></iframe>
+    </div>
+
     <p class="text-powerbi">
-      Los datos se actualizan automáticamente desde fuentes públicas. 
-      Este panel forma parte de un proyecto personal de análisis minero desarrollado con Power BI.
+      Data is based on public sources and this dashboard is part of my personal portfolio project.
+      The report will be continuously updated with new pages, improved storytelling, and additional
+      breakdowns (e.g., provinces, minerals, and YoY comparisons).
     </p>
   </div>
-
 </section>
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
 <style>
-  /* 🔸 Sección Sobre mí */
   .linear-grandient-1 {
     position: absolute;
     left: 0;
@@ -69,16 +95,16 @@
 
   .container-text-about {
     position: relative;
-    width: 50%;
+    width: 65%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 12px;
   }
 
   .title-about {
     position: relative;
     display: block;
-    font-size: 27px;
+    font-size: 28px;
     padding: 10px 0;
     color: #f6f6f9;
     width: 100%;
@@ -86,51 +112,131 @@
     scroll-margin-top: 80px;
   }
 
-  .container-text-about p {
-    font-size: 17px;
-    color: #f6f6f9;
-    text-align: left;
-    letter-spacing: 1px;
+  .p-lead {
+    font-size: 18px;
+    color: rgba(246, 246, 249, 0.95);
+    line-height: 1.7;
+    letter-spacing: 0.2px;
   }
 
-  /* 🔹 Sección Power BI */
+  .container-text-about p {
+    font-size: 16.5px;
+    color: rgba(246, 246, 249, 0.9);
+    text-align: left;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+    margin: 0;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .pill {
+    border: 1px solid rgba(0, 191, 165, 0.35);
+    color: rgba(246, 246, 249, 0.92);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    background: rgba(0, 191, 165, 0.08);
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 0.12s ease, background 0.12s ease, border 0.12s ease;
+  }
+
+  .btn-primary {
+    background: #00bfa5;
+    color: #0b0b0b;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: rgba(246, 246, 249, 0.92);
+    border: 1px solid rgba(246, 246, 249, 0.18);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Power BI section */
   .container-powerbi {
     position: relative;
     z-index: 1;
     width: 90%;
     max-width: 1200px;
     text-align: center;
-    margin: 80px auto;
+    margin: 70px auto 0;
   }
 
   .title-powerbi {
     font-size: 28px;
     color: #00bfa5;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 255, 180, 0.3);
+    margin-bottom: 14px;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 255, 180, 0.25);
   }
 
   .text-powerbi {
     color: rgba(246, 246, 249, 0.9);
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 16.5px;
+    line-height: 1.7;
     max-width: 900px;
-    margin: 20px auto;
+    margin: 14px auto;
     text-align: center;
   }
 
-  .container-powerbi iframe {
-    width: 100%;
-    height: 700px;
-    border: none;
-    border-radius: 14px;
-    box-shadow: 0 0 15px rgba(0, 255, 180, 0.2);
-    margin-top: 20px;
-    margin-bottom: 20px;
+  .insights-list {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    text-align: left;
+    color: rgba(246, 246, 249, 0.9);
+    line-height: 1.7;
+    padding-left: 18px;
   }
 
-  /* 🔸 Responsive */
+  .insights-list li {
+    margin: 6px 0;
+  }
+
+  /* Responsive iframe wrapper (better than fixed heights) */
+  .iframe-wrap {
+    width: 100%;
+    margin: 18px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 180, 0.18);
+    background: #0e0e0e;
+  }
+
+  .iframe-wrap iframe {
+    width: 100%;
+    height: 720px;
+    border: 0;
+    display: block;
+  }
+
   @media (max-width: 900px) {
     .container-about {
       flex-direction: column;
@@ -138,11 +244,10 @@
 
     .container-text-about {
       width: 100%;
-      padding: 10px 0;
     }
 
-    .container-powerbi iframe {
-      height: 400px;
+    .iframe-wrap iframe {
+      height: 460px;
     }
   }
 </style>
