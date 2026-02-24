@@ -6,7 +6,8 @@ import { getIconComponent } from "../../../icons/IconAll.astro";
 <section class="section-skill">
   <div class="linear-grandient-1"></div>
   <div class="container-skill">
-    <h2 class="title-skills" id="skills">Habilidades utilizadas</h2>
+    <h2 class="title-skills" id="skills">Skills used</h2>
+
     <ul class="ul-skill">
       {
         skills.map(({ icon, title }) => {
@@ -84,7 +85,6 @@ import { getIconComponent } from "../../../icons/IconAll.astro";
     align-items: center;
     gap: 15px;
     padding: 40px 0;
-    width: 100%;
     overflow: hidden;
     grid-template-columns: repeat(8, 1fr);
   }
