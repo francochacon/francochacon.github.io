@@ -8,7 +8,6 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
   <div class="linear-gradient-1"></div>
 
   <section class="container-persentation hero" id="inicio">
-    
     <div class="container-text hero-glass">
       <h1 class="text-name">Franco Chacón</h1>
 
@@ -47,12 +46,11 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
         <p><strong>Let’s turn your data into insights.</strong></p>
       </div>
 
-      <!-- CTA -->
+      <!-- CTA (mismo href que navbar) -->
       <div class="cta-row">
-        <a class="btn btn-primary" href="#projects">View Projects</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#projects" data-scroll="projects">View Projects</a>
+        <a class="btn btn-ghost" href="#contact" data-scroll="contact">Contact</a>
       </div>
-
     </div>
 
     <div class="container-photo-profile">
@@ -62,202 +60,233 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
         </picture>
       </div>
     </div>
-
   </section>
 </div>
 
+<script>
+  // Scroll robusto para anclas (captura el click antes que otros scripts)
+  document.addEventListener(
+    "click",
+    (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const id = href.slice(1);
+      const target = document.getElementById(id);
+
+      // Si no existe el elemento, dejamos que el navegador maneje (o no haga nada)
+      if (!target) return;
+
+      // Evitar comportamiento por defecto (y cualquier interferencia)
+      e.preventDefault();
+
+      // Scroll suave al target
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // Actualiza la URL con el hash sin recargar
+      history.pushState(null, "", `#${id}`);
+    },
+    true // <- captura
+  );
+</script>
+
 <style>
-
-/* scroll suave */
-html {
-  scroll-behavior: smooth;
-}
-
-/* contenedor base */
-.content-presentation {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* gradientes */
-.linear-gradient-1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 500px;
-  height: 520px;
-  background: radial-gradient(
-    at left center,
-    rgba(1,190,150,0.5),
-    transparent,
-    transparent
-  );
-  z-index: 0;
-  pointer-events: none; /* FIX CLICK */
-}
-
-.linear-gradient-2 {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    at right center,
-    rgba(1,190,150,0.6),
-    rgb(0,0,0),
-    rgb(0,0,0)
-  );
-  z-index: 0;
-  pointer-events: none; /* FIX CLICK */
-}
-
-/* layout */
-.container-persentation {
-  position: relative;
-  display: flex;
-  padding: 50px 0;
-  width: 90%;
-  margin: 0 auto;
-  max-width: 1355px;
-  z-index: 2; /* FIX CAPA */
-}
-
-.hero {
-  min-height: 100vh;
-  align-items: center;
-  gap: 40px;
-}
-
-.container-text {
-  width: 52%;
-  color: #f6f6f9;
-}
-
-/* glass texto */
-.hero-glass {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 22px;
-}
-
-.text-name {
-  font-size: 34px;
-  color: #01be96;
-  font-weight: 800;
-}
-
-.p-profession {
-  font-size: 22px;
-  font-weight: 800;
-  margin: 6px 0 14px;
-}
-
-.presentation-text p {
-  margin: 10px 0;
-  line-height: 1.6;
-}
-
-.presentation-list {
-  padding-left: 18px;
-}
-
-/* botones */
-.cta-row {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.btn {
-  padding: 10px 18px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.2s;
-}
-
-.btn-primary {
-  background: #01be96;
-  color: #000;
-  border: 1px solid #01be96;
-}
-
-.btn-ghost {
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  border: 1px solid rgba(1,190,150,0.55);
-  backdrop-filter: blur(8px);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-/* foto */
-.container-photo-profile {
-  width: 48%;
-  display: flex;
-  justify-content: center;
-}
-
-.photo-perfil {
-  height: 320px;
-  width: 320px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-}
-
-/* glass borde */
-.glass-ring {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(10px);
-}
-
-/* imagen */
-.photo-perfil img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* flotación */
-.photo-float {
-  animation: floaty 4.5s ease-in-out infinite;
-}
-
-@keyframes floaty {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* responsive */
-@media (max-width: 900px) {
-  .container-persentation {
-    flex-direction: column-reverse;
-    gap: 30px;
+  /* scroll suave (por si acaso) */
+  html {
+    scroll-behavior: smooth;
   }
 
-  .container-text,
-  .container-photo-profile {
+  .content-presentation {
+    position: relative;
     width: 100%;
+    height: 100%;
+  }
+
+  .linear-gradient-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 520px;
+    background: radial-gradient(
+      at left center,
+      rgba(1, 190, 150, 0.5),
+      transparent,
+      transparent
+    );
+    z-index: 0;
+    pointer-events: none; /* no bloquear clicks */
+  }
+
+  .linear-gradient-2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      at right center,
+      rgba(1, 190, 150, 0.6),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+    z-index: 0;
+    pointer-events: none; /* no bloquear clicks */
+  }
+
+  .container-persentation {
+    position: relative;
+    display: flex;
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1355px;
+    z-index: 2; /* arriba de los gradientes */
+  }
+
+  .hero {
+    min-height: 100vh;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .container-text {
+    width: 52%;
+    color: #f6f6f9;
+  }
+
+  .hero-glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 22px;
+  }
+
+  .text-name {
+    font-size: 34px;
+    color: #01be96;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .p-profession {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 6px 0 14px;
+  }
+
+  .presentation-text p {
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+
+  .presentation-list {
+    padding-left: 18px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    position: relative;
+    z-index: 3; /* por si hay stacking raro */
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: #01be96;
+    color: #000;
+    border: 1px solid #01be96;
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border: 1px solid rgba(1, 190, 150, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .container-photo-profile {
+    width: 48%;
+    display: flex;
+    justify-content: center;
   }
 
   .photo-perfil {
-    height: 280px;
-    width: 280px;
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
   }
-}
 
-@media (max-width: 500px) {
-  .linear-gradient-1 {
-    display: none;
+  .glass-ring {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
-}
 
+  .photo-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-float {
+    animation: floaty 4.5s ease-in-out infinite;
+  }
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .container-persentation {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+
+    .container-text,
+    .container-photo-profile {
+      width: 100%;
+    }
+
+    .photo-perfil {
+      height: 280px;
+      width: 280px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .linear-gradient-1 {
+      display: none;
+    }
+  }
 </style>
