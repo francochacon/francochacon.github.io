@@ -1,250 +1,275 @@
-<header class="header">
-  <h1 id="top">Portfolio</h1>
+---
+import { Image } from "astro:assets";
+import photoperfil from "../../../../public/img/photo-perfil.webp";
+---
 
-  <nav class="nav">
-    <ul class="ul-nav">
-      <a href="/" class="nav-home">
-        <li class="li-nav">Home</li>
-      </a>
+<div class="content-presentation">
+  <div class="linear-gradient-2"></div>
+  <div class="linear-gradient-1"></div>
 
-      <!-- Links que se ajustan según la página -->
-      <a class="nav-link" data-home="#proyectos" data-project="#dashboard" href="#proyectos">
-        <li class="li-nav">Projects</li>
-      </a>
+  <section class="container-persentation hero" id="inicio">
+    <div class="container-text hero-glass">
+      <h1 class="text-name">Franco Chacón</h1>
 
-      <a class="nav-link" data-home="#skills" data-project="#skills" href="#skills">
-        <li class="li-nav">Skills</li>
-      </a>
+      <p class="p-profession">
+        Data Analyst | Power BI, Excel & Business Intelligence Dashboards
+      </p>
 
-      <a class="nav-link" data-home="#estudios" data-project="#overview" href="#estudios">
-        <li class="li-nav">Education</li>
-      </a>
+      <div class="presentation-text">
+        <p>
+          I design professional, interactive dashboards tailored to your business goals.
+        </p>
 
-      <a class="nav-link" data-home="#sobremi" data-project="#overview" href="#sobremi">
-        <li class="li-nav">About</li>
-      </a>
+        <p>
+          I transform raw data into clear, actionable insights that improve performance, optimize operations, and support data-driven decisions.
+        </p>
 
-      <a class="nav-link" data-home="#contacto" data-project="#contacto" href="#contacto">
-        <li class="li-nav">Contact</li>
-      </a>
-    </ul>
-  </nav>
+        <p>
+          Whether you need a sales dashboard, financial report, marketing analytics, KPI tracking, or operational performance analysis, I build clean, dynamic, and customized solutions using Power BI or Excel.
+        </p>
 
-  <div class="container-bnt-menu">
-    <div class="btn-menu">
-      <span class="linea-menu" id="linea1"></span>
-      <span class="linea-menu" id="linea2"></span>
-      <span class="linea-menu" id="linea3"></span>
+        <p><strong>What you can expect:</strong></p>
+
+        <ul class="presentation-list">
+          <li>Clear KPI structure aligned with your business goals</li>
+          <li>Interactive filters and drill-down capabilities</li>
+          <li>Data cleaning and modeling for accuracy</li>
+          <li>Professional, executive-level design</li>
+          <li>Easy-to-understand visualizations</li>
+          <li>On-time delivery and responsive communication</li>
+        </ul>
+
+        <p>
+          My goal is not just to create charts — it’s to build a decision-making tool that adds real value.
+        </p>
+
+        <p><strong>Let’s turn your data into insights.</strong></p>
+      </div>
+
+      <!-- CTA: usando los mismos IDs que tu navbar -->
+      <div class="cta-row">
+        <a class="btn btn-primary cta-link" data-home="#proyectos" data-project="#dashboard" href="#proyectos">
+          View Projects
+        </a>
+
+        <a class="btn btn-ghost cta-link" data-home="#contacto" data-project="#contacto" href="#contacto">
+          Contact
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div class="menu-drop"></div>
+    <div class="container-photo-profile">
+      <div class="photo-perfil photo-float glass-ring">
+        <picture>
+          <Image src={photoperfil} alt="Foto de perfil de Franco Chacón" />
+        </picture>
+      </div>
+    </div>
+  </section>
+</div>
 
-  <script>
-    // --- Mobile menu behavior ---
-    const $menu = document.querySelector(".nav");
-    const $menuDrop = document.querySelector(".menu-drop");
-    const $btnmenu = document.querySelector(".btn-menu");
-    const $linea1 = document.querySelector("#linea1");
-    const $linea2 = document.querySelector("#linea2");
-    const $linea3 = document.querySelector("#linea3");
+<script>
+  // Igual que el header: ajusta anchors si estás en /proyecto...
+  const path = window.location.pathname;
+  const isProjectPage = path.includes("/proyecto");
 
-    const toggleMenu = () => {
-      $linea1.classList.toggle("activelinea1__bars-menu");
-      $linea2.classList.toggle("activelinea2__bars-menu");
-      $linea3.classList.toggle("activelinea3__bars-menu");
-      $menu.classList.toggle("menu-activado");
-      $menuDrop.classList.toggle("activa-menu-drop");
-    };
+  document.querySelectorAll(".cta-link").forEach((a) => {
+    const homeHref = a.getAttribute("data-home");
+    const projectHref = a.getAttribute("data-project");
+    a.setAttribute("href", isProjectPage ? projectHref : homeHref);
+  });
+</script>
 
-    $btnmenu.addEventListener("click", toggleMenu);
-    $menuDrop.addEventListener("click", toggleMenu);
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
 
-    // --- Smart anchors: home vs project pages ---
-    // If you are on /proyecto2/ (or any /proyectoX/), we switch anchors to project ones.
-    const path = window.location.pathname;
-    const isProjectPage = path.includes("/proyecto");
-
-    document.querySelectorAll(".nav-link").forEach((a) => {
-      const homeHref = a.getAttribute("data-home");
-      const projectHref = a.getAttribute("data-project");
-      a.setAttribute("href", isProjectPage ? projectHref : homeHref);
-    });
-
-    // Close menu when clicking a link (mobile UX)
-    document.querySelectorAll(".ul-nav a").forEach((a) => {
-      a.addEventListener("click", () => {
-        if (window.innerWidth <= 720 && $menu.classList.contains("menu-activado")) {
-          toggleMenu();
-        }
-      });
-    });
-  </script>
-</header>
-
-<style is:global>
-  .header {
+  .content-presentation {
     position: relative;
-    height: 80px;
-    background-color: #000;
     width: 100%;
-    padding: 20px 20px;
-    color: #f6f6f9;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    max-width: 1355px;
-    margin: 0 auto;
-  }
-  .header h1 {
-    display: inline-block;
-    position: relative;
-    z-index: 20;
-  }
-  .nav {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #f6f6f9;
-  }
-  .ul-nav {
-    position: relative;
-    display: flex;
+    height: 100%;
   }
 
-  .ul-nav a {
-    text-decoration: none;
-    color: #f6f6f9;
-  }
-  .li-nav {
-    position: relative;
-    list-style: none;
-    color: #f6f6f9;
-    transition: 0.3s;
-    margin: 0 10px;
-    padding: 4px 2px;
-    text-align: center;
-  }
-  .li-nav::before {
-    content: "";
+  .linear-gradient-1 {
     position: absolute;
-    height: 2px;
-    width: 0%;
-    background-color: #01be96;
-    bottom: -3px;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 520px;
+    background: radial-gradient(
+      at left center,
+      rgba(1, 190, 150, 0.5),
+      transparent,
+      transparent
+    );
+    z-index: 0;
+    pointer-events: none;
   }
-  .li-nav:hover::before {
+
+  .linear-gradient-2 {
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 100%;
-    transition: 0.4s;
+    height: 100%;
+    background: radial-gradient(
+      at right center,
+      rgba(1, 190, 150, 0.6),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+    z-index: 0;
+    pointer-events: none;
   }
-  .li-nav:hover {
+
+  .container-persentation {
+    position: relative;
+    display: flex;
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1355px;
+    z-index: 2;
+  }
+
+  .hero {
+    min-height: 100vh;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .container-text {
+    width: 52%;
+    color: #f6f6f9;
+  }
+
+  .hero-glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 22px;
+  }
+
+  .text-name {
+    font-size: 34px;
     color: #01be96;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
   }
 
-  .container-bnt-menu {
-    display: none;
+  .p-profession {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 6px 0 14px;
   }
 
-  .menu-drop {
-    display: none;
+  .presentation-text p {
+    margin: 10px 0;
+    line-height: 1.6;
   }
 
-  @media (max-width: 720px) {
-    .menu-drop {
-      display: block;
+  .presentation-list {
+    padding-left: 18px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s;
+  }
+
+  .btn-primary {
+    background: #01be96;
+    color: #000;
+    border: 1px solid #01be96;
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border: 1px solid rgba(1, 190, 150, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .container-photo-profile {
+    width: 48%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo-perfil {
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .glass-ring {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .photo-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-float {
+    animation: floaty 4.5s ease-in-out infinite;
+  }
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
     }
-    .container-bnt-menu {
-      display: block;
+    50% {
+      transform: translateY(-10px);
     }
-    .header {
-      position: fixed;
-      display: flex;
-      justify-items: center;
-      justify-content: space-between;
-      top: 0;
-      left: 0;
-      z-index: 100;
-    }
-    h1 {
-      display: inline-block;
-    }
-    .container-bnt-menu {
-      position: relative;
-      padding: 0px 20px;
-      z-index: 9999;
-    }
-    .linea-menu {
-      display: block;
-      position: relative;
-      height: 2px;
-      width: 40px;
-      background-color: #f6f6f9;
-      top: -5px;
-      margin-top: 10px;
-      cursor: pointer;
-      transform-origin: 0px 100%;
-      transition: all 0.4s;
-    }
-    .activelinea1__bars-menu {
-      transform: rotate(40deg) translate(-2px, 1px);
-    }
-    .activelinea2__bars-menu {
-      opacity: 0;
-      margin-left: -30px;
-    }
-    .activelinea3__bars-menu {
-      transform: rotate(-40deg) translate(-2px, 1px);
-    }
-    .nav {
-      position: fixed;
-      flex-direction: column;
-      background: #111111;
-      width: auto;
-      height: 100vh;
-      right: -300px;
-      top: 80px;
-      transition: right 0.4s ease-in-out;
-      z-index: 100;
+  }
+
+  @media (max-width: 900px) {
+    .container-persentation {
+      flex-direction: column-reverse;
+      gap: 30px;
     }
 
-    .li-nav {
-      padding: 30px 80px;
-      text-align: center;
+    .container-text,
+    .container-photo-profile {
       width: 100%;
-      margin: 0;
-    }
-    .li-nav:hover {
-      background-color: #01be96;
-      color: #000;
-    }
-    .li-nav:hover::before {
-      content: "";
-      width: 0;
-      height: 0;
     }
 
-    .menu-activado {
-      right: 0px;
-      transition: right 0.4s ease-in-out;
+    .photo-perfil {
+      height: 280px;
+      width: 280px;
     }
-    .menu-drop {
-      top: 0;
-      left: 0;
-      position: fixed;
-      height: 100vh;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 20;
+  }
+
+  @media (max-width: 500px) {
+    .linear-gradient-1 {
       display: none;
-    }
-    .activa-menu-drop {
-      display: block;
-      transition: 0.5s display;
-    }
-    .ul-nav {
-      flex-direction: column;
-      width: 100%;
     }
   }
 </style>
