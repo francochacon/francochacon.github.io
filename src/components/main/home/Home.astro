@@ -7,29 +7,25 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
   <div class="linear-gradient-2"></div>
   <div class="linear-gradient-1"></div>
 
-  <div class="container-persentation">
-    <div class="container-text">
+  <section class="container-persentation hero" id="inicio">
+    <div class="container-text hero-glass">
       <h1 class="text-name">Franco Chacón</h1>
 
-      <div class="container-profession">
-        <div>
-          <span class="p-profession">
-            Data Analyst | Power BI, Excel & Business Intelligence Dashboards
-          </span>
-        </div>
-      </div>
+      <p class="p-profession">
+        Data Analyst | Power BI, Excel & Business Intelligence Dashboards
+      </p>
 
       <div class="presentation-text">
         <p>
-          I will design a professional and interactive dashboard tailored to your business needs.
+          I design professional, interactive dashboards tailored to your business goals.
         </p>
 
         <p>
-          I specialize in transforming raw data into clear, actionable insights that help businesses improve performance, optimize operations, and make data-driven decisions.
+          I transform raw data into clear, actionable insights that improve performance, optimize operations, and support data-driven decisions.
         </p>
 
         <p>
-          Whether you need a sales dashboard, financial report, marketing analytics, KPI tracking, or operational performance analysis, I will build a clean, dynamic, and fully customized solution using Power BI or Excel.
+          Whether you need a sales dashboard, financial report, marketing analytics, KPI tracking, or operational performance analysis, I build clean, dynamic, and customized solutions using Power BI or Excel.
         </p>
 
         <p><strong>What you can expect:</strong></p>
@@ -38,47 +34,35 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
           <li>Clear KPI structure aligned with your business goals</li>
           <li>Interactive filters and drill-down capabilities</li>
           <li>Data cleaning and modeling for accuracy</li>
-          <li>Professional and executive-level design</li>
+          <li>Professional, executive-level design</li>
           <li>Easy-to-understand visualizations</li>
           <li>On-time delivery and responsive communication</li>
         </ul>
 
         <p>
-          My goal is not just to create charts, but to build a decision-making tool that adds real value to your business.
+          My goal is not just to create charts — it’s to build a decision-making tool that adds real value.
         </p>
 
         <p>
           <strong>Let’s turn your data into insights.</strong>
         </p>
       </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
     </div>
 
     <div class="container-photo-profile">
-      <div class="photo-perfil">
+      <div class="photo-perfil photo-float glass-ring">
         <picture>
-          <Image src={photoperfil} alt="Foto de perfil de Franco Chacón" id="inicio" />
+          <Image src={photoperfil} alt="Foto de perfil de Franco Chacón" />
         </picture>
       </div>
     </div>
-  </div>
+  </section>
 </div>
-
-<script>
-  const letters = document.querySelectorAll(".p-profession");
-
-  letters.forEach((letter) => {
-    letter.addEventListener("mouseenter", () => toggle(letter));
-  });
-
-  function toggle(letter) {
-    letter.classList.add("bouncing");
-    letter.addEventListener(
-      "animationend",
-      () => letter.classList.remove("bouncing"),
-      { once: true }
-    );
-  }
-</script>
 
 <style>
   .content-presentation {
@@ -125,74 +109,133 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
     width: 90%;
     margin: 0 auto;
     max-width: 1355px;
+    z-index: 1;
+  }
+
+  /* HERO: pantalla completa y centrado */
+  .hero {
+    min-height: 100vh;
+    align-items: center;
+    gap: 40px;
   }
 
   .container-text {
     position: relative;
-    width: 50%;
+    width: 52%;
     color: #f6f6f9;
+  }
+
+  /* GLASS (texto) */
+  .hero-glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 22px 22px;
   }
 
   .text-name {
     padding: 5px 0;
-    font-size: 30px;
+    font-size: 34px;
     color: #01be96;
     font-weight: 800;
     letter-spacing: 1px;
-    margin-top: 30px;
-  }
-
-  .container-profession {
-    cursor: pointer;
-    padding: 5px 0;
+    margin-top: 0;
   }
 
   .p-profession {
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 800;
-    cursor: pointer;
-    display: inline-block;
-    text-transform: capitalize;
+    margin: 6px 0 14px;
+    text-transform: none;
   }
 
-  .bouncing {
-    transition: 0.8s all;
-    color: #01be96;
-    animation: rubberband 400ms alternate ease-out;
+  .presentation-text p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.65;
+    opacity: 0.92;
   }
 
-  @keyframes rubberband {
-    10% { transform: scaleX(1); }
-    40% { transform: scaleX(1.12) scaleY(0.75); }
-    55% { transform: scaleX(0.85) scaleY(1); }
-    75% { transform: scaleX(0.9) scaleY(1); }
-    90% { transform: scaleX(1.85) scaleY(0.95); }
-    100% { transform: scaleX(1) scaleY(1); }
+  .presentation-list {
+    margin: 10px 0 12px;
+    padding-left: 18px;
+  }
+
+  .presentation-list li {
+    margin: 6px 0;
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+  }
+
+  .btn-primary {
+    background: #01be96;
+    color: #0b0b0b;
+    border: 1px solid #01be96;
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #f6f6f9;
+    border: 1px solid rgba(1, 190, 150, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
   }
 
   .container-photo-profile {
     position: relative;
-    width: 50%;
+    width: 48%;
     display: flex;
     justify-content: center;
   }
 
+  /* FOTO */
   .photo-perfil {
+    position: relative;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    height: 300px;
-    width: 300px;
-    margin-top: 30px;
-    margin-left: 110px;
+    height: 320px;
+    width: 320px;
     border-radius: 50%;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  /* GLASS ring (foto) */
+  .glass-ring {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .photo-perfil img {
+    display: block;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -200,25 +243,44 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
     transition: 0.3s;
   }
 
+  /* FOTO FLOTANTE */
+  .photo-float {
+    animation: floaty 4.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* responsive */
   @media (max-width: 900px) {
     .container-persentation {
       flex-direction: column-reverse;
+      height: auto;
       gap: 30px;
-      padding-top: 100px;
+      padding-top: 90px;
+      padding-bottom: 40px;
     }
 
-    .container-photo-profile {
+    .container-photo-profile,
+    .container-text {
       width: 100%;
-      justify-content: center;
-      margin: 0;
     }
 
     .photo-perfil {
-      margin: 0;
+      height: 280px;
+      width: 280px;
     }
 
-    .container-text {
-      width: 100%;
+    .hero-glass {
+      padding: 18px 16px;
     }
   }
 
@@ -226,5 +288,14 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
     .linear-gradient-1 {
       display: none;
     }
+
+    .text-name {
+      font-size: 30px;
+    }
+
+    .p-profession {
+      font-size: 18px;
+    }
   }
 </style>
+
