@@ -47,7 +47,7 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
         <p><strong>Let’s turn your data into insights.</strong></p>
       </div>
 
-      <!-- CTA BUTTONS (mismo comportamiento que navbar) -->
+      <!-- CTA -->
       <div class="cta-row">
         <a class="btn btn-primary" href="#projects">View Projects</a>
         <a class="btn btn-ghost" href="#contact">Contact</a>
@@ -68,17 +68,19 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
 
 <style>
 
-/* scroll suave global */
+/* scroll suave */
 html {
   scroll-behavior: smooth;
 }
 
+/* contenedor base */
 .content-presentation {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
+/* gradientes */
 .linear-gradient-1 {
   position: absolute;
   left: 0;
@@ -87,11 +89,12 @@ html {
   height: 520px;
   background: radial-gradient(
     at left center,
-    rgba(1, 190, 150, 0.5),
+    rgba(1,190,150,0.5),
     transparent,
     transparent
   );
   z-index: 0;
+  pointer-events: none; /* FIX CLICK */
 }
 
 .linear-gradient-2 {
@@ -102,13 +105,15 @@ html {
   height: 100%;
   background: radial-gradient(
     at right center,
-    rgba(1, 190, 150, 0.6),
-    rgb(0, 0, 0),
-    rgb(0, 0, 0)
+    rgba(1,190,150,0.6),
+    rgb(0,0,0),
+    rgb(0,0,0)
   );
   z-index: 0;
+  pointer-events: none; /* FIX CLICK */
 }
 
+/* layout */
 .container-persentation {
   position: relative;
   display: flex;
@@ -116,7 +121,7 @@ html {
   width: 90%;
   margin: 0 auto;
   max-width: 1355px;
-  z-index: 1;
+  z-index: 2; /* FIX CAPA */
 }
 
 .hero {
@@ -130,7 +135,7 @@ html {
   color: #f6f6f9;
 }
 
-/* glass effect texto */
+/* glass texto */
 .hero-glass {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
@@ -160,7 +165,7 @@ html {
   padding-left: 18px;
 }
 
-/* CTA */
+/* botones */
 .cta-row {
   display: flex;
   gap: 12px;
@@ -192,13 +197,13 @@ html {
   transform: translateY(-2px);
 }
 
+/* foto */
 .container-photo-profile {
   width: 48%;
   display: flex;
   justify-content: center;
 }
 
-/* foto */
 .photo-perfil {
   height: 320px;
   width: 320px;
@@ -207,20 +212,21 @@ html {
   box-shadow: 0 12px 30px rgba(0,0,0,0.45);
 }
 
-/* glass borde foto */
+/* glass borde */
 .glass-ring {
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.18);
   backdrop-filter: blur(10px);
 }
 
+/* imagen */
 .photo-perfil img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* animación flotante */
+/* flotación */
 .photo-float {
   animation: floaty 4.5s ease-in-out infinite;
 }
