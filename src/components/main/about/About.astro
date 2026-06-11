@@ -1,14 +1,28 @@
 <section class="section-about">
-  <div class="linear-grandient-1"></div>
   <div class="container-about">
     <div class="container-text-about">
-      <h2 class="title-about" id="sobremi">About me</h2>
-      <p>
-        I'm a Chemical Engineer with hands-on experience in industrial processes, environmental management, and quality control — now fully focused on data analysis and business intelligence.
-My edge is simple: I don't just build dashboards, I understand the operations behind the data. Whether it's production KPIs, environmental indicators, or process performance metrics, I know what those numbers actually mean in the real world.
-I work with Power BI, Excel, Python, and SQL to turn complex datasets into clear, decision-ready visuals — built for the people who need to act on them, not just read them.
-Based in Salta, Argentina. Working with clients worldwide.
-      </p>
+      <span class="badge">
+        <span class="badge-dot"></span>
+        Available for freelance work
+      </span>
+      <h2 class="title-about" id="sobremi">About <span class="accent">me</span></h2>
+      <div class="divider"></div>
+      <div class="paragraphs">
+        <p>I'm a <strong>Chemical Engineer</strong> with hands-on experience in industrial processes, environmental management, and quality control — now fully focused on <strong>data analysis and business intelligence</strong>.</p>
+        <p>My edge is simple: I don't just build dashboards, <strong>I understand the operations behind the data.</strong> Whether it's production KPIs, environmental indicators, or process performance metrics, I know what those numbers actually mean in the real world.</p>
+        <p>I work with Power BI, Excel, Python, and SQL to turn complex datasets into clear, <strong>decision-ready visuals</strong> — built for the people who need to act on them, not just read them.</p>
+      </div>
+      <div class="tools">
+        <span class="tool">Power BI</span>
+        <span class="tool">Excel</span>
+        <span class="tool">Python</span>
+        <span class="tool">SQL</span>
+        <span class="tool">DAX</span>
+      </div>
+      <div class="location">
+        <span class="loc-dot"></span>
+        Salta, Argentina &nbsp;·&nbsp; Working with clients worldwide
+      </div>
     </div>
     <div class="container-svg-about">
       <div class="container-svg">
@@ -23,90 +37,128 @@ Based in Salta, Argentina. Working with clients worldwide.
     </div>
   </div>
 </section>
-
-<script
-  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
-></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <style>
-  .linear-grandient-1 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    /* background: radial-gradient(at left center, rgba(1, 190, 150 , 0.5), transparent , transparent); */
-    background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.5));
-    background:;
-    z-index: 0;
-  }
-
   .section-about {
-    position: relative;
     background-color: #111111;
+    width: 100%;
   }
   .container-about {
     position: relative;
     width: 90%;
     display: flex;
     margin: 0 auto;
+    padding: 60px 0;
     max-width: 1355px;
+    align-items: center;
+    gap: 60px;
   }
-
   .container-text-about {
-    position: relative;
-    width: 50%;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+  }
+  .badge {
+    display: inline-flex;
     align-items: center;
+    gap: 8px;
+    background: #0f2e22;
+    border: 1px solid #1D9E75;
+    border-radius: 20px;
+    padding: 5px 14px;
+    width: fit-content;
+    font-size: 12px;
+    color: #1D9E75;
+    font-family: monospace;
+    letter-spacing: 0.05em;
+  }
+  .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1D9E75;
+    flex-shrink: 0;
   }
   .title-about {
-    position: relative;
-    display: block;
-    font-size: 27px;
-    padding: 10px 0;
+    font-size: 32px;
     color: #f6f6f9;
-    width: 100%;
     font-weight: 800;
+    line-height: 1.15;
     scroll-margin-top: 80px;
   }
-  .container-text-about p {
-    font-size: 17px;
-    color: #f6f6f9;
-    text-align: left;
-    letter-spacing: 1px;
+  .title-about .accent {
+    color: #1D9E75;
   }
-
+  .divider {
+    width: 40px;
+    height: 3px;
+    background: #1D9E75;
+    border-radius: 2px;
+  }
+  .paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .paragraphs p {
+    font-size: 15px;
+    color: #a0a0a0;
+    line-height: 1.75;
+    letter-spacing: 0.3px;
+  }
+  .paragraphs p strong {
+    color: #f6f6f9;
+    font-weight: 500;
+  }
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tool {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #a0a0a0;
+    font-family: monospace;
+  }
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #555555;
+  }
+  .loc-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1D9E75;
+    flex-shrink: 0;
+  }
   .container-svg-about {
-    position: relative;
-    width: 50%;
+    flex: 1;
   }
   .container-svg {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 100px;
   }
-
-  /*  responsive  */
-
   @media (max-width: 900px) {
-    /*Resposivo de la seccion sobre mi*/
     .container-about {
       flex-direction: column;
+      padding: 40px 0;
+      gap: 30px;
     }
     .container-svg-about {
       width: 100%;
     }
     .container-svg {
-      justify-content: start;
-      align-items: end;
-      padding: 0;
-    }
-    .container-text-about {
-      width: 100%;
-      padding: 10px 0;
+      justify-content: flex-start;
     }
   }
 </style>
