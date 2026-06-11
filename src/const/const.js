@@ -73,4 +73,3 @@ export const projects = [
     ],
   },
 ];
-Era simplemente qu
