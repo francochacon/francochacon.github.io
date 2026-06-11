@@ -7,7 +7,7 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
   <div class="linear-gradient-2"></div>
   <div class="linear-gradient-1"></div>
 
-  <section class="container-persentation hero" id="inicio">
+  <section class="container-persentation" id="inicio">
     <div class="container-text hero-glass">
       <h1 class="text-name">Franco Chacón</h1>
 
@@ -17,21 +17,26 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
 
       <div class="presentation-text">
         <p>
-          I am a Chemical Engineer specialized in process analysis, industrial data analytics and business intelligence. My experience includes process simulation, mining industry analysis, Power BI dashboard development and engineering problem solving.
+          I am a Chemical Engineer specialized in process analysis, industrial
+          data analytics and business intelligence. My experience includes
+          process simulation, mining industry analysis, Power BI dashboard
+          development and engineering problem solving.
         </p>
       </div>
 
-      <!-- CTA (mismo href que navbar) -->
       <div class="cta-row">
-        <a class="btn btn-primary" href="#projects" data-scroll="projects">View Projects</a>
-        <a class="btn btn-ghost" href="#contact" data-scroll="contact">Contact</a>
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
       </div>
     </div>
 
     <div class="container-photo-profile">
       <div class="photo-perfil photo-float glass-ring">
         <picture>
-          <Image src={photoperfil} alt="Foto de perfil de Franco Chacón" />
+          <Image
+            src={photoperfil}
+            alt="Foto de perfil de Franco Chacón"
+          />
         </picture>
       </div>
     </div>
@@ -39,7 +44,6 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
 </div>
 
 <script>
-  // Scroll robusto para anclas (captura el click antes que otros scripts)
   document.addEventListener(
     "click",
     (e) => {
@@ -52,32 +56,30 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
       const id = href.slice(1);
       const target = document.getElementById(id);
 
-      // Si no existe el elemento, dejamos que el navegador maneje (o no haga nada)
       if (!target) return;
 
-      // Evitar comportamiento por defecto (y cualquier interferencia)
       e.preventDefault();
 
-      // Scroll suave al target
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
 
-      // Actualiza la URL con el hash sin recargar
       history.pushState(null, "", `#${id}`);
     },
-    true // <- captura
+    true
   );
 </script>
 
 <style>
-  /* scroll suave (por si acaso) */
   html {
     scroll-behavior: smooth;
   }
 
   .content-presentation {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
 
   .linear-gradient-1 {
@@ -93,15 +95,12 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
       transparent
     );
     z-index: 0;
-    pointer-events: none; /* no bloquear clicks */
+    pointer-events: none;
   }
 
   .linear-gradient-2 {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: radial-gradient(
       at right center,
       rgba(1, 190, 150, 0.6),
@@ -109,23 +108,20 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
       rgb(0, 0, 0)
     );
     z-index: 0;
-    pointer-events: none; /* no bloquear clicks */
+    pointer-events: none;
   }
 
   .container-persentation {
     position: relative;
     display: flex;
-    padding: 50px 0;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1355px;
-    z-index: 2; /* arriba de los gradientes */
-  }
-
-  .hero {
-    min-height: 100vh;
     align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1355px;
+    min-height: 100vh;
+    margin: 0 auto;
     gap: 40px;
+    z-index: 2;
   }
 
   .container-text {
@@ -158,58 +154,50 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
 
   .presentation-text p {
     margin: 10px 0;
-    line-height: 1.6;
-  }
-
-  .presentation-list {
-    padding-left: 18px;
+    line-height: 1.7;
   }
 
   .cta-row {
     display: flex;
     gap: 12px;
-    margin-top: 16px;
+    margin-top: 18px;
     flex-wrap: wrap;
   }
 
   .btn {
-    position: relative;
-    z-index: 3; /* por si hay stacking raro */
     padding: 10px 18px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
-    transition: 0.2s;
-    cursor: pointer;
-  }
-
-  .btn-primary {
-    background: #01be96;
-    color: #000;
-    border: 1px solid #01be96;
-  }
-
-  .btn-ghost {
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
-    border: 1px solid rgba(1, 190, 150, 0.55);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
   }
 
   .btn:hover {
     transform: translateY(-2px);
   }
 
+  .btn-primary {
+    background: #01be96;
+    border: 1px solid #01be96;
+    color: #000;
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border: 1px solid rgba(1, 190, 150, 0.55);
+  }
+
   .container-photo-profile {
     width: 48%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .photo-perfil {
-    height: 320px;
     width: 320px;
+    height: 320px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
@@ -233,10 +221,10 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
   }
 
   @keyframes floaty {
-    0%,
-    100% {
+    0%, 100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -245,7 +233,9 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
   @media (max-width: 900px) {
     .container-persentation {
       flex-direction: column-reverse;
-      gap: 30px;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 0 40px;
     }
 
     .container-text,
@@ -254,8 +244,12 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
     }
 
     .photo-perfil {
-      height: 280px;
       width: 280px;
+      height: 280px;
+    }
+
+    .cta-row {
+      justify-content: center;
     }
   }
 
