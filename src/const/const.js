@@ -60,10 +60,6 @@ export const skills = [
     title: "Github",
     icon: IconKeys.github,
   },
-  {
-  title: "Aspen Plus",
-  icon: IconKeys.aspen,
-  },
 ];
 
 export const projects = [
