@@ -55,4 +55,34 @@ export const IconKeys = {
   vite: "vite",
 };
 
-export c
+export const skills = [
+  {
+    title: "Power BI",
+    icon: IconKeys.html,
+  },
+  {
+    title: "MYSQL",
+    icon: IconKeys.css,
+  },
+  {
+    title: "Python",
+    icon: IconKeys.javaScript,
+  },
+  {
+    title: "Autocad",
+    icon: IconKeys.astro,
+  },
+  {
+    title: "Git",
+    icon: IconKeys.git,
+  },
+  {
+    title: "Github",
+    icon: IconKeys.github,
+  },
+];
+
+export const projects = [
+  {
+    img: "../../../img/ecommerce-stripe-2.webp",
+    title: "Exportación
