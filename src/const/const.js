@@ -60,6 +60,11 @@ export const skills = [
     title: "Github",
     icon: IconKeys.github,
   },
+  {
+  title: "Aspen Plus",
+  icon: IconKeys.aspen,
+  img: "/img/aspen-logo.png",
+  },
 ];
 
 export const projects = [
