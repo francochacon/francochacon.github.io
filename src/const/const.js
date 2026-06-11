@@ -63,7 +63,6 @@ export const skills = [
   {
   title: "Aspen Plus",
   icon: IconKeys.aspen,
-  img: "/img/AspenPlus.webp",
   },
 ];
 
