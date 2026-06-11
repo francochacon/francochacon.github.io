@@ -1,12 +1,12 @@
 export const studies = [
   {
     title: "Chemical Engineering",
-    corporation: "Universidad Tecnológica Nacional (UTN)",
+    corporation: "Universidad Tecnologica Nacional (UTN)",
     date: "Jan 2016 – Oct 2023",
   },
   {
     title: "Postgraduate — Mining Operations & Metallurgical Industry",
-    corporation: "Facultad de Ingeniería, UNSa",
+    corporation: "Facultad de Ingenieria, UNSa",
     date: "Nov 2025 – Present",
   },
   {
@@ -15,13 +15,13 @@ export const studies = [
     date: "Jan 2026 – Present",
   },
   {
-    title: "Technical English for Mining Industry – A2",
+    title: "Technical English for Mining Industry - A2",
     corporation: "English For Mining",
     date: "Jun 2025 – Sep 2025",
   },
   {
     title: "Advanced Industrial Instrumentation",
-    corporation: "Fundación YPF",
+    corporation: "Fundacion YPF",
     date: "Aug 2023 – Nov 2023",
   },
   {
@@ -37,52 +37,4 @@ export const IconKeys = {
   javaScript: "javaScript",
   react: "react",
   astro: "astro",
-  materialUi: "materialUi",
-  nextjs: "nextjs",
-  redux: "redux",
-  styled: "styled",
-  tailwind: "tailwind",
-  radix: "radix",
-  reactQuery: "reactQuery",
-  typeScript: "typeScript",
-  zustand: "zustand",
-  git: "git",
-  github: "github",
-  stripe: "stripe",
-  shadcn: "shadcn",
-  nodejs: "nodejs",
-  mongodb: "mongodb",
-  vite: "vite",
-};
-
-export const skills = [
-  {
-    title: "Power BI",
-    icon: IconKeys.html,
-  },
-  {
-    title: "MYSQL",
-    icon: IconKeys.css,
-  },
-  {
-    title: "Python",
-    icon: IconKeys.javaScript,
-  },
-  {
-    title: "Autocad",
-    icon: IconKeys.astro,
-  },
-  {
-    title: "Git",
-    icon: IconKeys.git,
-  },
-  {
-    title: "Github",
-    icon: IconKeys.github,
-  },
-];
-
-export const projects = [
-  {
-    img: "../../../img/ecommerce-stripe-2.webp",
-    title: "Exportación
+  materialUi: "mate
