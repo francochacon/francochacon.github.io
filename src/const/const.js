@@ -64,7 +64,7 @@ export const skills = [
 
 export const projects = [
   {
-    img: "../../../img/argentina-mining-exports",
+    img: "../../../img/argentina-mining-exports.webp",
     title: "Argentina Mining Exports",
     link: "proyecto2",
     description: "Interactive Power BI dashboard analyzing Argentina's mining export records from 1998 to 2024. Covers 327 metallic and lithium projects across provinces, tracking copper, lithium, gold and silver production with KPIs and regional breakdowns.",
