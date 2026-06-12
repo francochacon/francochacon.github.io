@@ -63,6 +63,17 @@ export const skills = [
 ];
 
 export const projects = [
+    {
+    img: "../../../img/superstore-dashboard.webp",
+    title: "Superstore Sales Dashboard",
+    link: "proyecto3",
+    description: "Power BI dashboard built on the classic Superstore dataset. Tracks $2.3M in total sales, $286K profit and 5,009 orders with monthly trend analysis, regional performance breakdown and top 10 sub-categories by revenue.",
+    technologies: [
+      {
+        icon: IconKeys.html,
+      },
+    ],
+  }, 
   {
     img: "../../../img/argentina-mining-exports.webp",
     title: "Argentina Mining Exports",
@@ -79,17 +90,6 @@ export const projects = [
     title: "Mining Projects Map",
     link: "proyecto1",
     description: "Power BI report mapping Argentina's metallic and lithium mining projects by province, mineral type and development stage. Identifies key production clusters in Salta, San Juan and Santa Cruz with visual KPIs and drill-down filters.",
-    technologies: [
-      {
-        icon: IconKeys.html,
-      },
-    ],
-  },
-  {
-    img: "../../../img/superstore-dashboard.webp",
-    title: "Superstore Sales Dashboard",
-    link: "proyecto3",
-    description: "Power BI dashboard built on the classic Superstore dataset. Tracks $2.3M in total sales, $286K profit and 5,009 orders with monthly trend analysis, regional performance breakdown and top 10 sub-categories by revenue.",
     technologies: [
       {
         icon: IconKeys.html,
