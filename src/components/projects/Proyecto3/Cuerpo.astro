@@ -1,44 +1,33 @@
 <section class="section-about">
   <div class="linear-grandient-1"></div>
 
-  <!-- Main intro container -->
   <div class="container-about">
     <div class="container-text-about">
-      <h2 class="title-about" id="overview">Mining in Argentina</h2>
+      <h2 class="title-about" id="overview">Superstore Sales Dashboard</h2>
 
       <p class="p-lead">
-        Argentina has a diverse mineral endowment that positions the country as a relevant player in
-        the global mining industry. Key resources include copper, lithium, gold, silver, zinc, and
-        other strategic minerals—mainly across the Puna region, the Andes range, and Patagonia.
+        A retail analytics dashboard built on the classic Superstore dataset, tracking over $2.3M
+        in total sales across four US regions. Designed to surface profitability drivers,
+        seasonal trends, and category-level performance in a single interactive view.
       </p>
 
       <p>
-        This project showcases an interactive Power BI dashboard focused on mining exports and
-        industry structure. The goal is to highlight trends, concentration, and the main drivers
-        behind historical export peaks.
+        This project showcases an interactive Power BI dashboard focused on retail sales performance.
+        The goal is to highlight monthly trends, regional concentration, and the top sub-categories
+        driving revenue and profit margin.
       </p>
 
       <div class="pill-row" aria-label="Project stack">
         <span class="pill">Power BI</span>
         <span class="pill">DAX</span>
         <span class="pill">Data Modeling</span>
-        <span class="pill">Mining Analytics</span>
+        <span class="pill">Retail Analytics</span>
       </div>
 
       <div class="cta-row">
-        <a
-          class="btn-primary"
-          href="https://github.com/francochacon/argentina-mining-dashboard"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View repository on GitHub"
-        >
-          View repository
-        </a>
-
-        <a
+        
           class="btn-secondary"
-          href="https://app.powerbi.com/view?r=eyJrIjoiYjFkNGZlMzItZjMwZi00Zjc0LWI1MDUtYzMwODQ5ODUzYTI1IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+          href="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open the report in Power BI"
@@ -51,37 +40,36 @@
         </a>
       </div>
 
-      <!-- Optional: concise summary of what’s inside the dashboard -->
       <div class="metrics-box" aria-label="Key metrics included">
         <h3 class="metrics-title">Key metrics included</h3>
         <ul class="metrics-list">
-          <li>Highest-export year (FOB) and YoY growth</li>
-          <li>Dominant sector and sector share (%)</li>
-          <li>Dominant mineral and concentration (%)</li>
-          <li>Gold trend over the last years</li>
+          <li>Total sales ($2.3M), profit ($286K) and 5,009 orders</li>
+          <li>Profit margin percentage (12.47%)</li>
+          <li>Monthly sales and profit trend by year</li>
+          <li>Regional performance breakdown (West, East, Central, South)</li>
+          <li>Top 10 sub-categories by revenue (Phones, Chairs, Storage...)</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- Power BI section -->
   <div class="container-powerbi" id="dashboard">
-    <h2 class="title-powerbi">Mining Data Dashboard (Power BI)</h2>
+    <h2 class="title-powerbi">Retail Sales Dashboard (Power BI)</h2>
 
     <p class="text-powerbi">
-      The dashboard summarizes mining exports in Argentina and helps answer questions such as:
+      The dashboard summarizes Superstore retail data and helps answer questions such as:
     </p>
 
     <ul class="insights-list">
-      <li>Which year reached the highest export value (FOB)?</li>
-      <li>What is the dominant sector and its share?</li>
-      <li>Which mineral leads exports and how concentrated is the structure?</li>
-      <li>How has gold evolved over the last years?</li>
+      <li>Which months drive the highest sales and profit peaks?</li>
+      <li>Which region generates the most revenue?</li>
+      <li>What are the top 10 sub-categories by total sales?</li>
+      <li>How does profit margin vary across the product mix?</li>
     </ul>
 
     <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
       <iframe
-        title="Argentina mining dashboard"
+        title="Superstore sales dashboard"
         src="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
         frameborder="0"
         allowfullscreen="true"
@@ -89,9 +77,9 @@
     </div>
 
     <p class="text-powerbi">
-      Data is based on public sources and this dashboard is part of my personal portfolio project.
-      The report will be continuously updated with new pages, improved storytelling, and additional
-      breakdowns (e.g., provinces, minerals, and YoY comparisons).
+      Data is based on the publicly available Superstore sample dataset. This dashboard is part
+      of my personal portfolio and will be updated with additional pages covering customer
+      segmentation, discount analysis, and shipping performance.
     </p>
   </div>
 </section>
@@ -195,11 +183,6 @@
     white-space: nowrap;
   }
 
-  .btn-primary {
-    background: #00bfa5;
-    color: #0b0b0b;
-  }
-
   .btn-secondary {
     background: transparent;
     color: rgba(246, 246, 249, 0.92);
@@ -218,7 +201,6 @@
     transform: translateY(-1px);
   }
 
-  /* Optional metrics box */
   .metrics-box {
     margin-top: 14px;
     padding: 14px 14px 10px;
@@ -244,7 +226,6 @@
     font-size: 14px;
   }
 
-  /* Power BI section */
   .container-powerbi {
     position: relative;
     z-index: 1;
@@ -284,7 +265,6 @@
     margin: 6px 0;
   }
 
-  /* Responsive iframe wrapper */
   .iframe-wrap {
     width: 100%;
     margin: 18px auto;
