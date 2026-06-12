@@ -1,13 +1,13 @@
 export const studies = [
   {
     title: "Chemical Engineering",
-    corporation: "Universidad Tecnológica Nacional (UTN)",
-    date: "Jan 2016 – Oct 2023",
+    corporation: "Universidad Tecnologica Nacional (UTN)",
+    date: "Jan 2016 - Oct 2023",
   },
   {
-    title: "Postgraduate — Mining Operations & Metallurgical Industry",
-    corporation: "Facultad de Ingeniería, UNSa",
-    date: "Nov 2025 – Present",
+    title: "Postgraduate - Mining Operations & Metallurgical Industry",
+    corporation: "Facultad de Ingenieria, UNSa",
+    date: "Nov 2025 - Present",
   },
 ];
 
@@ -41,7 +41,7 @@ export const skills = [
     icon: IconKeys.html,
   },
   {
-    title: "MYSQL",
+    title: "MySQL",
     icon: IconKeys.css,
   },
   {
@@ -49,7 +49,7 @@ export const skills = [
     icon: IconKeys.javaScript,
   },
   {
-    title: "Autocad",
+    title: "AutoCAD",
     icon: IconKeys.astro,
   },
   {
@@ -65,9 +65,9 @@ export const skills = [
 export const projects = [
   {
     img: "../../../img/ecommerce-stripe-2.webp",
-    title: "Exportación Record",
+    title: "Argentina Mining Exports",
     link: "proyecto2",
-    description: `Argentina cuenta con una rica diversidad de recursos minerales que posicionan al país como un actor relevante en la industria minera global. El país posee yacimientos de cobre, litio, oro, plata, zinc y otros minerales estratégicos, destacándose en regiones como la Puna, la Cordillera de los Andes y la Patagonia. Además, se aprovechan técnicas modernas de extracción y un marco regulatorio que fomenta la inversión sostenible.  `,
+    description: "Interactive Power BI dashboard analyzing Argentina's mining export records from 1998 to 2024. Covers 327 metallic and lithium projects across provinces, tracking copper, lithium, gold and silver production with KPIs and regional breakdowns.",
     technologies: [
       {
         icon: IconKeys.html,
@@ -76,9 +76,20 @@ export const projects = [
   },
   {
     img: "../../../img/ecommerce-stripe-2.webp",
-    title: "La minerìa en la Argentina",
+    title: "Mining Projects Map",
     link: "proyecto1",
-    description: `Argentina cuenta con una rica diversidad de recursos minerales que posicionan al país como un actor relevante en la industria minera global. El país posee yacimientos de cobre, litio, oro, plata, zinc y otros minerales estratégicos, destacándose en regiones como la Puna, la Cordillera de los Andes y la Patagonia. Además, se aprovechan técnicas modernas de extracción y un marco regulatorio que fomenta la inversión sostenible.  `,
+    description: "Power BI report mapping Argentina's metallic and lithium mining projects by province, mineral type and development stage. Identifies key production clusters in Salta, San Juan and Santa Cruz with visual KPIs and drill-down filters.",
+    technologies: [
+      {
+        icon: IconKeys.html,
+      },
+    ],
+  },
+  {
+    img: "../../../img/ecommerce-stripe-2.webp",
+    title: "Superstore Sales Dashboard",
+    link: "proyecto3",
+    description: "Power BI dashboard built on the classic Superstore dataset. Tracks $2.3M in total sales, $286K profit and 5,009 orders with monthly trend analysis, regional performance breakdown and top 10 sub-categories by revenue.",
     technologies: [
       {
         icon: IconKeys.html,
