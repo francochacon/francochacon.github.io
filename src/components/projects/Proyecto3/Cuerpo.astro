@@ -1,0 +1,323 @@
+<section class="section-about">
+  <div class="linear-grandient-1"></div>
+
+  <!-- Main intro container -->
+  <div class="container-about">
+    <div class="container-text-about">
+      <h2 class="title-about" id="overview">Mining in Argentina</h2>
+
+      <p class="p-lead">
+        Argentina has a diverse mineral endowment that positions the country as a relevant player in
+        the global mining industry. Key resources include copper, lithium, gold, silver, zinc, and
+        other strategic minerals—mainly across the Puna region, the Andes range, and Patagonia.
+      </p>
+
+      <p>
+        This project showcases an interactive Power BI dashboard focused on mining exports and
+        industry structure. The goal is to highlight trends, concentration, and the main drivers
+        behind historical export peaks.
+      </p>
+
+      <div class="pill-row" aria-label="Project stack">
+        <span class="pill">Power BI</span>
+        <span class="pill">DAX</span>
+        <span class="pill">Data Modeling</span>
+        <span class="pill">Mining Analytics</span>
+      </div>
+
+      <div class="cta-row">
+        <a
+          class="btn-primary"
+          href="https://github.com/francochacon/argentina-mining-dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View repository on GitHub"
+        >
+          View repository
+        </a>
+
+        <a
+          class="btn-secondary"
+          href="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the report in Power BI"
+        >
+          Open report (Power BI)
+        </a>
+
+        <a class="btn-ghost" href="/" aria-label="Back to portfolio home">
+          Back to portfolio
+        </a>
+      </div>
+
+      <!-- Optional: concise summary of what’s inside the dashboard -->
+      <div class="metrics-box" aria-label="Key metrics included">
+        <h3 class="metrics-title">Key metrics included</h3>
+        <ul class="metrics-list">
+          <li>Highest-export year (FOB) and YoY growth</li>
+          <li>Dominant sector and sector share (%)</li>
+          <li>Dominant mineral and concentration (%)</li>
+          <li>Gold trend over the last years</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Power BI section -->
+  <div class="container-powerbi" id="dashboard">
+    <h2 class="title-powerbi">Mining Data Dashboard (Power BI)</h2>
+
+    <p class="text-powerbi">
+      The dashboard summarizes mining exports in Argentina and helps answer questions such as:
+    </p>
+
+    <ul class="insights-list">
+      <li>Which year reached the highest export value (FOB)?</li>
+      <li>What is the dominant sector and its share?</li>
+      <li>Which mineral leads exports and how concentrated is the structure?</li>
+      <li>How has gold evolved over the last years?</li>
+    </ul>
+
+    <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
+      <iframe
+        title="Argentina mining dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+        frameborder="0"
+        allowfullscreen="true"
+      ></iframe>
+    </div>
+
+    <p class="text-powerbi">
+      Data is based on public sources and this dashboard is part of my personal portfolio project.
+      The report will be continuously updated with new pages, improved storytelling, and additional
+      breakdowns (e.g., provinces, minerals, and YoY comparisons).
+    </p>
+  </div>
+</section>
+
+<style>
+  .linear-grandient-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.5));
+    z-index: 0;
+  }
+
+  .section-about {
+    position: relative;
+    background-color: #111111;
+    padding: 60px 0;
+  }
+
+  .container-about {
+    position: relative;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1355px;
+  }
+
+  .container-text-about {
+    position: relative;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .title-about {
+    position: relative;
+    display: block;
+    font-size: 28px;
+    padding: 10px 0;
+    color: #f6f6f9;
+    width: 100%;
+    font-weight: 800;
+    scroll-margin-top: 80px;
+  }
+
+  .p-lead {
+    font-size: 18px;
+    color: rgba(246, 246, 249, 0.95);
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+  }
+
+  .container-text-about p {
+    font-size: 16.5px;
+    color: rgba(246, 246, 249, 0.9);
+    text-align: left;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+    margin: 0;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .pill {
+    border: 1px solid rgba(0, 191, 165, 0.35);
+    color: rgba(246, 246, 249, 0.92);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    background: rgba(0, 191, 165, 0.08);
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 0.12s ease, background 0.12s ease, border 0.12s ease;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: #00bfa5;
+    color: #0b0b0b;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: rgba(246, 246, 249, 0.92);
+    border: 1px solid rgba(246, 246, 249, 0.18);
+  }
+
+  .btn-ghost {
+    background: rgba(246, 246, 249, 0.06);
+    color: rgba(246, 246, 249, 0.92);
+    border: 1px solid rgba(246, 246, 249, 0.08);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-ghost:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Optional metrics box */
+  .metrics-box {
+    margin-top: 14px;
+    padding: 14px 14px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(246, 246, 249, 0.1);
+    background: rgba(0, 0, 0, 0.25);
+    max-width: 900px;
+  }
+
+  .metrics-title {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(246, 246, 249, 0.95);
+    letter-spacing: 0.2px;
+  }
+
+  .metrics-list {
+    margin: 0;
+    padding-left: 18px;
+    color: rgba(246, 246, 249, 0.85);
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  /* Power BI section */
+  .container-powerbi {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 70px auto 0;
+  }
+
+  .title-powerbi {
+    font-size: 28px;
+    color: #00bfa5;
+    margin-bottom: 14px;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 255, 180, 0.25);
+  }
+
+  .text-powerbi {
+    color: rgba(246, 246, 249, 0.9);
+    font-size: 16.5px;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 14px auto;
+    text-align: center;
+  }
+
+  .insights-list {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    text-align: left;
+    color: rgba(246, 246, 249, 0.9);
+    line-height: 1.7;
+    padding-left: 18px;
+  }
+
+  .insights-list li {
+    margin: 6px 0;
+  }
+
+  /* Responsive iframe wrapper */
+  .iframe-wrap {
+    width: 100%;
+    margin: 18px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 180, 0.18);
+    background: #0e0e0e;
+  }
+
+  .iframe-wrap iframe {
+    width: 100%;
+    height: 720px;
+    border: 0;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .container-about {
+      flex-direction: column;
+    }
+
+    .container-text-about {
+      width: 100%;
+    }
+
+    .iframe-wrap iframe {
+      height: 460px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-ghost {
+      width: 100%;
+    }
+  }
+</style>
