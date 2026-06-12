@@ -1,10 +1,8 @@
 ---
 import { getIconComponent } from "../../../icons/IconAll.astro";
-
 type Technology = {
   icon?: string;
 };
-
 export interface Props {
   title: string;
   img: string;
@@ -12,17 +10,15 @@ export interface Props {
   technologies?: Technology[];
   link: string;
 }
-
 const { technologies, title, img, description, link } = Astro.props;
 ---
-
 <li class="li-project">
   <img src={img} alt={title} loading="lazy" />
   <p class="title-project">{title}</p>
   <p class="description-project">
     {description}
   </p>
-  <p class="title-technologies">tecnologías usadas</p>
+  <p class="title-technologies">Technologies used</p>
   <div class="container-technologies">
     {
       technologies.map(({ icon }) => {
@@ -32,29 +28,25 @@ const { technologies, title, img, description, link } = Astro.props;
     }
   </div>
   <div class="container-link-project">
-    <a href={link}>Ver más</a>
-    <!-- <a href={link} target="_blank">Ver más</a> -->
+    <a href={link}>View project</a>
   </div>
 </li>
-
 <style>
   .li-project {
-  position: relative;
-  list-style: none;
-  border: 1px solid #3d3e4f;
-  overflow: hidden;
-  max-width: 380px;
-  min-width: 300px;
-  width: 100%;
-  border-radius: 7px;
-  transition: transform 0.3s ease;
-  background-color: #25242d;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-
+    position: relative;
+    list-style: none;
+    border: 1px solid #3d3e4f;
+    overflow: hidden;
+    max-width: 380px;
+    min-width: 300px;
+    width: 100%;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
+    background-color: #25242d;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
   .li-project::before {
     content: "";
     position: absolute;
@@ -66,7 +58,6 @@ const { technologies, title, img, description, link } = Astro.props;
     transition: 0.3s ease-in-out;
     pointer-events: none;
   }
-
   .li-project:hover::before {
     content: "";
     position: absolute;
@@ -99,17 +90,20 @@ const { technologies, title, img, description, link } = Astro.props;
   .title-project::first-letter {
     text-transform: capitalize;
   }
-
   .title-technologies {
-    color: #f6f6f9;
-    font-size: 20px;
+    color: #555555;
+    font-size: 11px;
+    font-family: monospace;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     padding: 5px 10px;
   }
   .description-project {
     padding: 0 10px;
-    color: #f6f6f990;
-    font-size: 17px;
+    color: #a0a0a0;
+    font-size: 15px;
     font-weight: 400;
+    line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -118,11 +112,6 @@ const { technologies, title, img, description, link } = Astro.props;
   .description-project::first-letter {
     text-transform: capitalize;
   }
-
-  .title-technologies::first-letter {
-    text-transform: capitalize;
-  }
-
   .container-technologies {
     position: relative;
     display: flex;
@@ -136,15 +125,19 @@ const { technologies, title, img, description, link } = Astro.props;
     position: relative;
     width: 100%;
     padding: 20px 10px;
+    margin-top: auto;
   }
-
   .container-link-project a {
-    position: relative;
     text-decoration: none;
-    padding: 10px 10px;
+    padding: 8px 16px;
     background-color: #01be96;
-    border-radius: 5px;
-    color: #f6f6f9;
-    justify-content: space-between;
+    border-radius: 6px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  .container-link-project a:hover {
+    background-color: #00a882;
   }
 </style>
