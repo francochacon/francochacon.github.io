@@ -9,33 +9,33 @@ import { projectSkills } from "../../../const/const";
   <!-- Main intro container -->
   <div class="container-about">
     <div class="container-text-about">
-      <h2 class="title-about" id="overview">Mining in Argentina</h2>
+      <h2 class="title-about" id="overview">Mining Projects Map</h2>
 
       <p class="p-lead">
-        Argentina has a diverse mineral endowment that positions the country as a relevant player in
-        the global mining industry. Key resources include copper, lithium, gold, silver, zinc, and
-        other strategic minerals—mainly across the Puna region, the Andes range, and Patagonia.
+        A geospatial Power BI report mapping Argentina's metallic and lithium mining projects
+        across every province, tracking each project's mineral type and development stage from
+        exploration to production.
       </p>
 
       <p>
-        This project showcases an interactive Power BI dashboard focused on mining exports and
-        industry structure. The goal is to highlight trends, concentration, and the main drivers
-        behind historical export peaks.
+        This project showcases an interactive Power BI dashboard focused on the geographic
+        distribution of mining activity in Argentina. The goal is to highlight regional
+        production clusters, mineral concentration, and project maturity across the country.
       </p>
 
       <div class="pill-row" aria-label="Project stack">
         <span class="pill">Power BI</span>
         <span class="pill">DAX</span>
-        <span class="pill">Data Modeling</span>
+        <span class="pill">Geospatial Analysis</span>
         <span class="pill">Mining Analytics</span>
       </div>
 
-      <ProjectSkills skills={projectSkills.proyecto2} />
+      <ProjectSkills skills={projectSkills.project1} />
 
       <div class="cta-row">
         <a
           class="btn-primary"
-          href="https://github.com/francochacon/argentina-mining-dashboard"
+          href="https://github.com/francochacon"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View repository on GitHub"
@@ -45,7 +45,7 @@ import { projectSkills } from "../../../const/const";
 
         <a
           class="btn-secondary"
-          href="https://app.powerbi.com/view?r=eyJrIjoiYjFkNGZlMzItZjMwZi00Zjc0LWI1MDUtYzMwODQ5ODUzYTI1IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+          href="https://app.powerbi.com/view?r=eyJrIjoiYWU3MDc1YjEtMTkzOS00ZTk2LWEwOGEtMDA2OWQwOGY4Yzc5IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open the report in Power BI"
@@ -58,14 +58,13 @@ import { projectSkills } from "../../../const/const";
         </a>
       </div>
 
-      <!-- Optional: concise summary of what’s inside the dashboard -->
       <div class="metrics-box" aria-label="Key metrics included">
         <h3 class="metrics-title">Key metrics included</h3>
         <ul class="metrics-list">
-          <li>Highest-export year (FOB) and YoY growth</li>
-          <li>Dominant sector and sector share (%)</li>
-          <li>Dominant mineral and concentration (%)</li>
-          <li>Gold trend over the last years</li>
+          <li>Province-level breakdown of metallic and lithium mining projects</li>
+          <li>Mineral type and development-stage filters (exploration to production)</li>
+          <li>Key production clusters in Salta, San Juan and Santa Cruz</li>
+          <li>Visual KPIs with drill-down filters by region and mineral</li>
         </ul>
       </div>
     </div>
@@ -73,32 +72,32 @@ import { projectSkills } from "../../../const/const";
 
   <!-- Power BI section -->
   <div class="container-powerbi" id="dashboard">
-    <h2 class="title-powerbi">Mining Data Dashboard (Power BI)</h2>
+    <h2 class="title-powerbi">Mining Projects Dashboard (Power BI)</h2>
 
     <p class="text-powerbi">
-      The dashboard summarizes mining exports in Argentina and helps answer questions such as:
+      The dashboard maps mining activity across Argentina and helps answer questions such as:
     </p>
 
     <ul class="insights-list">
-      <li>Which year reached the highest export value (FOB)?</li>
-      <li>What is the dominant sector and its share?</li>
-      <li>Which mineral leads exports and how concentrated is the structure?</li>
-      <li>How has gold evolved over the last years?</li>
+      <li>Which provinces concentrate the most active mining projects?</li>
+      <li>What development stage is each project at (exploration, feasibility, production)?</li>
+      <li>Which minerals dominate each region?</li>
+      <li>How are production clusters distributed across Salta, San Juan and Santa Cruz?</li>
     </ul>
 
     <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
       <iframe
-        title="Argentina mining dashboard"
-        src="https://app.powerbi.com/view?r=eyJrIjoiMThhOTA0NzQtNTQ2Ny00N2U4LWEwNjUtNmZlYTczNjMzZjBlIiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+        title="Argentina mining projects map"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYWU3MDc1YjEtMTkzOS00ZTk2LWEwOGEtMDA2OWQwOGY4Yzc5IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
         frameborder="0"
         allowfullscreen="true"
       ></iframe>
     </div>
 
     <p class="text-powerbi">
-      Data is based on public sources and this dashboard is part of my personal portfolio project.
-      The report will be continuously updated with new pages, improved storytelling, and additional
-      breakdowns (e.g., provinces, minerals, and YoY comparisons).
+      Data is based on public sources and this dashboard is part of my personal portfolio
+      project. The report will be continuously updated with new pages and additional regional
+      breakdowns.
     </p>
   </div>
 </section>
@@ -225,7 +224,6 @@ import { projectSkills } from "../../../const/const";
     transform: translateY(-1px);
   }
 
-  /* Optional metrics box */
   .metrics-box {
     margin-top: 14px;
     padding: 14px 14px 10px;
@@ -251,7 +249,6 @@ import { projectSkills } from "../../../const/const";
     font-size: 14px;
   }
 
-  /* Power BI section */
   .container-powerbi {
     position: relative;
     z-index: 1;
@@ -291,7 +288,6 @@ import { projectSkills } from "../../../const/const";
     margin: 6px 0;
   }
 
-  /* Responsive iframe wrapper */
   .iframe-wrap {
     width: 100%;
     margin: 18px auto;
