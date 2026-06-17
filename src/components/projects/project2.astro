@@ -1,10 +1,11 @@
 ---
-import About from "./project2/Cuerpo.astro";
+import ProjectReport from "./ProjectReport.astro";
+import { projectReports } from "../../const/const";
 ---
 
 <main>
   <div class="container_p">
-    <About />
+    <ProjectReport report={projectReports.project2} />
   </div>
 </main>
 
