@@ -50,7 +50,8 @@ export const ui = {
     "about.location": "Salta, Argentina  ·  Working with clients worldwide",
 
     "footer.title": "Contact",
-    "footer.copy": "© 2025 Franco Chacón | Portfolio",
+    "footer.subtitle": "Currently available for freelance work. I usually reply within 24 hours.",
+    "footer.copy": "© 2025 Franco Chacón",
 
     "report.builtWith": "Built with",
     "report.viewRepository": "View repository",
@@ -102,7 +103,8 @@ export const ui = {
     "about.location": "Salta, Argentina  ·  Trabajo con clientes de todo el mundo",
 
     "footer.title": "Contacto",
-    "footer.copy": "© 2025 Franco Chacón | Portfolio",
+    "footer.subtitle": "Disponible para nuevos proyectos freelance. Normalmente respondo dentro de las 24 horas.",
+    "footer.copy": "© 2025 Franco Chacón",
 
     "report.builtWith": "Hecho con",
     "report.viewRepository": "Ver repositorio",

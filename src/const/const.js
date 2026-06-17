@@ -49,15 +49,73 @@ export const IconKeys = {
   vite: "vite",
 };
 
-// Tool names are brand/product names, identical in both languages.
-export const skills = [
-  { title: "Power BI", icon: IconKeys.powerbi },
-  { title: "MySQL", icon: IconKeys.mysql },
-  { title: "Python", icon: IconKeys.python },
-  { title: "AutoCAD", icon: IconKeys.autocad },
-  { title: "Git", icon: IconKeys.git },
-  { title: "Github", icon: IconKeys.github },
-];
+// Skills include a short caption to give each tool context instead of a bare icon grid.
+export const skills = {
+  en: [
+    {
+      title: "Power BI",
+      icon: IconKeys.powerbi,
+      caption: "Where I build the dashboards clients actually open every Monday.",
+    },
+    {
+      title: "MySQL",
+      icon: IconKeys.mysql,
+      caption: "Structuring and querying the data before it ever reaches a chart.",
+    },
+    {
+      title: "Python",
+      icon: IconKeys.python,
+      caption: "Cleaning, automating and modeling when a spreadsheet isn't enough.",
+    },
+    {
+      title: "AutoCAD",
+      icon: IconKeys.autocad,
+      caption: "Carried over from process engineering — reading and adapting technical drawings.",
+    },
+    {
+      title: "Git",
+      icon: IconKeys.git,
+      caption: "Version control on every project, including this site.",
+    },
+    {
+      title: "Github",
+      icon: IconKeys.github,
+      caption: "Where the code and the portfolio itself live, out in the open.",
+    },
+  ],
+  es: [
+    {
+      title: "Power BI",
+      icon: IconKeys.powerbi,
+      caption: "Donde armo los dashboards que los clientes abren todos los lunes.",
+    },
+    {
+      title: "MySQL",
+      icon: IconKeys.mysql,
+      caption: "Estructurando y consultando los datos antes de que lleguen a un gráfico.",
+    },
+    {
+      title: "Python",
+      icon: IconKeys.python,
+      caption: "Limpieza, automatización y modelado cuando una planilla no alcanza.",
+    },
+    {
+      title: "AutoCAD",
+      icon: IconKeys.autocad,
+      caption: "Heredado de la ingeniería de procesos: leer y adaptar planos técnicos.",
+    },
+    {
+      title: "Git",
+      icon: IconKeys.git,
+      caption: "Control de versiones en cada proyecto, incluido este sitio.",
+    },
+    {
+      title: "Github",
+      icon: IconKeys.github,
+      caption: "Donde el código y el portfolio mismo viven, a la vista de todos.",
+    },
+  ],
+};
 
 // Full content for each project's report page, per language. Centralizing this
 // here (instead of duplicating HTML across files) makes it the single place to
