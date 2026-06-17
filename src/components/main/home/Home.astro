@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import photoperfil from "../../../../public/img/photo-perfil.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="content-presentation">
@@ -12,21 +16,18 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
       <h1 class="text-name">Franco Chacón</h1>
 
       <p class="p-profession">
-        Chemical Engineer + Data Analyst
+        {t("hero.role")}
       </p>
 
       <div class="presentation-text">
         <p>
-          I am a Chemical Engineer specialized in process analysis, industrial
-          data analytics and business intelligence. My experience includes
-          process simulation, mining industry analysis, Power BI dashboard
-          development and engineering problem solving.
+          {t("hero.bio")}
         </p>
       </div>
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="#projects">View Projects</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#projects">{t("hero.viewProjects")}</a>
+        <a class="btn btn-ghost" href="#contact">{t("hero.contact")}</a>
       </div>
     </div>
 

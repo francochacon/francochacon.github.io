@@ -1,21 +1,26 @@
 ---
 import { projects } from "../../../const/const";
 import Project from "./Project.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const localizedProjects = projects[lang];
 
 const allTags = Array.from(
-  new Set(projects.flatMap((p) => p.tags || []))
+  new Set(localizedProjects.flatMap((p) => p.tags || []))
 ).sort();
 ---
 
 <section class="section-projects all-projects-page">
   <div class="container-projects">
-    <h1 class="title-projects">All Projects</h1>
+    <h1 class="title-projects">{t("projects.allTitle")}</h1>
     <p class="subtitle-projects">
-      Browse the full collection, or filter by technique.
+      {t("projects.allSubtitle")}
     </p>
 
     <div class="filter-row" role="group" aria-label="Filter projects by tag">
-      <button class="filter-chip is-active" data-filter="all">All</button>
+      <button class="filter-chip is-active" data-filter="all">{t("projects.filterAll")}</button>
       {
         allTags.map((tag) => (
           <button class="filter-chip" data-filter={tag}>
@@ -27,7 +32,7 @@ const allTags = Array.from(
 
     <ul class="ul-projects" id="projects-grid">
       {
-        projects.map(({ description, img, link, technologies, title, tags }) => (
+        localizedProjects.map(({ description, img, link, technologies, title, tags }) => (
           <Project
             img={img}
             description={description}
@@ -41,7 +46,7 @@ const allTags = Array.from(
     </ul>
 
     <p class="empty-state" id="empty-state" hidden>
-      No projects match this filter yet.
+      {t("projects.emptyState")}
     </p>
   </div>
 </section>
