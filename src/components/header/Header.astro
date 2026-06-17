@@ -8,23 +8,23 @@
       </a>
 
       <!-- Links que se ajustan según la página -->
-      <a class="nav-link" data-home="#proyectos" data-project="#dashboard" href="#proyectos">
+      <a class="nav-link" data-home="#projects" data-project="/#projects" href="#projects">
         <li class="li-nav">Projects</li>
       </a>
 
-      <a class="nav-link" data-home="#skills" data-project="#skills" href="#skills">
+      <a class="nav-link" data-home="#skills" data-project="/#skills" href="#skills">
         <li class="li-nav">Skills</li>
       </a>
 
-      <a class="nav-link" data-home="#studies" data-project="#studies" href="#studies">
+      <a class="nav-link" data-home="#studies" data-project="/#studies" href="#studies">
         <li class="li-nav">Education</li>
       </a>
 
-      <a class="nav-link" data-home="#sobremi" data-project="#overview" href="#sobremi">
+      <a class="nav-link" data-home="#about" data-project="/#about" href="#about">
         <li class="li-nav">About</li>
       </a>
 
-      <a class="nav-link" data-home="#contacto" data-project="#contacto" href="#contacto">
+      <a class="nav-link" data-home="#contact" data-project="/#contact" href="#contact">
         <li class="li-nav">Contact</li>
       </a>
     </ul>
@@ -61,9 +61,9 @@
     $menuDrop.addEventListener("click", toggleMenu);
 
     // --- Smart anchors: home vs project pages ---
-    // If you are on /proyecto2/ (or any /proyectoX/), we switch anchors to project ones.
+    // If you are on /project2/ (or any /projectX/), we switch anchors to project ones.
     const path = window.location.pathname;
-    const isProjectPage = path.includes("/proyecto");
+    const isProjectPage = path.includes("/project");
 
     document.querySelectorAll(".nav-link").forEach((a) => {
       const homeHref = a.getAttribute("data-home");

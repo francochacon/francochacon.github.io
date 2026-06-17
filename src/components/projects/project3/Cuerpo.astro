@@ -6,46 +6,44 @@ import { projectSkills } from "../../../const/const";
 <section class="section-about">
   <div class="linear-grandient-1"></div>
 
-  <!-- Main intro container -->
   <div class="container-about">
     <div class="container-text-about">
-      <h2 class="title-about" id="overview">Mining Projects Map</h2>
+      <h2 class="title-about" id="overview">Superstore Sales Dashboard</h2>
 
       <p class="p-lead">
-        A geospatial Power BI report mapping Argentina's metallic and lithium mining projects
-        across every province, tracking each project's mineral type and development stage from
-        exploration to production.
+        A retail analytics dashboard built on the classic Superstore dataset, tracking over $2.3M
+        in total sales across four US regions. Designed to surface profitability drivers,
+        seasonal trends, and category-level performance in a single interactive view.
       </p>
 
       <p>
-        This project showcases an interactive Power BI dashboard focused on the geographic
-        distribution of mining activity in Argentina. The goal is to highlight regional
-        production clusters, mineral concentration, and project maturity across the country.
+        This project showcases an interactive Power BI dashboard focused on retail sales performance.
+        The goal is to highlight monthly trends, regional concentration, and the top sub-categories
+        driving revenue and profit margin.
       </p>
 
       <div class="pill-row" aria-label="Project stack">
         <span class="pill">Power BI</span>
         <span class="pill">DAX</span>
-        <span class="pill">Geospatial Analysis</span>
-        <span class="pill">Mining Analytics</span>
+        <span class="pill">Data Modeling</span>
+        <span class="pill">Retail Analytics</span>
       </div>
 
-      <ProjectSkills skills={projectSkills.proyecto1} />
+      <ProjectSkills skills={projectSkills.project3} />
 
       <div class="cta-row">
         <a
           class="btn-primary"
-          href="https://github.com/francochacon"
+          href="https://github.com/francochacon/superstore-sales-dashboard"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View repository on GitHub"
         >
           View repository
-        </a>
-
-        <a
+        </a> 
+       <a
           class="btn-secondary"
-          href="https://app.powerbi.com/view?r=eyJrIjoiYWU3MDc1YjEtMTkzOS00ZTk2LWEwOGEtMDA2OWQwOGY4Yzc5IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+          href="https://app.powerbi.com/view?r=eyJrIjoiYjFkNGZlMzItZjMwZi00Zjc0LWI1MDUtYzMwODQ5ODUzYTI1IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open the report in Power BI"
@@ -61,43 +59,43 @@ import { projectSkills } from "../../../const/const";
       <div class="metrics-box" aria-label="Key metrics included">
         <h3 class="metrics-title">Key metrics included</h3>
         <ul class="metrics-list">
-          <li>Province-level breakdown of metallic and lithium mining projects</li>
-          <li>Mineral type and development-stage filters (exploration to production)</li>
-          <li>Key production clusters in Salta, San Juan and Santa Cruz</li>
-          <li>Visual KPIs with drill-down filters by region and mineral</li>
+          <li>Total sales ($2.3M), profit ($286K) and 5,009 orders</li>
+          <li>Profit margin percentage (12.47%)</li>
+          <li>Monthly sales and profit trend by year</li>
+          <li>Regional performance breakdown (West, East, Central, South)</li>
+          <li>Top 10 sub-categories by revenue (Phones, Chairs, Storage...)</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- Power BI section -->
   <div class="container-powerbi" id="dashboard">
-    <h2 class="title-powerbi">Mining Projects Dashboard (Power BI)</h2>
+    <h2 class="title-powerbi">Retail Sales Dashboard (Power BI)</h2>
 
     <p class="text-powerbi">
-      The dashboard maps mining activity across Argentina and helps answer questions such as:
+      The dashboard summarizes Superstore retail data and helps answer questions such as:
     </p>
 
     <ul class="insights-list">
-      <li>Which provinces concentrate the most active mining projects?</li>
-      <li>What development stage is each project at (exploration, feasibility, production)?</li>
-      <li>Which minerals dominate each region?</li>
-      <li>How are production clusters distributed across Salta, San Juan and Santa Cruz?</li>
+      <li>Which months drive the highest sales and profit peaks?</li>
+      <li>Which region generates the most revenue?</li>
+      <li>What are the top 10 sub-categories by total sales?</li>
+      <li>How does profit margin vary across the product mix?</li>
     </ul>
 
     <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
       <iframe
-        title="Argentina mining projects map"
-        src="https://app.powerbi.com/view?r=eyJrIjoiYWU3MDc1YjEtMTkzOS00ZTk2LWEwOGEtMDA2OWQwOGY4Yzc5IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+        title="Superstore sales dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYjFkNGZlMzItZjMwZi00Zjc0LWI1MDUtYzMwODQ5ODUzYTI1IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
         frameborder="0"
         allowfullscreen="true"
       ></iframe>
     </div>
 
     <p class="text-powerbi">
-      Data is based on public sources and this dashboard is part of my personal portfolio
-      project. The report will be continuously updated with new pages and additional regional
-      breakdowns.
+      Data is based on the publicly available Superstore sample dataset. This dashboard is part
+      of my personal portfolio and will be updated with additional pages covering customer
+      segmentation, discount analysis, and shipping performance.
     </p>
   </div>
 </section>
@@ -199,11 +197,6 @@ import { projectSkills } from "../../../const/const";
     font-weight: 700;
     transition: transform 0.12s ease, background 0.12s ease, border 0.12s ease;
     white-space: nowrap;
-  }
-
-  .btn-primary {
-    background: #00bfa5;
-    color: #0b0b0b;
   }
 
   .btn-secondary {
