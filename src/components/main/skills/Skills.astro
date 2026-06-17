@@ -5,119 +5,94 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const localizedSkills = skills[lang];
 ---
 
-<section class="section-skill">
-  <div class="linear-grandient-1"></div>
-  <div class="container-skill">
-    <h2 class="title-skills" id="skills">{t("skills.title")}</h2>
-    <ul class="ul-skill">
-      {
-        skills.map(({ icon, title }) => {
-          const IconComponent = getIconComponent(icon);
-          return (
-            <li class="li-skills">
-              {IconComponent && <IconComponent />}
-              <p class="p-skill">{title}</p>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </div>
-</section>
+<div class="substory-block">
+  <div class="substory-divider"></div>
+  <h3 class="substory-heading" id="skills">{t("skills.title")}</h3>
+  <ul class="ul-skill">
+    {
+      localizedSkills.map(({ icon, title, caption }) => {
+        const IconComponent = getIconComponent(icon);
+        return (
+          <li class="li-skills">
+            <div class="skill-icon">{IconComponent && <IconComponent />}</div>
+            <div class="skill-text">
+              <p class="skill-title">{title}</p>
+              <p class="skill-caption">{caption}</p>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
 
 <style>
-  .section-skill {
-    position: relative;
-    overflow: hidden;
-    background-color: #111111;
+  .substory-divider {
+    width: 40px;
+    height: 3px;
+    background: #01be96;
+    border-radius: 2px;
+    margin-bottom: 14px;
   }
-  .container-skill {
-    position: relative;
-    width: 90%;
+  .substory-heading {
+    font-size: 20px;
     color: #f6f6f9;
-    padding: 10px 0;
-    margin: 0 auto;
-    padding: 10px 0;
-    height: 100%;
-    max-width: 1355px;
-  }
-  .title-skills {
-    position: relative;
-    display: block;
-    font-size: 27px;
-    padding: 10px 0;
-    color: #f6f6f9;
-    width: 100%;
-    font-weight: 800;
+    font-weight: 700;
     scroll-margin-top: 80px;
   }
-
-  .li-skills {
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .p-skill {
-    padding: 5px 0;
-  }
-  .linear-grandient-1 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, #000, rgba(1, 190, 150, 0.5));
-    z-index: 0;
-  }
-
   .ul-skill {
     position: relative;
     display: grid;
-    width: 100%;
-    align-items: center;
-    gap: 15px;
-    padding: 40px 0;
-    width: 100%;
-    overflow: hidden;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px 0 0;
+    list-style: none;
   }
-  @media (min-width: 300px) {
+  .li-skills {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(1, 190, 150, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .skill-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #01be96;
+  }
+  .skill-icon :global(svg),
+  .skill-icon :global(i) {
+    width: 28px;
+    height: 28px;
+  }
+  .skill-title {
+    color: #f6f6f9;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .skill-caption {
+    color: #a0a0a0;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  @media (min-width: 640px) {
+    .ul-skill {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1100px) {
     .ul-skill {
       grid-template-columns: repeat(3, 1fr);
-      padding: 20px 0;
-    }
-  }
-  @media (min-width: 550px) {
-    .ul-skill {
-      grid-template-columns: repeat(4, 1fr);
-      padding: 20px 0;
-    }
-  }
-  @media (min-width: 800px) {
-    .ul-skill {
-      grid-template-columns: repeat(5, 1fr);
-    }
-  }
-  @media (min-width: 1000px) {
-    .ul-skill {
-      grid-template-columns: repeat(6, 1fr);
-    }
-  }
-  @media (min-width: 1200px) {
-    .ul-skill {
-      grid-template-columns: repeat(7, 1fr);
-    }
-  }
-  @media (min-width: 1350px) {
-    .ul-skill {
-      grid-template-columns: repeat(8, 1fr);
     }
   }
 </style>

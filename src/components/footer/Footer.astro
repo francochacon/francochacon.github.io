@@ -5,52 +5,49 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer>
-  <section class="section-footer">
-    <div class="linear-grandient-1"></div>
-    <div class="container-footer">
-      <h2 class="title-contact" id="contact">{t("footer.title")}</h2>
-      <div class="container-redes">
-        <a href="https://wa.me/+543875633214" target="_blank">
-          <li class="li-contact">
-            <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
-            <p>Whatsapp</p>
-          </li>
+<footer class="section-footer">
+  <div class="linear-grandient-1"></div>
+  <div class="container-footer">
+    <h2 class="title-contact" id="contact">{t("footer.title")}</h2>
+    <p class="subtitle-contact">{t("footer.subtitle")}</p>
+
+    <ul class="container-redes">
+      <li>
+        <a href="https://wa.me/+543875633214" target="_blank" class="contact-card">
+          <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
+          <span>Whatsapp</span>
         </a>
+      </li>
 
-        <a href="https://github.com/francochacon" target="_blank">
-          <li class="li-contact">
-            <i class="fa-brands fa-github"></i>
-            <p>Github</p>
-          </li>
-        </a> 
-
-        <!--<a href="https://www.instagram.com/osnaider_m19/" target="_blank">
-          <li class="li-contact">
-            <i class="fa-brands fa-instagram"></i>
-            <p>Instagram</p>
-          </li>
-        </a> -->
-
-        <a
-          href="https://www.linkedin.com/in/francochacon/"
-          target="_blank"
-        >
-          <li class="li-contact">
-            <i class="fa-brands fa-linkedin"></i>
-            <p>Linkedin</p>
-          </li>
+      <li>
+        <a href="https://github.com/francochacon" target="_blank" class="contact-card">
+          <i class="fa-brands fa-github"></i>
+          <span>Github</span>
         </a>
-      </div>
-    </div>
-  </section>
+      </li>
 
-  <div class="container-copy">
-    <p>{t("footer.copy")}</p>
+      <li>
+        <a href="https://www.linkedin.com/in/francochacon/" target="_blank" class="contact-card">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>Linkedin</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="footer-divider"></div>
+
+    <p class="container-copy">{t("footer.copy")}</p>
   </div>
 </footer>
 
 <style>
+  .section-footer {
+    position: relative;
+    width: 100%;
+    background-color: #111111;
+    overflow: hidden;
+  }
+
   .linear-grandient-1 {
     position: absolute;
     left: 0;
@@ -61,157 +58,79 @@ const t = useTranslations(lang);
     z-index: 0;
   }
 
-  .section-footer {
-    position: relative;
-    width: 100%;
-    background-color: #111111;
-  }
-
   .container-footer {
     position: relative;
+    z-index: 1;
     width: 90%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 50px 0 24px;
     max-width: 1355px;
   }
 
   .title-contact {
     color: #f6f6f9;
-    padding: 10px 0;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 27px;
+    font-weight: 800;
     scroll-margin-top: 80px;
+  }
+
+  .subtitle-contact {
+    color: #a0a0a0;
+    font-size: 14px;
+    margin-top: 8px;
+    max-width: 480px;
+    line-height: 1.6;
   }
 
   .container-redes {
     position: relative;
     display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    padding: 30px 0;
+    gap: 16px;
+    padding: 28px 0 36px;
     flex-wrap: wrap;
+    list-style: none;
   }
 
-  .container-redes a {
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: #f6f6f9;
-  }
-
-  .li-contact {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    transition: color 0.2s ease-in-out;
-  }
-
-  .li-contact i {
-    font-size: 30px;
-  }
-
-  .li-contact:hover {
-    color: #01be96;
-  }
-
-  .metales-container {
-    margin-top: 40px;
-    text-align: center;
-    color: #f6f6f9;
-  }
-
-  .metales-title {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: #01be96;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(1, 190, 150, 0.3);
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
     font-weight: 600;
+    transition: border-color 0.2s ease, transform 0.15s ease, color 0.2s ease;
   }
 
-  .iframes-metales {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  .contact-card i {
+    font-size: 20px;
+    color: #01be96;
   }
 
-  iframe {
-    border-radius: 10px;
-    overflow: hidden;
-    background: #000;
+  .contact-card:hover {
+    border-color: #01be96;
+    color: #01be96;
+    transform: translateY(-2px);
+  }
+
+  .contact-card:hover i {
+    color: #01be96;
+  }
+
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .container-copy {
-    position: relative;
-    color: #f6f6f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-    background-color: #000;
-    font-size: 14px;
+    color: #555555;
+    font-size: 13px;
+    padding-top: 18px;
+    text-align: center;
   }
 </style>
-
-
-
-<!-- BarraMetales.astro -->
-<!--<div class="metals-bar"> -->
-<!--  <div id="metals-prices">Cargando precios de metales...</div> -->
-<!--</div> -->
-
-<!--<style> -->
-<!--  .metals-bar { -->
-<!--    background-color: #0f0f0f; -->
-<!--    color: #f6f6f9; -->
-<!--    font-size: 14px; -->
-<!--    padding: 6px 15px; -->
-<!--    width: 100%; -->
-<!--    text-align: center; -->
-<!--    font-family: "Inter", sans-serif; -->
-<!--    position: fixed; -->
-<!--    top: 0; -->
-<!--    left: 0; -->
-<!--    z-index: 1000; -->
-<!--    border-bottom: 1px solid #01be96; -->
-<!--  } -->
-
-<!--  #metals-prices { -->
-<!--    white-space: nowrap; -->
-<!--    overflow: hidden; -->
-<!--    animation: scroll 25s linear infinite; -->
-<!--  } -->
-
-<!--  @keyframes scroll { -->
-<!--    from { -->
-<!--      transform: translateX(100%); -->
-<!--    } -->
-<!--    to { -->
-<!--      transform: translateX(-100%); -->
-<!--    } -->
-<!--  } -->
-<!--</style> -->
-
-<!--<script> -->
-<!--  async function cargarPrecios() { -->
-<!--    try { -->
-<!--      const respuesta = await fetch("https://api.metals.dev/v1/latest?api_key=guest"); -->
-<!--      const data = await respuesta.json(); -->
-
-<!--      const precios = { -->
-<!--        oro: data.metals.gold.USD, -->
-<!--        plata: data.metals.silver.USD, -->
-<!--        cobre: data.metals.copper.USD, -->
-<!--        hierro: data.metals.iron_ore.USD -->
-<!--      }; -->
-
-<!--      const texto = `💰 Oro: $${precios.oro.toFixed(2)}/oz | 🪙 Plata: $${precios.plata.toFixed(2)}/oz | 🧱 Cobre: $${precios.cobre.toFixed(2)}/lb | ⚙️ Hierro: $${precios.hierro.toFixed(2)}/t`; -->
-<!--      document.getElementById("metals-prices").textContent = texto; -->
-<!--    } catch (error) { -->
-<!--      document.getElementById("metals-prices").textContent = "No se pudieron cargar los precios."; -->
-<!--      console.error("Error al cargar precios:", error); -->
-<!--    } -->
-<!--  } -->
-
-<!--  cargarPrecios(); -->
-<!--  setInterval(cargarPrecios, 10 * 60 * 1000); // actualiza cada 10 minutos -->
-<!--</script> -->

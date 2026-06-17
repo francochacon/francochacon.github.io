@@ -1,5 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import Studies from "../studies/Studies.astro";
+import Skills from "../skills/Skills.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -43,6 +45,11 @@ const t = useTranslations(lang);
           autoplay></lottie-player>
       </div>
     </div>
+  </div>
+
+  <div class="container-substory">
+    <Studies />
+    <Skills />
   </div>
 </section>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -167,6 +174,17 @@ const t = useTranslations(lang);
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .container-substory {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1355px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 60px;
   }
   @media (max-width: 900px) {
     .container-about {
