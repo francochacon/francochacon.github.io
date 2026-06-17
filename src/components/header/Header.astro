@@ -5,6 +5,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const prefix = (path) => (lang === "es" ? `/es${path}` : path);
 const homeHref = lang === "es" ? "/es" : "/";
+const projectsHref = lang === "es" ? "/es/projects" : "/projects";
 const otherLang = lang === "es" ? "en" : "es";
 const switchHref = getLocalizedPath(Astro.url.pathname, otherLang);
 const switchLabel = otherLang === "es" ? "ES" : "EN";
@@ -19,19 +20,11 @@ const switchLabel = otherLang === "es" ? "ES" : "EN";
         <li class="li-nav">{t("nav.home")}</li>
       </a>
 
-      <!-- Links que se ajustan según la página -->
-      <a class="nav-link" data-home="#projects" data-project={prefix("/projects")} href="#projects">
+      <a href={projectsHref}>
         <li class="li-nav">{t("nav.projects")}</li>
       </a>
 
-      <a class="nav-link" data-home="#skills" data-project={prefix("/#skills")} href="#skills">
-        <li class="li-nav">{t("nav.skills")}</li>
-      </a>
-
-      <a class="nav-link" data-home="#studies" data-project={prefix("/#studies")} href="#studies">
-        <li class="li-nav">{t("nav.education")}</li>
-      </a>
-
+      <!-- Links que se ajustan según la página -->
       <a class="nav-link" data-home="#about" data-project={prefix("/#about")} href="#about">
         <li class="li-nav">{t("nav.about")}</li>
       </a>

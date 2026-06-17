@@ -7,11 +7,9 @@ export const languages = {
 
 export const ui = {
   en: {
-    "site.brand": "Portfolio",
+    "site.brand": "Franco Chacón",
     "nav.home": "Home",
     "nav.projects": "Projects",
-    "nav.skills": "Skills",
-    "nav.education": "Education",
     "nav.about": "About",
     "nav.contact": "Contact",
 
@@ -61,11 +59,9 @@ export const ui = {
     "report.keyMetrics": "Key metrics included",
   },
   es: {
-    "site.brand": "Portafolio",
+    "site.brand": "Franco Chacón",
     "nav.home": "Inicio",
     "nav.projects": "Proyectos",
-    "nav.skills": "Habilidades",
-    "nav.education": "Educación",
     "nav.about": "Sobre mí",
     "nav.contact": "Contacto",
 
