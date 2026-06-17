@@ -1,6 +1,8 @@
 ---
 import { projects } from "../../../const/const";
 import Project from "./Project.astro";
+
+const latestProjects = projects.slice(0, 3);
 ---
 
 <section class="section-projects">
@@ -10,7 +12,7 @@ import Project from "./Project.astro";
     <div>
       <ul class="ul-projects">
         {
-          projects.map(({ description, img, link, technologies, title }) => (
+          latestProjects.map(({ description, img, link, technologies, title }) => (
             <Project
               img={img}
               description={description}
@@ -21,6 +23,9 @@ import Project from "./Project.astro";
           ))
         }
       </ul>
+    </div>
+    <div class="view-all-row">
+      <a class="btn-view-all" href="/projects">View all projects</a>
     </div>
   </div>
 </section>
@@ -68,6 +73,31 @@ import Project from "./Project.astro";
 }
   .ul-projects a {
     text-decoration: none;
+  }
+
+  .view-all-row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .btn-view-all {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    background: transparent;
+    color: rgba(246, 246, 249, 0.92);
+    border: 1px solid rgba(246, 246, 249, 0.18);
+    transition: transform 0.12s ease;
+  }
+
+  .btn-view-all:hover {
+    transform: translateY(-1px);
   }
 
   /* responsive */

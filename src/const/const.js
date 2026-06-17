@@ -168,6 +168,7 @@ export const projects = [
     title: "Superstore Sales Dashboard",
     link: "project3",
     description: "Power BI dashboard built on the classic Superstore dataset. Tracks $2.3M in total sales, $286K profit and 5,009 orders with monthly trend analysis, regional performance breakdown and top 10 sub-categories by revenue.",
+    tags: projectReports.project3.pills,
     technologies: [
       {
         icon: IconKeys.powerbi,
@@ -179,6 +180,7 @@ export const projects = [
     title: "Argentina Mining Exports",
     link: "project2",
     description: "Interactive Power BI dashboard analyzing Argentina's mining export records from 1998 to 2024. Covers 327 metallic and lithium projects across provinces, tracking copper, lithium, gold and silver production with KPIs and regional breakdowns.",
+    tags: projectReports.project2.pills,
     technologies: [
       {
         icon: IconKeys.powerbi,
@@ -190,6 +192,7 @@ export const projects = [
     title: "Mining Projects Map",
     link: "project1",
     description: "Power BI report mapping Argentina's metallic and lithium mining projects by province, mineral type and development stage. Identifies key production clusters in Salta, San Juan and Santa Cruz with visual KPIs and drill-down filters.",
+    tags: projectReports.project1.pills,
     technologies: [
       {
         icon: IconKeys.powerbi,

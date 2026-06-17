@@ -9,10 +9,11 @@ export interface Props {
   description: string;
   technologies?: Technology[];
   link: string;
+  tags?: string[];
 }
-const { technologies, title, img, description, link } = Astro.props;
+const { technologies, title, img, description, link, tags = [] } = Astro.props;
 ---
-<li class="li-project">
+<li class="li-project" data-tags={tags.join(",")}>
   <img src={img} alt={title} loading="lazy" />
   <p class="title-project">{title}</p>
   <p class="description-project">
@@ -28,7 +29,7 @@ const { technologies, title, img, description, link } = Astro.props;
     }
   </div>
   <div class="container-link-project">
-    <a href={link}>View project</a>
+    <a href={`/${link}`}>View project</a>
   </div>
 </li>
 <style>
