@@ -1,0 +1,173 @@
+---
+import { projects } from "../../../const/const";
+import Project from "./Project.astro";
+
+const allTags = Array.from(
+  new Set(projects.flatMap((p) => p.tags || []))
+).sort();
+---
+
+<section class="section-projects all-projects-page">
+  <div class="container-projects">
+    <h1 class="title-projects">All Projects</h1>
+    <p class="subtitle-projects">
+      Browse the full collection, or filter by technique.
+    </p>
+
+    <div class="filter-row" role="group" aria-label="Filter projects by tag">
+      <button class="filter-chip is-active" data-filter="all">All</button>
+      {
+        allTags.map((tag) => (
+          <button class="filter-chip" data-filter={tag}>
+            {tag}
+          </button>
+        ))
+      }
+    </div>
+
+    <ul class="ul-projects" id="projects-grid">
+      {
+        projects.map(({ description, img, link, technologies, title, tags }) => (
+          <Project
+            img={img}
+            description={description}
+            link={link}
+            title={title}
+            technologies={technologies}
+            tags={tags}
+          />
+        ))
+      }
+    </ul>
+
+    <p class="empty-state" id="empty-state" hidden>
+      No projects match this filter yet.
+    </p>
+  </div>
+</section>
+
+<script>
+  const chips = document.querySelectorAll(".filter-chip");
+  const cards = document.querySelectorAll("#projects-grid .li-project");
+  const emptyState = document.getElementById("empty-state");
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+
+      const filter = chip.getAttribute("data-filter");
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const tags = (card.getAttribute("data-tags") || "").split(",");
+        const show = filter === "all" || tags.includes(filter || "");
+        card.style.display = show ? "" : "none";
+        if (show) visibleCount++;
+      });
+
+      if (emptyState) {
+        emptyState.hidden = visibleCount > 0;
+      }
+    });
+  });
+</script>
+
+<style>
+  .section-projects {
+    position: relative;
+    background-color: #111111;
+    overflow: hidden;
+    min-height: 80vh;
+    padding-top: 50px;
+  }
+
+  .container-projects {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1355px;
+  }
+
+  .title-projects {
+    position: relative;
+    display: block;
+    font-size: 32px;
+    padding: 10px 0;
+    color: #f6f6f9;
+    width: 100%;
+    font-weight: 800;
+  }
+
+  .subtitle-projects {
+    color: #a0a0a0;
+    font-size: 16px;
+    margin: 0 0 24px;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .filter-chip {
+    border: 1px solid rgba(246, 246, 249, 0.18);
+    color: rgba(246, 246, 249, 0.8);
+    background: transparent;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+
+  .filter-chip:hover {
+    border-color: rgba(0, 191, 165, 0.6);
+    color: #f6f6f9;
+  }
+
+  .filter-chip.is-active {
+    border-color: #00bfa5;
+    background: rgba(0, 191, 165, 0.12);
+    color: #f6f6f9;
+  }
+
+  .empty-state {
+    color: #a0a0a0;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .ul-projects {
+    position: relative;
+    display: grid;
+    width: 100%;
+    padding: 10px 0 60px;
+    list-style: none;
+  }
+
+  .ul-projects a {
+    text-decoration: none;
+  }
+
+  @media (min-width: 300px) {
+    .ul-projects {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+  @media (min-width: 700px) {
+    .ul-projects {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .ul-projects {
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+    }
+  }
+</style>
