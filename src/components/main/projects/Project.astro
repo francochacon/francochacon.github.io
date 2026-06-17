@@ -1,5 +1,7 @@
 ---
 import { getIconComponent } from "../../../icons/IconAll.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
 type Technology = {
   icon?: string;
 };
@@ -12,6 +14,9 @@ export interface Props {
   tags?: string[];
 }
 const { technologies, title, img, description, link, tags = [] } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const href = lang === "es" ? `/es/${link}` : `/${link}`;
 ---
 <li class="li-project" data-tags={tags.join(",")}>
   <img src={img} alt={title} loading="lazy" />
@@ -19,7 +24,7 @@ const { technologies, title, img, description, link, tags = [] } = Astro.props;
   <p class="description-project">
     {description}
   </p>
-  <p class="title-technologies">Technologies used</p>
+  <p class="title-technologies">{t("projects.technologiesUsed")}</p>
   <div class="container-technologies">
     {
       technologies.map(({ icon }) => {
@@ -29,7 +34,7 @@ const { technologies, title, img, description, link, tags = [] } = Astro.props;
     }
   </div>
   <div class="container-link-project">
-    <a href={`/${link}`}>View project</a>
+    <a href={href}>{t("projects.viewProject")}</a>
   </div>
 </li>
 <style>

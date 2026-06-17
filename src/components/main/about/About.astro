@@ -1,17 +1,24 @@
+---
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section class="section-about">
   <div class="linear-gradient-about"></div>
   <div class="container-about">
     <div class="container-text-about">
       <span class="badge">
         <span class="badge-dot"></span>
-        Available for freelance work
+        {t("about.badge")}
       </span>
-      <h2 class="title-about" id="about">About <span class="accent">me</span></h2>
+      <h2 class="title-about" id="about">{t("about.title")} <span class="accent">{t("about.titleAccent")}</span></h2>
       <div class="divider"></div>
       <div class="paragraphs">
-        <p>I'm a <strong>Chemical Engineer</strong> with hands-on experience in industrial processes, environmental management, and quality control — now fully focused on <strong>data analysis and business intelligence</strong>.</p>
-        <p>My edge is simple: I don't just build dashboards, <strong>I understand the operations behind the data.</strong> Whether it's production KPIs, environmental indicators, or process performance metrics, I know what those numbers actually mean in the real world.</p>
-        <p>I work with Power BI, Excel, Python, and SQL to turn complex datasets into clear, <strong>decision-ready visuals</strong> — built for the people who need to act on them, not just read them.</p>
+        <p>{t("about.p1Before")} <strong>{t("about.p1Strong")}</strong> {t("about.p1After")} <strong>{t("about.p1StrongEnd")}</strong>.</p>
+        <p>{t("about.p2Before")} <strong>{t("about.p2Strong")}</strong> {t("about.p2After")}</p>
+        <p>{t("about.p3Before")} <strong>{t("about.p3Strong")}</strong> {t("about.p3After")}</p>
       </div>
       <div class="tools">
         <span class="tool">Power BI</span>
@@ -22,7 +29,7 @@
       </div>
       <div class="location">
         <span class="loc-dot"></span>
-        Salta, Argentina &nbsp;·&nbsp; Working with clients worldwide
+        {t("about.location")}
       </div>
     </div>
     <div class="container-svg-about">

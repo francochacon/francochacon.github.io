@@ -1,14 +1,17 @@
 ---
 import { getIconComponent } from "../../icons/IconAll.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 export interface Props {
   skills: { title: string; icon: string }[];
 }
 const { skills } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="project-skills" aria-label="Built with">
-  <span class="project-skills-label">Built with</span>
+  <span class="project-skills-label">{t("report.builtWith")}</span>
   <ul class="project-skills-list">
     {
       skills.map(({ icon, title }) => {

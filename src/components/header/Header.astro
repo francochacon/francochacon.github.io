@@ -1,31 +1,47 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const prefix = (path) => (lang === "es" ? `/es${path}` : path);
+const homeHref = lang === "es" ? "/es" : "/";
+const otherLang = lang === "es" ? "en" : "es";
+const switchHref = getLocalizedPath(Astro.url.pathname, otherLang);
+const switchLabel = otherLang === "es" ? "ES" : "EN";
+---
+
 <header class="header">
-  <h1 id="top">Portfolio</h1>
+  <h1 id="top">{t("site.brand")}</h1>
 
   <nav class="nav">
     <ul class="ul-nav">
-      <a href="/" class="nav-home">
-        <li class="li-nav">Home</li>
+      <a href={homeHref} class="nav-home">
+        <li class="li-nav">{t("nav.home")}</li>
       </a>
 
       <!-- Links que se ajustan según la página -->
-      <a class="nav-link" data-home="#projects" data-project="/projects" href="#projects">
-        <li class="li-nav">Projects</li>
+      <a class="nav-link" data-home="#projects" data-project={prefix("/projects")} href="#projects">
+        <li class="li-nav">{t("nav.projects")}</li>
       </a>
 
-      <a class="nav-link" data-home="#skills" data-project="/#skills" href="#skills">
-        <li class="li-nav">Skills</li>
+      <a class="nav-link" data-home="#skills" data-project={prefix("/#skills")} href="#skills">
+        <li class="li-nav">{t("nav.skills")}</li>
       </a>
 
-      <a class="nav-link" data-home="#studies" data-project="/#studies" href="#studies">
-        <li class="li-nav">Education</li>
+      <a class="nav-link" data-home="#studies" data-project={prefix("/#studies")} href="#studies">
+        <li class="li-nav">{t("nav.education")}</li>
       </a>
 
-      <a class="nav-link" data-home="#about" data-project="/#about" href="#about">
-        <li class="li-nav">About</li>
+      <a class="nav-link" data-home="#about" data-project={prefix("/#about")} href="#about">
+        <li class="li-nav">{t("nav.about")}</li>
       </a>
 
-      <a class="nav-link" data-home="#contact" data-project="/#contact" href="#contact">
-        <li class="li-nav">Contact</li>
+      <a class="nav-link" data-home="#contact" data-project={prefix("/#contact")} href="#contact">
+        <li class="li-nav">{t("nav.contact")}</li>
+      </a>
+
+      <a href={switchHref} class="lang-switch" aria-label="Switch language">
+        <li class="li-nav li-lang">{switchLabel}</li>
       </a>
     </ul>
   </nav>
@@ -140,6 +156,18 @@
   }
   .li-nav:hover {
     color: #01be96;
+  }
+
+  .li-lang {
+    border: 1px solid rgba(1, 190, 150, 0.5);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .li-lang::before {
+    display: none;
   }
 
   .container-bnt-menu {

@@ -1,11 +1,14 @@
 ---
 import ProjectReport from "./ProjectReport.astro";
 import { projectReports } from "../../const/const";
+import { getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <main>
   <div class="container_p">
-    <ProjectReport report={projectReports.project3} />
+    <ProjectReport report={projectReports[lang].project3} />
   </div>
 </main>
 

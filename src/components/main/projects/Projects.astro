@@ -1,31 +1,36 @@
 ---
 import { projects } from "../../../const/const";
 import Project from "./Project.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
-const latestProjects = projects.slice(0, 3);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const allProjectsHref = lang === "es" ? "/es/projects" : "/projects";
+const latestProjects = projects[lang].slice(0, 3);
 ---
 
 <section class="section-projects">
   <div class="linear-grandient-1"></div>
   <div class="container-projects">
-    <h2 class="title-projects" id="projects">Projects</h2>
+    <h2 class="title-projects" id="projects">{t("projects.title")}</h2>
     <div>
       <ul class="ul-projects">
         {
-          latestProjects.map(({ description, img, link, technologies, title }) => (
+          latestProjects.map(({ description, img, link, technologies, title, tags }) => (
             <Project
               img={img}
               description={description}
               link={link}
               title={title}
               technologies={technologies}
+              tags={tags}
             />
           ))
         }
       </ul>
     </div>
     <div class="view-all-row">
-      <a class="btn-view-all" href="/projects">View all projects</a>
+      <a class="btn-view-all" href={allProjectsHref}>{t("projects.viewAll")}</a>
     </div>
   </div>
 </section>
@@ -86,18 +91,19 @@ const latestProjects = projects.slice(0, 3);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 18px;
+    padding: 12px 22px;
     border-radius: 12px;
     font-size: 14px;
     font-weight: 700;
-    background: transparent;
-    color: rgba(246, 246, 249, 0.92);
-    border: 1px solid rgba(246, 246, 249, 0.18);
-    transition: transform 0.12s ease;
+    background: #01be96;
+    color: #000;
+    border: 1px solid #01be96;
+    transition: transform 0.12s ease, background 0.12s ease;
   }
 
   .btn-view-all:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    background: #00a882;
   }
 
   /* responsive */

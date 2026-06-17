@@ -1,14 +1,19 @@
 ---
 import { studies } from "../../../const/const";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const localizedStudies = studies[lang];
 ---
 
 <section class="section_studies">
   <div class="linear-grandient-1"></div>
   <div class="content_studies">
-    <h3 class="title-studies" id="studies">Studies</h3>
+    <h3 class="title-studies" id="studies">{t("studies.title")}</h3>
     <ul class="ul-studies">
       {
-        studies.map(({ date, title, corporation }) => (
+        localizedStudies.map(({ date, title, corporation }) => (
           <li class="li-studies">
             <span class="circle" />
             <div>

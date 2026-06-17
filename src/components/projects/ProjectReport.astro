@@ -1,5 +1,6 @@
 ---
 import ProjectSkills from "./ProjectSkills.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 export interface ProjectReportData {
   title: string;
@@ -23,6 +24,9 @@ export interface Props {
 }
 
 const { report } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const homeHref = lang === "es" ? "/es" : "/";
 ---
 
 <section class="section-about">
@@ -51,7 +55,7 @@ const { report } = Astro.props;
           rel="noopener noreferrer"
           aria-label="View repository on GitHub"
         >
-          View repository
+          {t("report.viewRepository")}
         </a>
 
         <a
@@ -61,11 +65,11 @@ const { report } = Astro.props;
           rel="noopener noreferrer"
           aria-label="Open the report in Power BI"
         >
-          Open report (Power BI)
+          {t("report.openReport")}
         </a>
 
-        <a class="btn-ghost" href="/" aria-label="Back to portfolio home">
-          Back to portfolio
+        <a class="btn-ghost" href={homeHref} aria-label="Back to portfolio home">
+          {t("report.backToPortfolio")}
         </a>
       </div>
 
