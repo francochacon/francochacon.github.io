@@ -1,49 +1,62 @@
 ---
-import ProjectSkills from "../ProjectSkills.astro";
-import { projectSkills } from "../../../const/const";
+import ProjectSkills from "./ProjectSkills.astro";
+
+export interface ProjectReportData {
+  title: string;
+  leadParagraph: string;
+  description: string;
+  pills: string[];
+  skills: { title: string; icon: string }[];
+  githubUrl: string;
+  powerBiUrl: string;
+  metricsTitle: string;
+  metrics: string[];
+  dashboardTitle: string;
+  dashboardIntro: string;
+  insights: string[];
+  iframeTitle: string;
+  closingParagraph: string;
+}
+
+export interface Props {
+  report: ProjectReportData;
+}
+
+const { report } = Astro.props;
 ---
 
 <section class="section-about">
   <div class="linear-grandient-1"></div>
 
+  <!-- Main intro container -->
   <div class="container-about">
     <div class="container-text-about">
-      <h2 class="title-about" id="overview">Superstore Sales Dashboard</h2>
+      <h2 class="title-about" id="overview">{report.title}</h2>
 
-      <p class="p-lead">
-        A retail analytics dashboard built on the classic Superstore dataset, tracking over $2.3M
-        in total sales across four US regions. Designed to surface profitability drivers,
-        seasonal trends, and category-level performance in a single interactive view.
-      </p>
+      <p class="p-lead">{report.leadParagraph}</p>
 
-      <p>
-        This project showcases an interactive Power BI dashboard focused on retail sales performance.
-        The goal is to highlight monthly trends, regional concentration, and the top sub-categories
-        driving revenue and profit margin.
-      </p>
+      <p>{report.description}</p>
 
       <div class="pill-row" aria-label="Project stack">
-        <span class="pill">Power BI</span>
-        <span class="pill">DAX</span>
-        <span class="pill">Data Modeling</span>
-        <span class="pill">Retail Analytics</span>
+        {report.pills.map((pill) => <span class="pill">{pill}</span>)}
       </div>
 
-      <ProjectSkills skills={projectSkills.project3} />
+      <ProjectSkills skills={report.skills} />
 
       <div class="cta-row">
         <a
           class="btn-primary"
-          href="https://github.com/francochacon/superstore-sales-dashboard"
+          href={report.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View repository on GitHub"
         >
           View repository
-        </a> 
-       <a
+        </a>
+
+        <a
           class="btn-secondary"
-          href="https://app.powerbi.com/view?r=eyJrIjoiYjFkNGZlMzItZjMwZi00Zjc0LWI1MDUtYzMwODQ5ODUzYTI1IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+          href={report.powerBiUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open the report in Power BI"
@@ -57,46 +70,34 @@ import { projectSkills } from "../../../const/const";
       </div>
 
       <div class="metrics-box" aria-label="Key metrics included">
-        <h3 class="metrics-title">Key metrics included</h3>
+        <h3 class="metrics-title">{report.metricsTitle}</h3>
         <ul class="metrics-list">
-          <li>Total sales ($2.3M), profit ($286K) and 5,009 orders</li>
-          <li>Profit margin percentage (12.47%)</li>
-          <li>Monthly sales and profit trend by year</li>
-          <li>Regional performance breakdown (West, East, Central, South)</li>
-          <li>Top 10 sub-categories by revenue (Phones, Chairs, Storage...)</li>
+          {report.metrics.map((metric) => <li>{metric}</li>)}
         </ul>
       </div>
     </div>
   </div>
 
+  <!-- Power BI section -->
   <div class="container-powerbi" id="dashboard">
-    <h2 class="title-powerbi">Retail Sales Dashboard (Power BI)</h2>
+    <h2 class="title-powerbi">{report.dashboardTitle}</h2>
 
-    <p class="text-powerbi">
-      The dashboard summarizes Superstore retail data and helps answer questions such as:
-    </p>
+    <p class="text-powerbi">{report.dashboardIntro}</p>
 
     <ul class="insights-list">
-      <li>Which months drive the highest sales and profit peaks?</li>
-      <li>Which region generates the most revenue?</li>
-      <li>What are the top 10 sub-categories by total sales?</li>
-      <li>How does profit margin vary across the product mix?</li>
+      {report.insights.map((insight) => <li>{insight}</li>)}
     </ul>
 
     <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
       <iframe
-        title="Superstore sales dashboard"
-        src="https://app.powerbi.com/view?r=eyJrIjoiYjFkNGZlMzItZjMwZi00Zjc0LWI1MDUtYzMwODQ5ODUzYTI1IiwidCI6IjNkMWM3ODQ2LWUxZjctNGU0ZC04YmM1LTY3M2E3MmI0YTJmNSIsImMiOjR9"
+        title={report.iframeTitle}
+        src={report.powerBiUrl}
         frameborder="0"
         allowfullscreen="true"
       ></iframe>
     </div>
 
-    <p class="text-powerbi">
-      Data is based on the publicly available Superstore sample dataset. This dashboard is part
-      of my personal portfolio and will be updated with additional pages covering customer
-      segmentation, discount analysis, and shipping performance.
-    </p>
+    <p class="text-powerbi">{report.closingParagraph}</p>
   </div>
 </section>
 
@@ -197,6 +198,11 @@ import { projectSkills } from "../../../const/const";
     font-weight: 700;
     transition: transform 0.12s ease, background 0.12s ease, border 0.12s ease;
     white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: #00bfa5;
+    color: #0b0b0b;
   }
 
   .btn-secondary {
