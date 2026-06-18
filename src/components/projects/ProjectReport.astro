@@ -57,25 +57,29 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
       <ProjectSkills skills={report.skills} />
 
       <div class="cta-row">
-        <a
-          class="btn-primary"
-          href={report.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View repository on GitHub"
-        >
-          {t("report.viewRepository")}
-        </a>
+        {report.githubUrl && (
+          <a
+            class="btn-primary"
+            href={report.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View repository on GitHub"
+          >
+            {t("report.viewRepository")}
+          </a>
+        )}
 
-        <a
-          class="btn-secondary"
-          href={report.powerBiUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open the report in Power BI"
-        >
-          {t("report.openReport")}
-        </a>
+        {report.powerBiUrl && (
+          <a
+            class="btn-secondary"
+            href={report.powerBiUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the report in Power BI"
+          >
+            {t("report.openReport")}
+          </a>
+        )}
 
         <a class="btn-ghost" href={homeHref} aria-label="Back to portfolio home">
           {t("report.backToPortfolio")}
@@ -95,14 +99,16 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
   <div class="container-powerbi" id="dashboard">
     <h2 class="title-powerbi">{report.dashboardTitle}</h2>
 
-    <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
-      <iframe
-        title={report.iframeTitle}
-        src={report.powerBiUrl}
-        frameborder="0"
-        allowfullscreen="true"
-      ></iframe>
-    </div>
+    {report.powerBiUrl && (
+      <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
+        <iframe
+          title={report.iframeTitle}
+          src={report.powerBiUrl}
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    )}
 
     <p class="text-powerbi">{report.closingParagraph}</p>
   </div>
