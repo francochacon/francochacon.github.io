@@ -241,7 +241,7 @@ export const projectReports = {
         "/img/chemical-storage-compatibility.webp",
         "/img/chemical-storage-lab-layout.webp",
       ],
-      githubUrl: "",
+      githubUrl: "https://github.com/francochacon/chemical-storage-intelligence-platform",
       powerBiUrl: "",
       metricsTitle: "What this dashboard will track",
       metrics: [
@@ -366,7 +366,7 @@ export const projectReports = {
         "/img/chemical-storage-compatibility.webp",
         "/img/chemical-storage-lab-layout.webp",
       ],
-      githubUrl: "",
+      githubUrl: "https://github.com/francochacon/chemical-storage-intelligence-platform",
       powerBiUrl: "",
       metricsTitle: "Qué va a medir este dashboard",
       metrics: [
