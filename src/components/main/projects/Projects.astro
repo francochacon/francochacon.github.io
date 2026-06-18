@@ -16,9 +16,9 @@ const latestProjects = projects[lang].slice(0, 3);
     <div>
       <ul class="ul-projects">
         {
-          latestProjects.map(({ description, img, link, technologies, title, tags }) => (
+          latestProjects.map(({ description, images, link, technologies, title, tags }) => (
             <Project
-              img={img}
+              images={images}
               description={description}
               link={link}
               title={title}

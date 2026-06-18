@@ -1,5 +1,8 @@
 ---
 import ProjectSkills from "./ProjectSkills.astro";
+import ProjectGallery from "./ProjectGallery.astro";
+import Project from "../main/projects/Project.astro";
+import { projects } from "../../const/const";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 export interface ProjectReportData {
@@ -8,29 +11,35 @@ export interface ProjectReportData {
   description: string;
   pills: string[];
   skills: { title: string; icon: string }[];
+  images: string[];
   githubUrl: string;
   powerBiUrl: string;
   metricsTitle: string;
   metrics: string[];
   dashboardTitle: string;
-  dashboardIntro: string;
-  insights: string[];
   iframeTitle: string;
   closingParagraph: string;
 }
 
 export interface Props {
   report: ProjectReportData;
+  currentLink: string;
 }
 
-const { report } = Astro.props;
+const { report, currentLink } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const homeHref = lang === "es" ? "/es" : "/";
+const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(0, 2);
 ---
 
 <section class="section-about">
   <div class="linear-grandient-1"></div>
+
+  <!-- Gallery -->
+  <div class="container-gallery">
+    <ProjectGallery images={report.images} title={report.title} />
+  </div>
 
   <!-- Main intro container -->
   <div class="container-about">
@@ -86,12 +95,6 @@ const homeHref = lang === "es" ? "/es" : "/";
   <div class="container-powerbi" id="dashboard">
     <h2 class="title-powerbi">{report.dashboardTitle}</h2>
 
-    <p class="text-powerbi">{report.dashboardIntro}</p>
-
-    <ul class="insights-list">
-      {report.insights.map((insight) => <li>{insight}</li>)}
-    </ul>
-
     <div class="iframe-wrap" aria-label="Embedded Power BI dashboard">
       <iframe
         title={report.iframeTitle}
@@ -103,6 +106,26 @@ const homeHref = lang === "es" ? "/es" : "/";
 
     <p class="text-powerbi">{report.closingParagraph}</p>
   </div>
+
+  {
+    moreProjects.length > 0 && (
+      <div class="container-more-projects">
+        <h3 class="more-projects-title">{t("projects.moreProjects")}</h3>
+        <ul class="more-projects-row">
+          {moreProjects.map(({ description, images, link, technologies, title, tags }) => (
+            <Project
+              images={images}
+              description={description}
+              link={link}
+              title={title}
+              technologies={technologies}
+              tags={tags}
+            />
+          ))}
+        </ul>
+      </div>
+    )
+  }
 </section>
 
 <style>
@@ -120,6 +143,14 @@ const homeHref = lang === "es" ? "/es" : "/";
     position: relative;
     background-color: #111111;
     padding: 60px 0;
+  }
+
+  .container-gallery {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    margin: 0 auto 36px;
+    max-width: 1355px;
   }
 
   .container-about {
@@ -278,19 +309,6 @@ const homeHref = lang === "es" ? "/es" : "/";
     text-align: center;
   }
 
-  .insights-list {
-    max-width: 900px;
-    margin: 0 auto 18px;
-    text-align: left;
-    color: rgba(246, 246, 249, 0.9);
-    line-height: 1.7;
-    padding-left: 18px;
-  }
-
-  .insights-list li {
-    margin: 6px 0;
-  }
-
   .iframe-wrap {
     width: 100%;
     margin: 18px auto;
@@ -305,6 +323,28 @@ const homeHref = lang === "es" ? "/es" : "/";
     height: 720px;
     border: 0;
     display: block;
+  }
+
+  .container-more-projects {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1355px;
+    margin: 80px auto 0;
+  }
+
+  .more-projects-title {
+    font-size: 20px;
+    color: #f6f6f9;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .more-projects-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    list-style: none;
   }
 
   @media (max-width: 900px) {

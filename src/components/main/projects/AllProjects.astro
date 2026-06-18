@@ -32,9 +32,9 @@ const allTags = Array.from(
 
     <ul class="ul-projects" id="projects-grid">
       {
-        localizedProjects.map(({ description, img, link, technologies, title, tags }) => (
+        localizedProjects.map(({ description, images, link, technologies, title, tags }) => (
           <Project
-            img={img}
+            images={images}
             description={description}
             link={link}
             title={title}

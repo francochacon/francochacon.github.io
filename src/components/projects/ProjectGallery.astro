@@ -1,0 +1,170 @@
+---
+export interface Props {
+  images: string[];
+  title: string;
+}
+
+const { images, title } = Astro.props;
+const hasMultiple = images.length > 1;
+const galleryId = `gallery-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class="project-gallery" data-gallery-id={galleryId}>
+  <div class="gallery-main">
+    {
+      images.map((src, i) => (
+        <img
+          src={src}
+          alt={`${title} — ${i + 1}/${images.length}`}
+          class="gallery-slide"
+          data-index={i}
+          style={`opacity:${i === 0 ? 1 : 0}`}
+          loading={i === 0 ? "eager" : "lazy"}
+        />
+      ))
+    }
+
+    {
+      hasMultiple && (
+        <>
+          <button class="gallery-arrow arrow-left" aria-label="Previous image" type="button">
+            ‹
+          </button>
+          <button class="gallery-arrow arrow-right" aria-label="Next image" type="button">
+            ›
+          </button>
+        </>
+      )
+    }
+  </div>
+
+  {
+    hasMultiple && (
+      <div class="thumb-row">
+        {images.map((src, i) => (
+          <button
+            class="thumb"
+            class:list={[{ active: i === 0 }]}
+            data-index={i}
+            type="button"
+            aria-label={`Show image ${i + 1}`}
+          >
+            <img src={src} alt="" loading="lazy" />
+          </button>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .project-gallery {
+    width: 100%;
+  }
+
+  .gallery-main {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0e0e0e;
+    border: 1px solid rgba(1, 190, 150, 0.2);
+  }
+
+  .gallery-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+  }
+
+  .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s ease;
+  }
+
+  .gallery-arrow:hover {
+    background: rgba(1, 190, 150, 0.7);
+  }
+
+  .arrow-left {
+    left: 12px;
+  }
+  .arrow-right {
+    right: 12px;
+  }
+
+  .thumb-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .thumb {
+    width: 96px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    background: #0e0e0e;
+    border: 2px solid transparent;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .thumb.active {
+    opacity: 1;
+    border-color: #01be96;
+  }
+</style>
+
+<script>
+  function initGalleries() {
+    document.querySelectorAll(".project-gallery").forEach((gallery) => {
+      const slides = Array.from(gallery.querySelectorAll(".gallery-slide"));
+      const thumbs = Array.from(gallery.querySelectorAll(".thumb"));
+      const left = gallery.querySelector(".arrow-left");
+      const right = gallery.querySelector(".arrow-right");
+      let current = 0;
+
+      function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((s, i) => (s.style.opacity = i === current ? "1" : "0"));
+        thumbs.forEach((t, i) => t.classList.toggle("active", i === current));
+      }
+
+      if (left) left.addEventListener("click", () => show(current - 1));
+      if (right) right.addEventListener("click", () => show(current + 1));
+      thumbs.forEach((t, i) => t.addEventListener("click", () => show(i)));
+    });
+  }
+
+  initGalleries();
+  document.addEventListener("astro:after-swap", initGalleries);
+</script>
