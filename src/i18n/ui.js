@@ -27,6 +27,7 @@ export const ui = {
     "projects.allSubtitle": "Browse the full collection, or filter by technique.",
     "projects.filterAll": "All",
     "projects.emptyState": "No projects match this filter yet.",
+    "projects.moreProjects": "More projects",
 
     "skills.title": "Skills",
 
@@ -80,6 +81,7 @@ export const ui = {
     "projects.allSubtitle": "Explorá la colección completa, o filtrá por técnica.",
     "projects.filterAll": "Todos",
     "projects.emptyState": "Todavía no hay proyectos que coincidan con este filtro.",
+    "projects.moreProjects": "Más proyectos",
 
     "skills.title": "Habilidades",
 

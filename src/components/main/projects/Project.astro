@@ -7,19 +7,44 @@ type Technology = {
 };
 export interface Props {
   title: string;
-  img: string;
+  images: string[];
   description: string;
   technologies?: Technology[];
   link: string;
   tags?: string[];
 }
-const { technologies, title, img, description, link, tags = [] } = Astro.props;
+const { technologies, title, images, description, link, tags = [] } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const href = lang === "es" ? `/es/${link}` : `/${link}`;
+const hasMultiple = images.length > 1;
 ---
 <li class="li-project" data-tags={tags.join(",")}>
-  <img src={img} alt={title} loading="lazy" />
+  <div class="card-media">
+    {
+      images.map((src, i) => (
+        <img
+          src={src}
+          alt={title}
+          loading="lazy"
+          class="card-media-img"
+          data-index={i}
+          style={`opacity:${i === 0 ? 1 : 0}`}
+        />
+      ))
+    }
+    {
+      hasMultiple && (
+        <>
+          <button class="card-arrow card-arrow-left" aria-label="Previous image" type="button">‹</button>
+          <button class="card-arrow card-arrow-right" aria-label="Next image" type="button">›</button>
+          <div class="card-dots">
+            {images.map((_, i) => <span class="card-dot" class:list={[{ active: i === 0 }]} />)}
+          </div>
+        </>
+      )
+    }
+  </div>
   <p class="title-project">{title}</p>
   <p class="description-project">
     {description}
@@ -77,15 +102,69 @@ const href = lang === "es" ? `/es/${link}` : `/${link}`;
   .li-project:hover {
     transform: translateY(-10px);
   }
-  .li-project img {
+  .card-media {
     position: relative;
     display: block;
     height: 200px;
     width: 100%;
+    overflow: hidden;
+  }
+  .card-media-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: left top;
     user-select: none;
-    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .card-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+  }
+  .li-project:hover .card-arrow {
+    opacity: 1;
+  }
+  .card-arrow-left {
+    left: 8px;
+  }
+  .card-arrow-right {
+    right: 8px;
+  }
+  .card-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    z-index: 2;
+  }
+  .card-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+  }
+  .card-dot.active {
+    background: #fff;
   }
   .title-project {
     color: #f6f6f9;
@@ -147,3 +226,35 @@ const href = lang === "es" ? `/es/${link}` : `/${link}`;
     background-color: #00a882;
   }
 </style>
+
+<script>
+  function initProjectCards() {
+    document.querySelectorAll(".li-project").forEach((card) => {
+      const imgs = Array.from(card.querySelectorAll(".card-media-img"));
+      if (imgs.length <= 1) return;
+
+      const dots = Array.from(card.querySelectorAll(".card-dot"));
+      const left = card.querySelector(".card-arrow-left");
+      const right = card.querySelector(".card-arrow-right");
+      let current = 0;
+
+      function show(index) {
+        current = (index + imgs.length) % imgs.length;
+        imgs.forEach((img, i) => (img.style.opacity = i === current ? "1" : "0"));
+        dots.forEach((d, i) => d.classList.toggle("active", i === current));
+      }
+
+      function stop(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      if (left) left.addEventListener("click", (e) => { stop(e); show(current - 1); });
+      if (right) right.addEventListener("click", (e) => { stop(e); show(current + 1); });
+      card.addEventListener("mouseleave", () => show(0));
+    });
+  }
+
+  initProjectCards();
+  document.addEventListener("astro:after-swap", initProjectCards);
+</script>
