@@ -139,7 +139,9 @@ export const projectReports = {
       description:
         "This project showcases an interactive Power BI dashboard focused on the geographic distribution of mining activity in Argentina. The goal is to highlight regional production clusters, mineral concentration, and project maturity across the country.",
       pills: ["Power BI", "DAX", "Geospatial Analysis", "Mining Analytics"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+      ],
       images: ["/img/mining-projects-map.webp"],
       githubUrl: "https://github.com/francochacon/mining-projects-map",
       powerBiUrl:
@@ -163,7 +165,10 @@ export const projectReports = {
       description:
         "This project showcases an interactive Power BI dashboard focused on mining exports and industry structure. The goal is to highlight trends, concentration, and the main drivers behind historical export peaks.",
       pills: ["Power BI", "DAX", "Data Modeling", "Mining Analytics"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Python", icon: IconKeys.python },
+      ],
       images: ["/img/argentina-mining-exports.webp"],
       githubUrl: "https://github.com/francochacon/argentina-mining-dashboard",
       powerBiUrl:
@@ -187,7 +192,10 @@ export const projectReports = {
       description:
         "This project showcases an interactive Power BI dashboard focused on retail sales performance. The goal is to highlight monthly trends, regional concentration, and the top sub-categories driving revenue and profit margin.",
       pills: ["Power BI", "DAX", "Data Modeling", "Retail Analytics"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "MySQL", icon: IconKeys.mysql },
+      ],
       images: ["/img/superstore-dashboard.webp"],
       githubUrl: "https://github.com/francochacon/superstore-sales-dashboard",
       powerBiUrl:
@@ -212,7 +220,9 @@ export const projectReports = {
       description:
         "The concept centers on a single KPI — the valorization rate, the share of waste (cardboard, plastic, organic matter) diverted to circular economy or composting versus incinerated — tracked by category and over time, so management can see whether segregation initiatives move the number.",
       pills: ["Concept", "Power BI", "Sustainability KPIs", "Process Engineering"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+      ],
       images: ["/img/waste-valorization-kpi.webp"],
       githubUrl: "",
       powerBiUrl: "",
@@ -235,7 +245,11 @@ export const projectReports = {
       description:
         "The platform combines inventory data quality (stock status, quantities, units) with a chemical compatibility model built shelf by shelf, so any two substances can be checked for incompatibility before they're stored together. It's currently in the data-modeling stage: the substance audit, the corrected 13-shelf classification, and the compatibility matrix are complete; the interactive Power BI build is next.",
       pills: ["Concept", "Power BI", "Inventory Analytics", "Data Quality Audit"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Python", icon: IconKeys.python },
+        { title: "Github", icon: IconKeys.github },
+      ],
       images: [
         "/img/chemical-storage-dashboard.webp",
         "/img/chemical-storage-compatibility.webp",
@@ -264,7 +278,9 @@ export const projectReports = {
       description:
         "Este proyecto presenta un dashboard interactivo en Power BI enfocado en la distribución geográfica de la actividad minera en Argentina. El objetivo es destacar los clústeres de producción regional, la concentración de minerales y la madurez de los proyectos en todo el país.",
       pills: ["Power BI", "DAX", "Análisis Geoespacial", "Análisis Minero"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+      ],
       images: ["/img/mining-projects-map.webp"],
       githubUrl: "https://github.com/francochacon/mining-projects-map",
       powerBiUrl:
@@ -288,7 +304,10 @@ export const projectReports = {
       description:
         "Este proyecto presenta un dashboard interactivo en Power BI enfocado en las exportaciones mineras y la estructura de la industria. El objetivo es destacar tendencias, concentración y los principales motores detrás de los picos históricos de exportación.",
       pills: ["Power BI", "DAX", "Modelado de Datos", "Análisis Minero"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Python", icon: IconKeys.python },
+      ],
       images: ["/img/argentina-mining-exports.webp"],
       githubUrl: "https://github.com/francochacon/argentina-mining-dashboard",
       powerBiUrl:
@@ -312,7 +331,10 @@ export const projectReports = {
       description:
         "Este proyecto presenta un dashboard interactivo en Power BI enfocado en la performance de ventas retail. El objetivo es destacar las tendencias mensuales, la concentración regional y las principales subcategorías que impulsan los ingresos y el margen de ganancia.",
       pills: ["Power BI", "DAX", "Modelado de Datos", "Análisis Retail"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "MySQL", icon: IconKeys.mysql },
+      ],
       images: ["/img/superstore-dashboard.webp"],
       githubUrl: "https://github.com/francochacon/superstore-sales-dashboard",
       powerBiUrl:
@@ -337,7 +359,9 @@ export const projectReports = {
       description:
         "El concepto se centra en un solo KPI — la tasa de valorización, el porcentaje de residuos (cartón, plástico, materia orgánica) destinado a economía circular o compostaje versus incinerado — medido por categoría y en el tiempo, para que la gerencia pueda ver si las iniciativas de segregación mueven el número.",
       pills: ["Concepto", "Power BI", "KPIs de Sustentabilidad", "Ingeniería de Procesos"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+      ],
       images: ["/img/waste-valorization-kpi.webp"],
       githubUrl: "",
       powerBiUrl: "",
@@ -360,7 +384,11 @@ export const projectReports = {
       description:
         "La plataforma combina calidad de datos de inventario (estado de stock, cantidades, unidades) con un modelo de compatibilidad química armado estante por estante, para poder chequear si dos sustancias son incompatibles antes de guardarlas juntas. Hoy está en etapa de modelado de datos: la auditoría de sustancias, la clasificación corregida en 13 estantes y la matriz de compatibilidad ya están completas; el armado interactivo en Power BI es el siguiente paso.",
       pills: ["Concepto", "Power BI", "Análisis de Inventario", "Auditoría de Calidad de Datos"],
-      skills: [{ title: "Power BI", icon: IconKeys.powerbi }],
+      skills: [
+        { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Python", icon: IconKeys.python },
+        { title: "Github", icon: IconKeys.github },
+      ],
       images: [
         "/img/chemical-storage-dashboard.webp",
         "/img/chemical-storage-compatibility.webp",
