@@ -17,109 +17,67 @@ const t = useTranslations(lang);
           <span>Whatsapp</span>
         </a>
       </li>
-
-      <li>
-        <a href="https://github.com/francochacon" target="_blank" class="contact-card">
-          <i class="fa-brands fa-github"></i>
-          <span>Github</span>
-        </a>
-      </li>
-
       <li>
         <a href="https://www.linkedin.com/in/francochacon/" target="_blank" class="contact-card">
           <i class="fa-brands fa-linkedin"></i>
-          <span>Linkedin</span>
+          <span>LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/francochacon" target="_blank" class="contact-card">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
         </a>
       </li>
     </ul>
 
-    <div class="footer-divider"></div>
+    <div class="hire-section">
+      <p class="hire-label">{t("footer.hire")}</p>
+      <div class="hire-cards">
+        <a href="https://www.upwork.com/freelancers/~01c688bcf95e6b2de2" target="_blank" rel="noopener noreferrer" class="hire-card hire-card--upwork">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+          Upwork
+        </a>
+        <a href="https://es.fiverr.com/s/5rW9GZ6" target="_blank" rel="noopener noreferrer" class="hire-card hire-card--fiverr">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-1.39c-.445 0-.701-.19-.701-.698V8.763h2.09V7.25h-2.09V5h-1.744v8.251c0 1.34.848 2.133 2.15 2.133h1.685v-3.5zm-5.21-4.785v-.006c0-.957-.768-1.727-1.714-1.727H9.975v1.745h4.418c.315 0 .57.258.57.572v.001c0 .314-.255.571-.57.571H9.975v1.722h4.418c.315 0 .57.258.57.572v.001c0 .315-.255.572-.57.572h-4.418V14.5h4.109c1.946 0 3.524-1.59 3.524-3.552v-.85zM0 24V0h24v24z"/></svg>
+          Fiverr
+        </a>
+      </div>
+    </div>
 
+    <div class="footer-divider"></div>
     <p class="container-copy">{t("footer.copy")}</p>
   </div>
 </footer>
 
 <style>
-  .section-footer {
-    position: relative;
-    width: 100%;
-    background-color: #000;
-    overflow: hidden;
-  }
-
-  .container-footer {
-    position: relative;
-    z-index: 1;
-    width: 90%;
-    margin: 0 auto;
-    padding: 50px 0 24px;
-    max-width: 1355px;
-  }
-
-  .title-contact {
-    color: #f6f6f9;
-    font-size: 27px;
-    font-weight: 800;
-    scroll-margin-top: 80px;
-  }
-
-  .subtitle-contact {
-    color: #a0a0a0;
-    font-size: 14px;
-    margin-top: 8px;
-    max-width: 480px;
-    line-height: 1.6;
-  }
-
-  .container-redes {
-    position: relative;
-    display: flex;
-    gap: 16px;
-    padding: 28px 0 36px;
-    flex-wrap: wrap;
-    list-style: none;
-  }
-
+  .section-footer { position: relative; width: 100%; background-color: #000; overflow: hidden; }
+  .container-footer { position: relative; z-index: 1; width: 90%; margin: 0 auto; padding: 50px 0 24px; max-width: 1355px; }
+  .title-contact { color: #f6f6f9; font-size: 27px; font-weight: 800; scroll-margin-top: 80px; }
+  .subtitle-contact { color: #a0a0a0; font-size: 14px; margin-top: 8px; max-width: 480px; line-height: 1.6; }
+  .container-redes { position: relative; display: flex; gap: 16px; padding: 28px 0 20px; flex-wrap: wrap; list-style: none; }
   .contact-card {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #f6f6f9;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(1, 190, 150, 0.3);
-    border-radius: 12px;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
+    display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f6f6f9;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(1,190,150,0.3);
+    border-radius: 12px; padding: 10px 18px; font-size: 14px; font-weight: 600;
     transition: border-color 0.2s ease, transform 0.15s ease, color 0.2s ease;
   }
+  .contact-card i { font-size: 20px; color: #01be96; }
+  .contact-card:hover { border-color: #01be96; color: #01be96; transform: translateY(-2px); }
 
-  .contact-card i {
-    font-size: 20px;
-    color: #01be96;
+  .hire-section { margin-bottom: 32px; }
+  .hire-label { font-size: 11px; font-family: monospace; color: #555; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .hire-cards { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hire-card {
+    display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+    font-size: 14px; font-weight: 700; padding: 11px 22px; border-radius: 12px;
+    border: 1px solid transparent; transition: all 0.2s ease;
   }
+  .hire-card--upwork { background: rgba(20,164,78,0.12); color: #14a44e; border-color: rgba(20,164,78,0.35); }
+  .hire-card--upwork:hover { background: rgba(20,164,78,0.22); transform: translateY(-2px); }
+  .hire-card--fiverr { background: rgba(26,182,112,0.12); color: #1ab670; border-color: rgba(26,182,112,0.35); }
+  .hire-card--fiverr:hover { background: rgba(26,182,112,0.22); transform: translateY(-2px); }
 
-  .contact-card:hover {
-    border-color: #01be96;
-    color: #01be96;
-    transform: translateY(-2px);
-  }
-
-  .contact-card:hover i {
-    color: #01be96;
-  }
-
-  .footer-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  .container-copy {
-    color: #555555;
-    font-size: 13px;
-    padding-top: 18px;
-    text-align: center;
-  }
+  .footer-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.08); }
+  .container-copy { color: #555555; font-size: 13px; padding-top: 18px; text-align: center; }
 </style>
