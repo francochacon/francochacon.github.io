@@ -1,0 +1,98 @@
+---
+import { skills } from "../../../const/const";
+import { getIconComponent } from "../../../icons/IconAll.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const localizedSkills = skills[lang];
+---
+
+<div class="substory-block">
+  <div class="substory-divider"></div>
+  <h3 class="substory-heading" id="skills">{t("skills.title")}</h3>
+  <ul class="ul-skill">
+    {
+      localizedSkills.map(({ icon, title, caption }) => {
+        const IconComponent = getIconComponent(icon);
+        return (
+          <li class="li-skills">
+            <div class="skill-icon">{IconComponent && <IconComponent />}</div>
+            <div class="skill-text">
+              <p class="skill-title">{title}</p>
+              <p class="skill-caption">{caption}</p>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .substory-divider {
+    width: 40px;
+    height: 3px;
+    background: #01be96;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  .substory-heading {
+    font-size: 20px;
+    color: #f6f6f9;
+    font-weight: 700;
+    scroll-margin-top: 80px;
+  }
+  .ul-skill {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px 0 0;
+    list-style: none;
+  }
+  .li-skills {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(1, 190, 150, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .skill-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #01be96;
+  }
+  .skill-icon :global(svg),
+  .skill-icon :global(i) {
+    width: 28px;
+    height: 28px;
+  }
+  .skill-title {
+    color: #f6f6f9;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .skill-caption {
+    color: #a0a0a0;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  @media (min-width: 640px) {
+    .ul-skill {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1100px) {
+    .ul-skill {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
