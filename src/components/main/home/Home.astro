@@ -5,22 +5,6 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const phrasesMap = {
-  en: [
-    "Chemical Engineer → Data Analyst",
-    "Power BI · Python · SQL · DAX · SAP",
-    "Mining · O&G · Industrial Lab",
-    "Turning process data into decisions",
-  ],
-  es: [
-    "Ingeniero Químico → Analista de Datos",
-    "Power BI · Python · SQL · DAX · SAP",
-    "Minería · O&G · Laboratorio Industrial",
-    "Datos de proceso en decisiones de negocio",
-  ],
-};
-const phrases = phrasesMap[lang] ?? phrasesMap.en;
 ---
 
 <div class="content-presentation">
@@ -35,12 +19,6 @@ const phrases = phrasesMap[lang] ?? phrasesMap.en;
         {t("hero.role")}
       </p>
 
-      <!-- rotating phrases -->
-      <div class="rotating-wrap" aria-live="polite">
-        <span class="rotating-text" id="rotating-phrase"></span>
-        <span class="rotating-cursor">|</span>
-      </div>
-
       <div class="presentation-text">
         <p>
           {t("hero.bio")}
@@ -50,18 +28,6 @@ const phrases = phrasesMap[lang] ?? phrasesMap.en;
       <div class="cta-row">
         <a class="btn btn-primary" href="#projects">{t("hero.viewProjects")}</a>
         <a class="btn btn-ghost" href="#contact">{t("hero.contact")}</a>
-        <a
-          class="btn btn-repo"
-          href="https://github.com/francochacon/chemical-storage-intelligence-platform"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View chemical storage project on GitHub"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
-            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-          {t("hero.repoBtn")}
-        </a>
       </div>
     </div>
 
@@ -78,54 +44,28 @@ const phrases = phrasesMap[lang] ?? phrasesMap.en;
   </section>
 </div>
 
-<script define:vars={{ phrases }}>
-  const el = document.getElementById("rotating-phrase");
-  if (el) {
-    let pi = 0, ci = 0, deleting = false, wait = 0;
-    const SPEED_TYPE = 42, SPEED_DEL = 22, PAUSE = 2200, PAUSE_EMPTY = 400;
-
-    function tick() {
-      const phrase = phrases[pi];
-      if (wait > 0) { wait -= 16; requestAnimationFrame(tick); return; }
-
-      if (!deleting) {
-        if (ci < phrase.length) {
-          el.textContent = phrase.slice(0, ++ci);
-          setTimeout(tick, SPEED_TYPE + Math.random() * 20);
-        } else {
-          wait = PAUSE;
-          deleting = true;
-          requestAnimationFrame(tick);
-        }
-      } else {
-        if (ci > 0) {
-          el.textContent = phrase.slice(0, --ci);
-          setTimeout(tick, SPEED_DEL);
-        } else {
-          pi = (pi + 1) % phrases.length;
-          deleting = false;
-          wait = PAUSE_EMPTY;
-          requestAnimationFrame(tick);
-        }
-      }
-    }
-    setTimeout(tick, 600);
-  }
-</script>
-
 <script>
   document.addEventListener(
     "click",
     (e) => {
       const link = e.target.closest('a[href^="#"]');
       if (!link) return;
+
       const href = link.getAttribute("href");
       if (!href || href === "#") return;
+
       const id = href.slice(1);
       const target = document.getElementById(id);
+
       if (!target) return;
+
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
       history.pushState(null, "", `#${id}`);
     },
     true
@@ -133,121 +73,190 @@ const phrases = phrasesMap[lang] ?? phrasesMap.en;
 </script>
 
 <style>
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
   .content-presentation {
     position: relative;
     width: 100%;
     overflow: hidden;
   }
+
   .linear-gradient-1 {
-    position: absolute; left: 0; top: 0;
-    width: 500px; height: 520px;
-    background: radial-gradient(at left center, rgba(1,190,150,0.5), transparent, transparent);
-    z-index: 0; pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 520px;
+    background: radial-gradient(
+      at left center,
+      rgba(1, 190, 150, 0.5),
+      transparent,
+      transparent
+    );
+    z-index: 0;
+    pointer-events: none;
   }
+
   .linear-gradient-2 {
-    position: absolute; inset: 0;
-    background: radial-gradient(at right center, rgba(1,190,150,0.6), rgb(0,0,0), rgb(0,0,0));
-    z-index: 0; pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      at right center,
+      rgba(1, 190, 150, 0.6),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+    z-index: 0;
+    pointer-events: none;
   }
+
   .container-persentation {
-    position: relative;
-    display: flex; align-items: center;
-    width: 90%; margin: 0 auto;
-    max-width: 1355px; padding: 50px 0;
-    gap: 40px; z-index: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1355px;
+  padding: 50px 0;
+  gap: 40px;
+  z-index: 2;
+}
+
+  .container-text {
+    width: 52%;
+    color: #f6f6f9;
   }
-  .container-text { width: 52%; color: #f6f6f9; }
+
   .hero-glass {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 18px; padding: 22px;
+    border-radius: 18px;
+    padding: 22px;
   }
+
   .text-name {
-    font-size: 34px; color: #01be96;
-    font-weight: 800; letter-spacing: 1px; margin: 0;
+    font-size: 34px;
+    color: #01be96;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
   }
+
   .p-profession {
-    font-size: 22px; font-weight: 800; margin: 6px 0 10px;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 6px 0 14px;
   }
 
-  /* rotating text */
-  .rotating-wrap {
-    display: flex; align-items: center; gap: 2px;
-    min-height: 22px; margin-bottom: 12px;
+  .presentation-text p {
+    margin: 10px 0;
+    line-height: 1.7;
   }
-  .rotating-text {
-    font-size: 13px; font-family: monospace;
-    color: #01be96; letter-spacing: 0.04em;
-  }
-  .rotating-cursor {
-    font-size: 15px; color: #01be96;
-    animation: blink 1s step-end infinite;
-  }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  .presentation-text p { margin: 10px 0; line-height: 1.7; }
   .cta-row {
-    display: flex; gap: 10px;
-    margin-top: 18px; flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
   }
+
   .btn {
-    padding: 10px 18px; border-radius: 12px;
-    text-decoration: none; font-weight: 700;
-    transition: all 0.25s ease; font-size: 14px;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-primary {
-    background: #01be96; border: 1px solid #01be96; color: #000;
-  }
-  .btn-ghost {
-    background: rgba(255,255,255,0.06); color: #fff;
-    border: 1px solid rgba(1,190,150,0.55);
-  }
-  .btn-repo {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: rgba(255,255,255,0.04); color: #a0a0a0;
-    border: 1px solid rgba(255,255,255,0.12);
-    font-size: 13px; padding: 9px 15px; border-radius: 12px;
-    text-decoration: none; font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
     transition: all 0.25s ease;
   }
-  .btn-repo:hover {
-    color: #f6f6f9; border-color: rgba(1,190,150,0.4);
+
+  .btn:hover {
     transform: translateY(-2px);
   }
+
+  .btn-primary {
+    background: #01be96;
+    border: 1px solid #01be96;
+    color: #000;
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border: 1px solid rgba(1, 190, 150, 0.55);
+  }
+
   .container-photo-profile {
-    width: 48%; display: flex;
-    justify-content: center; align-items: center;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   .photo-perfil {
-    width: 320px; height: 320px;
-    border-radius: 50%; overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
   }
+
   .glass-ring {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
-  .photo-perfil img { width: 100%; height: 100%; object-fit: cover; }
-  .photo-float { animation: floaty 4.5s ease-in-out infinite; }
-  @keyframes floaty {
-    0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}
+
+  .photo-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+
+  .photo-float {
+    animation: floaty 4.5s ease-in-out infinite;
+  }
+
+  @keyframes floaty {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
   @media (max-width: 900px) {
     .container-persentation {
       flex-direction: column-reverse;
-      justify-content: center; text-align: center;
+      justify-content: center;
+      text-align: center;
       padding: 120px 0 40px;
     }
-    .container-text, .container-photo-profile { width: 100%; }
-    .photo-perfil { width: 280px; height: 280px; }
-    .cta-row { justify-content: center; }
+
+
+    .container-text,
+    .container-photo-profile {
+      width: 100%;
+    }
+
+    .photo-perfil {
+      width: 280px;
+      height: 280px;
+    }
+
+    .cta-row {
+      justify-content: center;
+    }
   }
-  @media (max-width: 500px) { .linear-gradient-1 { display: none; } }
+
+  @media (max-width: 500px) {
+    .linear-gradient-1 {
+      display: none;
+    }
+  }
 </style>

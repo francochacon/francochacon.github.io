@@ -1,11 +1,8 @@
 ---
 import Header from "../components/header/Header.astro";
 import "../style/index.css";
-import Main from "../components/projects/project5.astro";
+import Main from "../components/main/main.astro";
 import Footer from "../components/footer/Footer.astro";
-import { projectReports } from "../const/const";
-
-const title = projectReports.en.project5.title;
 ---
 
 <html lang="en">
@@ -14,15 +11,19 @@ const title = projectReports.en.project5.title;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={projectReports.en.project5.description} />
-    <meta name="robots" content="noindex" />
-    <link rel="alternate" hreflang="en" href={`https://francochacon.github.io/project5`} />
-    <link rel="alternate" hreflang="es" href={`https://francochacon.github.io/es/project5`} />
-    <link rel="alternate" hreflang="x-default" href={`https://francochacon.github.io/project5`} />
+    <meta
+      name="description"
+      content="I specialize in transforming raw data into clear, 
+                actionable insights that help businesses improve performance, 
+                optimize operations, and make data-driven decisions."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://francochacon.github.io/project5`} />
+    <meta property="og:url" content="https://francochacon.github.io/" />
     <meta property="og:site_name" content="Franco Chacón" />
-    <meta property="og:title" content={`${title} | Franco Chacón`} />
+    <meta property="og:title" content="Franco Chacón Portfolio" />
+    <link rel="alternate" hreflang="en" href="https://francochacon.github.io/" />
+    <link rel="alternate" hreflang="es" href="https://francochacon.github.io/es" />
+    <link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/" />
     <meta
       property="og:image"
       content="https://francochacon.github.io/img/preview-page.webp"
@@ -31,7 +32,7 @@ const title = projectReports.en.project5.title;
     <script
       src="https://kit.fontawesome.com/2898a0ac51.js"
       crossorigin="anonymous"></script>
-    <title>{title} | Franco Chacón</title>
+    <title>Portfolio | Franco Chacón</title>
   </head>
   <body>
     <Header />

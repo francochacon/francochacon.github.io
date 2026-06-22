@@ -1,11 +1,8 @@
 ---
 import Header from "../components/header/Header.astro";
 import "../style/index.css";
-import Main from "../components/projects/project5.astro";
+import AllProjects from "../components/main/projects/AllProjects.astro";
 import Footer from "../components/footer/Footer.astro";
-import { projectReports } from "../const/const";
-
-const title = projectReports.en.project5.title;
 ---
 
 <html lang="en">
@@ -14,15 +11,17 @@ const title = projectReports.en.project5.title;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={projectReports.en.project5.description} />
-    <meta name="robots" content="noindex" />
-    <link rel="alternate" hreflang="en" href={`https://francochacon.github.io/project5`} />
-    <link rel="alternate" hreflang="es" href={`https://francochacon.github.io/es/project5`} />
-    <link rel="alternate" hreflang="x-default" href={`https://francochacon.github.io/project5`} />
+    <meta
+      name="description"
+      content="Browse the full collection of data analytics and business intelligence projects by Franco Chacón."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://francochacon.github.io/project5`} />
+    <meta property="og:url" content="https://francochacon.github.io/projects" />
     <meta property="og:site_name" content="Franco Chacón" />
-    <meta property="og:title" content={`${title} | Franco Chacón`} />
+    <meta property="og:title" content="All Projects | Franco Chacón" />
+    <link rel="alternate" hreflang="en" href="https://francochacon.github.io/projects" />
+    <link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/projects" />
+    <link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/projects" />
     <meta
       property="og:image"
       content="https://francochacon.github.io/img/preview-page.webp"
@@ -31,11 +30,13 @@ const title = projectReports.en.project5.title;
     <script
       src="https://kit.fontawesome.com/2898a0ac51.js"
       crossorigin="anonymous"></script>
-    <title>{title} | Franco Chacón</title>
+    <title>All Projects | Franco Chacón</title>
   </head>
   <body>
     <Header />
-    <Main />
+    <main>
+      <AllProjects />
+    </main>
     <Footer />
   </body>
 </html>

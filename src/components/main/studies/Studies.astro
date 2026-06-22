@@ -1,0 +1,83 @@
+---
+import { studies } from "../../../const/const";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const localizedStudies = studies[lang];
+---
+
+<div class="substory-block">
+  <div class="substory-divider"></div>
+  <h3 class="substory-heading" id="studies">{t("studies.title")}</h3>
+  <ul class="ul-studies">
+    {
+      localizedStudies.map(({ date, title, corporation }) => (
+        <li class="li-studies">
+          <span class="circle" />
+          <div>
+            <h4>{title}</h4>
+            <p>{corporation}</p>
+            <span>{date}</span>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .substory-divider {
+    width: 40px;
+    height: 3px;
+    background: #01be96;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  .substory-heading {
+    font-size: 20px;
+    color: #f6f6f9;
+    font-weight: 700;
+    scroll-margin-top: 80px;
+  }
+  .ul-studies {
+    padding: 24px 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .li-studies {
+    padding: 0px 20px;
+    color: #f6f6f9;
+    border-left: 1px solid rgba(246, 246, 249, 0.25);
+    list-style: none;
+    position: relative;
+    padding-bottom: 40px;
+  }
+  .li-studies:last-child {
+    padding-bottom: 0;
+  }
+  .circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: -5px;
+    top: 5px;
+    background-color: #01be96;
+  }
+  .li-studies h4 {
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #f6f6f9;
+  }
+  .li-studies p {
+    padding: 3px 0;
+    color: #a0a0a0;
+    font-size: 14px;
+  }
+  .li-studies span {
+    font-size: 13px;
+    color: #555555;
+  }
+</style>
