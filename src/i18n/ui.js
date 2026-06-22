@@ -10,6 +10,7 @@ export const ui = {
     "site.brand": "Franco Chacón",
     "nav.home": "Home",
     "nav.projects": "Projects",
+    "nav.services": "Services",
     "nav.about": "About",
     "nav.contact": "Contact",
 
@@ -18,7 +19,7 @@ export const ui = {
       "I'm a Chemical Engineer turning industrial experience into data intelligence. From waste valorization KPIs at TotalEnergies to chemical inventory audits, I build Power BI dashboards that connect engineering context with business decisions.",
     "hero.viewProjects": "View Projects",
     "hero.contact": "Contact",
-    "hero.rotating": "Power BI · DAX · Python · SQL · Excel · SAP",
+    "hero.repoBtn": "Latest project",
 
     "projects.title": "Projects",
     "projects.viewAll": "View all projects",
@@ -31,7 +32,6 @@ export const ui = {
     "projects.moreProjects": "More projects",
 
     "skills.title": "Skills",
-
     "studies.title": "Studies",
 
     "about.badge": "Available for freelance work",
@@ -39,27 +39,28 @@ export const ui = {
     "about.titleAccent": "me",
     "about.p1Before": "I'm a",
     "about.p1Strong": "Chemical Engineer",
-    "about.p1After":
-      "with hands-on experience in industrial processes, environmental management, and quality control — now fully focused on",
+    "about.p1After": "with hands-on experience in industrial processes, environmental management, and quality control — now fully focused on",
     "about.p1StrongEnd": "data analysis and business intelligence",
     "about.p2Before": "My edge is simple: I don't just build dashboards,",
     "about.p2Strong": "I understand the operations behind the data.",
-    "about.p2After":
-      "Whether it's production KPIs, environmental indicators, or process performance metrics, I know what those numbers actually mean in the real world.",
+    "about.p2After": "Whether it's production KPIs, environmental indicators, or process performance metrics, I know what those numbers actually mean in the real world.",
     "about.p3Before": "I work with Power BI, Excel, Python, and SQL to turn complex datasets into clear,",
     "about.p3Strong": "decision-ready visuals",
     "about.p3After": "— built for the people who need to act on them, not just read them.",
     "about.location": "Salta, Argentina  ·  Working with clients worldwide",
-    "about.stat1value": "279",
-    "about.stat1label": "reagents audited",
-    "about.stat2value": "5+",
-    "about.stat2label": "BI projects",
+    "about.statsTitle": "In numbers",
+    "about.stat1value": "5+",
+    "about.stat1label": "BI projects",
+    "about.stat2value": "6+",
+    "about.stat2label": "tools mastered",
+    "about.stat2sub": "Power BI · Python · SQL · Excel · DAX · SAP",
     "about.stat3value": "3",
     "about.stat3label": "industries",
-    "about.stat3sub": "mining · O&G · lab",
+    "about.stat3sub": "mining · O&G · industrial lab",
 
     "footer.title": "Contact",
     "footer.subtitle": "Currently available for freelance work. I usually reply within 24 hours.",
+    "footer.hire": "Hire me on",
     "footer.copy": "© 2026 Franco Chacón",
 
     "report.builtWith": "Built with",
@@ -67,12 +68,12 @@ export const ui = {
     "report.openReport": "Open report (Power BI)",
     "report.backToPortfolio": "Back to portfolio",
     "report.keyMetrics": "Key metrics included",
-    "hero.repoBtn": "Latest project",
   },
   es: {
     "site.brand": "Franco Chacón",
     "nav.home": "Inicio",
     "nav.projects": "Proyectos",
+    "nav.services": "Servicios",
     "nav.about": "Sobre mí",
     "nav.contact": "Contacto",
 
@@ -81,7 +82,7 @@ export const ui = {
       "Soy Ingeniero Químico que convierte experiencia industrial en inteligencia de datos. De KPIs de valorización de residuos en TotalEnergies a auditorías de inventario químico, armo dashboards en Power BI que conectan contexto de ingeniería con decisiones de negocio.",
     "hero.viewProjects": "Ver proyectos",
     "hero.contact": "Contacto",
-    "hero.rotating": "Power BI · DAX · Python · SQL · Excel · SAP",
+    "hero.repoBtn": "Último proyecto",
 
     "projects.title": "Proyectos",
     "projects.viewAll": "Ver todos los proyectos",
@@ -94,7 +95,6 @@ export const ui = {
     "projects.moreProjects": "Más proyectos",
 
     "skills.title": "Habilidades",
-
     "studies.title": "Estudios",
 
     "about.badge": "Disponible para trabajo freelance",
@@ -102,27 +102,28 @@ export const ui = {
     "about.titleAccent": "mí",
     "about.p1Before": "Soy",
     "about.p1Strong": "Ingeniero Químico",
-    "about.p1After":
-      "con experiencia práctica en procesos industriales, gestión ambiental y control de calidad — hoy enfocado por completo en",
+    "about.p1After": "con experiencia práctica en procesos industriales, gestión ambiental y control de calidad — hoy enfocado por completo en",
     "about.p1StrongEnd": "análisis de datos y business intelligence",
     "about.p2Before": "Mi diferencial es simple: no solo armo dashboards,",
     "about.p2Strong": "entiendo las operaciones detrás de los datos.",
-    "about.p2After":
-      "Ya sea KPIs de producción, indicadores ambientales o métricas de performance de proceso, sé qué significan esos números en la práctica.",
+    "about.p2After": "Ya sea KPIs de producción, indicadores ambientales o métricas de performance de proceso, sé qué significan esos números en la práctica.",
     "about.p3Before": "Trabajo con Power BI, Excel, Python y SQL para convertir datasets complejos en",
     "about.p3Strong": "visuales listos para tomar decisiones",
     "about.p3After": "— pensados para quienes tienen que actuar sobre ellos, no solo leerlos.",
     "about.location": "Salta, Argentina  ·  Trabajo con clientes de todo el mundo",
-    "about.stat1value": "279",
-    "about.stat1label": "reactivos auditados",
-    "about.stat2value": "5+",
-    "about.stat2label": "proyectos BI",
+    "about.statsTitle": "En números",
+    "about.stat1value": "5+",
+    "about.stat1label": "proyectos BI",
+    "about.stat2value": "6+",
+    "about.stat2label": "herramientas dominadas",
+    "about.stat2sub": "Power BI · Python · SQL · Excel · DAX · SAP",
     "about.stat3value": "3",
     "about.stat3label": "industrias",
-    "about.stat3sub": "minería · O&G · laboratorio",
+    "about.stat3sub": "minería · O&G · laboratorio industrial",
 
     "footer.title": "Contacto",
     "footer.subtitle": "Disponible para nuevos proyectos freelance. Normalmente respondo dentro de las 24 horas.",
+    "footer.hire": "Contratame en",
     "footer.copy": "© 2026 Franco Chacón",
 
     "report.builtWith": "Hecho con",
@@ -130,6 +131,5 @@ export const ui = {
     "report.openReport": "Abrir reporte (Power BI)",
     "report.backToPortfolio": "Volver al portfolio",
     "report.keyMetrics": "Métricas clave incluidas",
-    "hero.repoBtn": "Último proyecto",
   },
 };

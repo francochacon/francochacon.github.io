@@ -1,0 +1,19 @@
+---
+import ProjectReport from "./ProjectReport.astro";
+import { projectReports } from "../../const/const";
+import { getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<main>
+  <div class="container_p">
+    <ProjectReport report={projectReports[lang].project1} currentLink="project1" />
+  </div>
+</main>
+
+<style>
+  .container_p {
+    width: 100%;
+  }
+</style>
