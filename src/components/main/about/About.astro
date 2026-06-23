@@ -84,15 +84,35 @@ const t = useTranslations(lang);
             <span class="cert-badge">A2</span>
           </div>
         </div>
-        <!-- placeholder for future certs — duplicated for seamless loop -->
-        <div class="cert-card cert-placeholder">
-          <div class="cert-icon">📜</div>
+        <!-- cert 2: HackerRank SQL -->
+        <a
+          class="cert-card cert-card--link"
+          href="https://www.hackerrank.com/certificates/0541ede6a117"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cert-icon">🗃️</div>
           <div class="cert-body">
-            <p class="cert-name">{lang === "es" ? "Próximamente..." : "Coming soon..."}</p>
-            <p class="cert-issuer">&nbsp;</p>
+            <p class="cert-name">SQL</p>
+            <p class="cert-issuer">HackerRank</p>
+            <span class="cert-badge">{lang === "es" ? "Ver certificado" : "View certificate"}</span>
           </div>
-        </div>
-        <!-- duplicate for infinite loop -->
+        </a>
+        <!-- cert 3: HackerRank Python -->
+        <a
+          class="cert-card cert-card--link"
+          href="https://www.hackerrank.com/certificates/d50a25c2a32e"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cert-icon">🐍</div>
+          <div class="cert-body">
+            <p class="cert-name">Python</p>
+            <p class="cert-issuer">HackerRank</p>
+            <span class="cert-badge">{lang === "es" ? "Ver certificado" : "View certificate"}</span>
+          </div>
+        </a>
+        <!-- duplicate set for the infinite loop -->
         <div class="cert-card">
           <div class="cert-icon">🎓</div>
           <div class="cert-body">
@@ -101,13 +121,32 @@ const t = useTranslations(lang);
             <span class="cert-badge">A2</span>
           </div>
         </div>
-        <div class="cert-card cert-placeholder">
-          <div class="cert-icon">📜</div>
+        <a
+          class="cert-card cert-card--link"
+          href="https://www.hackerrank.com/certificates/0541ede6a117"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cert-icon">🗃️</div>
           <div class="cert-body">
-            <p class="cert-name">{lang === "es" ? "Próximamente..." : "Coming soon..."}</p>
-            <p class="cert-issuer">&nbsp;</p>
+            <p class="cert-name">SQL</p>
+            <p class="cert-issuer">HackerRank</p>
+            <span class="cert-badge">{lang === "es" ? "Ver certificado" : "View certificate"}</span>
           </div>
-        </div>
+        </a>
+        <a
+          class="cert-card cert-card--link"
+          href="https://www.hackerrank.com/certificates/d50a25c2a32e"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cert-icon">🐍</div>
+          <div class="cert-body">
+            <p class="cert-name">Python</p>
+            <p class="cert-issuer">HackerRank</p>
+            <span class="cert-badge">{lang === "es" ? "Ver certificado" : "View certificate"}</span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -183,7 +222,7 @@ const t = useTranslations(lang);
   }
 
   /* ── Certificates carousel ── */
-  .certs-section { margin: 0 0 40px; }
+  .certs-section { width: 90%; max-width: 1355px; margin: 0 auto 40px; }
   .certs-label {
     font-size: 11px; font-family: monospace; color: #555;
     text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
@@ -195,7 +234,7 @@ const t = useTranslations(lang);
   }
   .certs-track {
     display: flex; gap: 16px; width: max-content;
-    animation: scroll-certs 18s linear infinite;
+    animation: scroll-certs 26s linear infinite;
   }
   .certs-track:hover { animation-play-state: paused; }
   @keyframes scroll-certs {
@@ -209,6 +248,8 @@ const t = useTranslations(lang);
     transition: border-color 0.25s ease;
   }
   .cert-card:hover { border-color: rgba(1,190,150,0.55); }
+  .cert-card--link { text-decoration: none; cursor: pointer; }
+  .cert-card--link:hover { background: rgba(1,190,150,0.06); }
   .cert-placeholder { border-style: dashed; opacity: 0.45; }
   .cert-icon { font-size: 26px; flex-shrink: 0; }
   .cert-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
