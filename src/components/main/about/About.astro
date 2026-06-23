@@ -69,6 +69,49 @@ const t = useTranslations(lang);
     </div>
   </div>
 
+
+  <!-- Certificates carousel -->
+  <div class="certs-section">
+    <p class="certs-label">{lang === "es" ? "Certificaciones" : "Certifications"}</p>
+    <div class="certs-track-wrap">
+      <div class="certs-track">
+        <!-- cert 1 -->
+        <div class="cert-card">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-body">
+            <p class="cert-name">{lang === "es" ? "Inglés A2" : "English A2"}</p>
+            <p class="cert-issuer">Cambridge Assessment</p>
+            <span class="cert-badge">A2</span>
+          </div>
+        </div>
+        <!-- placeholder for future certs — duplicated for seamless loop -->
+        <div class="cert-card cert-placeholder">
+          <div class="cert-icon">📜</div>
+          <div class="cert-body">
+            <p class="cert-name">{lang === "es" ? "Próximamente..." : "Coming soon..."}</p>
+            <p class="cert-issuer">&nbsp;</p>
+          </div>
+        </div>
+        <!-- duplicate for infinite loop -->
+        <div class="cert-card">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-body">
+            <p class="cert-name">{lang === "es" ? "Inglés A2" : "English A2"}</p>
+            <p class="cert-issuer">Cambridge Assessment</p>
+            <span class="cert-badge">A2</span>
+          </div>
+        </div>
+        <div class="cert-card cert-placeholder">
+          <div class="cert-icon">📜</div>
+          <div class="cert-body">
+            <p class="cert-name">{lang === "es" ? "Próximamente..." : "Coming soon..."}</p>
+            <p class="cert-issuer">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container-substory">
     <Studies />
     <Skills />
@@ -137,5 +180,44 @@ const t = useTranslations(lang);
     .container-about { flex-direction: column; padding: 40px 0; gap: 30px; }
     .container-svg-about { width: 100%; }
     .stats-block { max-width: 100%; }
+  }
+
+  /* ── Certificates carousel ── */
+  .certs-section { margin: 0 0 40px; }
+  .certs-label {
+    font-size: 11px; font-family: monospace; color: #555;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
+  }
+  .certs-track-wrap {
+    overflow: hidden; position: relative;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .certs-track {
+    display: flex; gap: 16px; width: max-content;
+    animation: scroll-certs 18s linear infinite;
+  }
+  .certs-track:hover { animation-play-state: paused; }
+  @keyframes scroll-certs {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .cert-card {
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(1,190,150,0.2);
+    border-radius: 14px; padding: 14px 20px; flex-shrink: 0; width: 220px;
+    transition: border-color 0.25s ease;
+  }
+  .cert-card:hover { border-color: rgba(1,190,150,0.55); }
+  .cert-placeholder { border-style: dashed; opacity: 0.45; }
+  .cert-icon { font-size: 26px; flex-shrink: 0; }
+  .cert-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .cert-name { font-size: 13px; font-weight: 700; color: #f6f6f9; margin: 0; white-space: nowrap; }
+  .cert-issuer { font-size: 11px; color: #555; font-family: monospace; margin: 0; }
+  .cert-badge {
+    display: inline-block; margin-top: 4px; font-size: 10px; font-weight: 800;
+    background: rgba(1,190,150,0.15); color: #01be96;
+    border: 1px solid rgba(1,190,150,0.35); border-radius: 4px; padding: 1px 7px;
+    width: fit-content; font-family: monospace;
   }
 </style>

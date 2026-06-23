@@ -141,6 +141,7 @@ export const projectReports = {
       pills: ["Power BI", "DAX", "Geospatial Analysis", "Mining Analytics"],
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Git", icon: IconKeys.git },
       ],
       images: ["/img/mining-projects-map.webp"],
       githubUrl: "https://github.com/francochacon/mining-projects-map",
@@ -168,6 +169,8 @@ export const projectReports = {
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
         { title: "Python", icon: IconKeys.python },
+        { title: "Git", icon: IconKeys.git },
+        { title: "GitHub", icon: IconKeys.github },
       ],
       images: ["/img/argentina-mining-exports.webp"],
       githubUrl: "https://github.com/francochacon/argentina-mining-dashboard",
@@ -195,6 +198,8 @@ export const projectReports = {
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
         { title: "MySQL", icon: IconKeys.mysql },
+        { title: "Git", icon: IconKeys.git },
+        { title: "GitHub", icon: IconKeys.github },
       ],
       images: ["/img/superstore-dashboard.webp"],
       githubUrl: "https://github.com/francochacon/superstore-sales-dashboard",
@@ -222,6 +227,7 @@ export const projectReports = {
       pills: ["Concept", "Power BI", "Sustainability KPIs", "Process Engineering"],
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Git", icon: IconKeys.git },
       ],
       images: ["/img/waste-valorization-kpi.webp"],
       githubUrl: "",
@@ -280,6 +286,7 @@ export const projectReports = {
       pills: ["Power BI", "DAX", "Análisis Geoespacial", "Análisis Minero"],
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Git", icon: IconKeys.git },
       ],
       images: ["/img/mining-projects-map.webp"],
       githubUrl: "https://github.com/francochacon/mining-projects-map",
@@ -307,6 +314,8 @@ export const projectReports = {
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
         { title: "Python", icon: IconKeys.python },
+        { title: "Git", icon: IconKeys.git },
+        { title: "GitHub", icon: IconKeys.github },
       ],
       images: ["/img/argentina-mining-exports.webp"],
       githubUrl: "https://github.com/francochacon/argentina-mining-dashboard",
@@ -334,6 +343,8 @@ export const projectReports = {
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
         { title: "MySQL", icon: IconKeys.mysql },
+        { title: "Git", icon: IconKeys.git },
+        { title: "GitHub", icon: IconKeys.github },
       ],
       images: ["/img/superstore-dashboard.webp"],
       githubUrl: "https://github.com/francochacon/superstore-sales-dashboard",
@@ -361,6 +372,7 @@ export const projectReports = {
       pills: ["Concepto", "Power BI", "KPIs de Sustentabilidad", "Ingeniería de Procesos"],
       skills: [
         { title: "Power BI", icon: IconKeys.powerbi },
+        { title: "Git", icon: IconKeys.git },
       ],
       images: ["/img/waste-valorization-kpi.webp"],
       githubUrl: "",

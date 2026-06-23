@@ -13,6 +13,7 @@ export const ui = {
     "nav.services": "Services",
     "nav.about": "About",
     "nav.contact": "Contact",
+    "nav.store": "Store",
 
     "hero.role": "Chemical Engineer + Data Analyst",
     "hero.bio":
@@ -76,6 +77,7 @@ export const ui = {
     "nav.services": "Servicios",
     "nav.about": "Sobre mí",
     "nav.contact": "Contacto",
+    "nav.store": "Tienda",
 
     "hero.role": "Ingeniero Químico + Analista de Datos",
     "hero.bio":
