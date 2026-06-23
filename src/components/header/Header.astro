@@ -10,7 +10,7 @@ const servicesHref = lang === "es" ? "/es/services" : "/services";
 const otherLang = lang === "es" ? "en" : "es";
 const enHref = getLocalizedPath(Astro.url.pathname, "en");
 const esHref = getLocalizedPath(Astro.url.pathname, "es");
-const currentFlag = lang === "es" ? "🇦🇷" : "🇺🇸";
+const currentFlagClass = lang === "es" ? "fi-ar" : "fi-us";
 ---
 
 <header class="header">
@@ -40,14 +40,14 @@ const currentFlag = lang === "es" ? "🇦🇷" : "🇺🇸";
 
       <div class="lang-dropdown">
         <button class="lang-trigger" aria-label="Select language">
-          {currentFlag}
+          <span class={`fi fi-${currentFlagClass} fis`}></span>
         </button>
         <div class="lang-menu">
           <a href={enHref} class={`lang-option ${lang === "en" ? "lang-option--active" : ""}`}>
-            🇺🇸 <span>English</span>
+            <span class="fi fi-us fis"></span><span>English</span>
           </a>
           <a href={esHref} class={`lang-option ${lang === "es" ? "lang-option--active" : ""}`}>
-            🇦🇷 <span>Español</span>
+            <span class="fi fi-ar fis"></span><span>Español</span>
           </a>
         </div>
       </div>
@@ -103,6 +103,7 @@ const currentFlag = lang === "es" ? "🇦🇷" : "🇺🇸";
 </header>
 
 <style is:global>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css');
   .header {
     position: relative;
     height: 80px;
@@ -143,13 +144,14 @@ const currentFlag = lang === "es" ? "🇦🇷" : "🇺🇸";
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(1,190,150,0.4);
     border-radius: 999px;
-    padding: 4px 10px;
-    font-size: 18px;
+    padding: 5px 8px;
     cursor: pointer;
     color: #f6f6f9;
     line-height: 1;
     transition: border-color 0.2s ease, background 0.2s ease;
+    display: flex; align-items: center; justify-content: center;
   }
+  .lang-trigger .fi { width: 20px; height: 20px; border-radius: 50%; }
   .lang-trigger:hover {
     border-color: #01be96;
     background: rgba(1,190,150,0.1);
@@ -187,6 +189,7 @@ const currentFlag = lang === "es" ? "🇦🇷" : "🇺🇸";
     transition: background 0.15s ease, color 0.15s ease;
     white-space: nowrap;
   }
+  .lang-option .fi { width: 18px; height: 18px; border-radius: 3px; flex-shrink: 0; }
   .lang-option:hover {
     background: rgba(1,190,150,0.12);
     color: #f6f6f9;

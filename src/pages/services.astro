@@ -145,6 +145,16 @@ import "../style/index.css";
         </div>
       </section>
 
+      <!-- Projects CTA -->
+      <section class="projects-cta-section">
+        <div class="projects-cta-inner">
+          <p class="projects-cta-sub">Want to see these concepts in action?</p>
+          <h2 class="projects-cta-title">Check out my projects</h2>
+          <p class="projects-cta-desc">From mining industry dashboards to chemical inventory platforms — real projects built with the same tools and methodology described above.</p>
+          <a href="/projects" class="projects-cta-btn">See all projects →</a>
+        </div>
+      </section>
+
     </main>
     <Footer />
   </body>
@@ -226,4 +236,32 @@ import "../style/index.css";
     .services-hero { padding: 100px 0 50px; }
     .hero-ctas { flex-direction: column; }
   }
+
+  .projects-cta-section {
+    background: linear-gradient(135deg, rgba(1,190,150,0.08), rgba(1,190,150,0.02));
+    border-top: 1px solid rgba(1,190,150,0.2);
+    padding: 70px 0;
+  }
+  .projects-cta-inner {
+    width: 90%; max-width: 700px; margin: 0 auto; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .projects-cta-sub {
+    font-size: 12px; font-family: monospace; color: #01be96;
+    text-transform: uppercase; letter-spacing: 0.1em; margin: 0;
+  }
+  .projects-cta-title {
+    font-size: 32px; font-weight: 800; margin: 0; line-height: 1.2;
+  }
+  .projects-cta-desc {
+    font-size: 15px; color: #a0a0a0; line-height: 1.7;
+    max-width: 560px; margin: 0;
+  }
+  .projects-cta-btn {
+    display: inline-block; margin-top: 8px; text-decoration: none;
+    background: #01be96; color: #000; font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 12px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .projects-cta-btn:hover { background: #00a882; transform: translateY(-2px); }
 </style>
