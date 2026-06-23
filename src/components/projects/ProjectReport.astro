@@ -113,6 +113,40 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
     <p class="text-powerbi">{report.closingParagraph}</p>
   </div>
 
+  <!-- Sticky services panel -->
+  <aside class="services-sticky" id="services-sticky" aria-label="Services panel">
+    <div class="ss-inner">
+      <p class="ss-eyebrow">💼 {lang === "es" ? "¿Te interesa algo así?" : "Interested in this?"}</p>
+      <h3 class="ss-title">{lang === "es" ? "Mis servicios" : "My services"}</h3>
+      <div class="ss-items">
+        <div class="ss-item">
+          <span class="ss-icon">📊</span>
+          <div>
+            <p class="ss-name">{lang === "es" ? "Dashboard Power BI" : "Power BI Dashboard"}</p>
+            <p class="ss-price">{lang === "es" ? "desde $120" : "from $120"}</p>
+          </div>
+        </div>
+        <div class="ss-item">
+          <span class="ss-icon">🏭</span>
+          <div>
+            <p class="ss-name">{lang === "es" ? "Dashboard Industrial" : "Industrial Dashboard"}</p>
+            <p class="ss-price">{lang === "es" ? "desde $250" : "from $250"}</p>
+          </div>
+        </div>
+        <div class="ss-item">
+          <span class="ss-icon">🧹</span>
+          <div>
+            <p class="ss-name">{lang === "es" ? "Limpieza de datos" : "Data Cleaning"}</p>
+            <p class="ss-price">{lang === "es" ? "desde $60" : "from $60"}</p>
+          </div>
+        </div>
+      </div>
+      <a href={lang === "es" ? "/es/services" : "/services"} class="ss-cta">
+        {lang === "es" ? "Ver servicios completos →" : "See all services →"}
+      </a>
+    </div>
+  </aside>
+
   {
     moreProjects.length > 0 && (
       <div class="container-more-projects">
@@ -351,6 +385,102 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
     gap: 24px;
     flex-wrap: wrap;
     list-style: none;
+  }
+
+  /* ── Sticky services panel ── */
+  .services-sticky {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 210px;
+    z-index: 50;
+    pointer-events: auto;
+  }
+
+  .ss-inner {
+    background: rgba(10, 10, 10, 0.92);
+    border: 1px solid rgba(1, 190, 150, 0.3);
+    border-radius: 16px;
+    padding: 18px 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  .ss-eyebrow {
+    font-size: 10px;
+    color: #01be96;
+    font-family: monospace;
+    letter-spacing: 0.05em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .ss-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #f6f6f9;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ss-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ss-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .ss-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .ss-name {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #f6f6f9;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ss-price {
+    font-size: 10.5px;
+    color: #01be96;
+    font-family: monospace;
+    font-weight: 700;
+    margin: 2px 0 0;
+  }
+
+  .ss-cta {
+    display: block;
+    background: #01be96;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .ss-cta:hover {
+    background: #00a882;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 1300px) {
+    .services-sticky { display: none; }
   }
 
   @media (max-width: 900px) {

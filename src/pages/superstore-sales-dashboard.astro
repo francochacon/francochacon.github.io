@@ -1,0 +1,35 @@
+---
+import Header from "../components/header/Header.astro";
+import "../style/index.css";
+import Main from "../components/projects/project3.astro";
+import Footer from "../components/footer/Footer.astro";
+import { projectReports } from "../const/const";
+
+const title = projectReports.en.project3.title;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={projectReports.en.project3.description} />
+    <link rel="canonical" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <link rel="alternate" hreflang="en" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/superstore-sales-dashboard" />
+    <link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://francochacon.github.io/superstore-sales-dashboard" />
+    <meta property="og:site_name" content="Franco Chacón" />
+    <meta property="og:title" content={`${title} | Franco Chacón`} />
+    <meta property="og:image" content="https://francochacon.github.io/img/preview-page.webp" />
+    <script src="https://kit.fontawesome.com/2898a0ac51.js" crossorigin="anonymous"></script>
+    <title>{title} | Franco Chacón</title>
+  </head>
+  <body>
+    <Header />
+    <Main />
+    <Footer />
+  </body>
+</html>
