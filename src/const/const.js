@@ -421,7 +421,7 @@ export const projects = {
     {
       images: projectReports.en.project3.images,
       title: "Superstore Sales Dashboard",
-      link: "project3",
+      link: "superstore-sales-dashboard",
       description:
         "Power BI dashboard built on the classic Superstore dataset. Tracks $2.3M in total sales, $286K profit and 5,009 orders with monthly trend analysis, regional performance breakdown and top 10 sub-categories by revenue.",
       tags: projectReports.en.project3.pills,
@@ -430,7 +430,7 @@ export const projects = {
     {
       images: projectReports.en.project2.images,
       title: "Argentina Mining Exports",
-      link: "project2",
+      link: "mining-exports-dashboard",
       description:
         "Interactive Power BI dashboard analyzing Argentina's mining export records from 1998 to 2024. Covers 327 metallic and lithium projects across provinces, tracking copper, lithium, gold and silver production with KPIs and regional breakdowns.",
       tags: projectReports.en.project2.pills,
@@ -439,7 +439,7 @@ export const projects = {
     {
       images: projectReports.en.project1.images,
       title: "Mining Projects Map",
-      link: "project1",
+      link: "argentina-mining-map",
       description:
         "Power BI report mapping Argentina's metallic and lithium mining projects by province, mineral type and development stage. Identifies key production clusters in Salta, San Juan and Santa Cruz with visual KPIs and drill-down filters.",
       tags: projectReports.en.project1.pills,
@@ -448,7 +448,7 @@ export const projects = {
     {
       images: projectReports.en.project4.images,
       title: projectReports.en.project4.title,
-      link: "project4",
+      link: "waste-valorization-kpi",
       description: projectReports.en.project4.description,
       tags: projectReports.en.project4.pills,
       technologies: [{ icon: IconKeys.powerbi }],
@@ -456,7 +456,7 @@ export const projects = {
     {
       images: projectReports.en.project5.images,
       title: projectReports.en.project5.title,
-      link: "project5",
+      link: "chemical-storage-platform",
       description: projectReports.en.project5.description,
       tags: projectReports.en.project5.pills,
       technologies: [{ icon: IconKeys.powerbi }],
@@ -466,7 +466,7 @@ export const projects = {
     {
       images: projectReports.es.project3.images,
       title: "Dashboard de Ventas Superstore",
-      link: "project3",
+      link: "superstore-sales-dashboard",
       description:
         "Dashboard en Power BI construido sobre el clásico dataset de Superstore. Sigue $2.3M en ventas totales, $286K de ganancia y 5.009 órdenes, con análisis de tendencia mensual, desglose de performance regional y el top 10 de subcategorías por ingresos.",
       tags: projectReports.es.project3.pills,
@@ -475,7 +475,7 @@ export const projects = {
     {
       images: projectReports.es.project2.images,
       title: "Exportaciones Mineras de Argentina",
-      link: "project2",
+      link: "mining-exports-dashboard",
       description:
         "Dashboard interactivo en Power BI que analiza los registros de exportaciones mineras de Argentina entre 1998 y 2024. Cubre 327 proyectos metalíferos y de litio en distintas provincias, siguiendo la producción de cobre, litio, oro y plata con KPIs y desgloses regionales.",
       tags: projectReports.es.project2.pills,
@@ -484,7 +484,7 @@ export const projects = {
     {
       images: projectReports.es.project1.images,
       title: "Mapa de Proyectos Mineros",
-      link: "project1",
+      link: "argentina-mining-map",
       description:
         "Reporte en Power BI que mapea los proyectos mineros metalíferos y de litio de Argentina por provincia, tipo de mineral y etapa de desarrollo. Identifica los principales clústeres de producción en Salta, San Juan y Santa Cruz con KPIs visuales y filtros drill-down.",
       tags: projectReports.es.project1.pills,
@@ -493,7 +493,7 @@ export const projects = {
     {
       images: projectReports.es.project4.images,
       title: projectReports.es.project4.title,
-      link: "project4",
+      link: "waste-valorization-kpi",
       description: projectReports.es.project4.description,
       tags: projectReports.es.project4.pills,
       technologies: [{ icon: IconKeys.powerbi }],
@@ -501,7 +501,7 @@ export const projects = {
     {
       images: projectReports.es.project5.images,
       title: projectReports.es.project5.title,
-      link: "project5",
+      link: "chemical-storage-platform",
       description: projectReports.es.project5.description,
       tags: projectReports.es.project5.pills,
       technologies: [{ icon: IconKeys.powerbi }],

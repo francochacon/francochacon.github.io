@@ -8,8 +8,9 @@ const homeHref = lang === "es" ? "/es" : "/";
 const projectsHref = lang === "es" ? "/es/projects" : "/projects";
 const servicesHref = lang === "es" ? "/es/services" : "/services";
 const otherLang = lang === "es" ? "en" : "es";
-const switchHref = getLocalizedPath(Astro.url.pathname, otherLang);
-const switchLabel = otherLang === "es" ? "ES" : "EN";
+const enHref = getLocalizedPath(Astro.url.pathname, "en");
+const esHref = getLocalizedPath(Astro.url.pathname, "es");
+const currentFlag = lang === "es" ? "🇦🇷" : "🇺🇸";
 ---
 
 <header class="header">
@@ -37,9 +38,19 @@ const switchLabel = otherLang === "es" ? "ES" : "EN";
         <li class="li-nav">{t("nav.contact")}</li>
       </a>
 
-      <a href={switchHref} class="lang-switch" aria-label="Switch language">
-        <li class="li-nav li-lang">{switchLabel}</li>
-      </a>
+      <div class="lang-dropdown">
+        <button class="lang-trigger" aria-label="Select language">
+          {currentFlag}
+        </button>
+        <div class="lang-menu">
+          <a href={enHref} class={`lang-option ${lang === "en" ? "lang-option--active" : ""}`}>
+            🇺🇸 <span>English</span>
+          </a>
+          <a href={esHref} class={`lang-option ${lang === "es" ? "lang-option--active" : ""}`}>
+            🇦🇷 <span>Español</span>
+          </a>
+        </div>
+      </div>
     </ul>
   </nav>
 
@@ -122,11 +133,68 @@ const switchLabel = otherLang === "es" ? "ES" : "EN";
   .li-services {
     color: #01be96; font-weight: 700;
   }
-  .li-lang {
-    border: 1px solid rgba(1,190,150,0.5); border-radius: 999px;
-    padding: 3px 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+  .lang-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
   }
-  .li-lang::before { display: none; }
+  .lang-trigger {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(1,190,150,0.4);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #f6f6f9;
+    line-height: 1;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .lang-trigger:hover {
+    border-color: #01be96;
+    background: rgba(1,190,150,0.1);
+  }
+  .lang-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(10,10,10,0.96);
+    border: 1px solid rgba(1,190,150,0.25);
+    border-radius: 12px;
+    padding: 6px;
+    min-width: 130px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 999;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .lang-dropdown:hover .lang-menu {
+    display: flex;
+  }
+  .lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+  .lang-option:hover {
+    background: rgba(1,190,150,0.12);
+    color: #f6f6f9;
+  }
+  .lang-option--active {
+    color: #01be96;
+    background: rgba(1,190,150,0.08);
+  }
   .container-bnt-menu { display: none; }
   .menu-drop { display: none; }
 
