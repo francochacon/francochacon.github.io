@@ -91,12 +91,15 @@ const currentFlag = lang === "es" ? arFlag : usFlag;
     $menuDrop.addEventListener("click", toggleMenu);
 
     const path = window.location.pathname;
-    const isProjectPage = path.includes("/project");
+    // The home page is the only page that actually has #about and #contact
+    // sections in it. On any other page (services, store, projects, project
+    // detail pages, etc.) those links need to point back to the home page.
+    const isHomePage = path === "/" || path === "/es" || path === "/es/";
 
     document.querySelectorAll(".nav-link").forEach((a) => {
       const homeHref = a.getAttribute("data-home");
       const projectHref = a.getAttribute("data-project");
-      a.setAttribute("href", isProjectPage ? projectHref : homeHref);
+      a.setAttribute("href", isHomePage ? homeHref : projectHref);
     });
 
     document.querySelectorAll(".ul-nav a").forEach((a) => {
@@ -106,6 +109,38 @@ const currentFlag = lang === "es" ? arFlag : usFlag;
         }
       });
     });
+
+    // ── Language dropdown: open on hover, close after a short delay ──
+    // (instead of relying purely on CSS :hover, which closes instantly
+    // the moment the cursor leaves the trigger button, before it reaches
+    // the menu below it).
+    const $langDropdown = document.querySelector(".lang-dropdown");
+    const $langMenu = document.querySelector(".lang-menu");
+    let closeTimer;
+
+    const openLangMenu = () => {
+      clearTimeout(closeTimer);
+      $langMenu.classList.add("lang-menu--open");
+    };
+    const scheduleCloseLangMenu = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        $langMenu.classList.remove("lang-menu--open");
+      }, 450);
+    };
+
+    if ($langDropdown && $langMenu) {
+      $langDropdown.addEventListener("mouseenter", openLangMenu);
+      $langDropdown.addEventListener("mouseleave", scheduleCloseLangMenu);
+      $langMenu.addEventListener("mouseenter", openLangMenu);
+      $langMenu.addEventListener("mouseleave", scheduleCloseLangMenu);
+      $langDropdown.addEventListener("click", (e) => {
+        // tap support on touch devices
+        if (e.target.closest(".lang-trigger")) {
+          $langMenu.classList.toggle("lang-menu--open");
+        }
+      });
+    }
   </script>
 </header>
 
@@ -179,7 +214,7 @@ const currentFlag = lang === "es" ? arFlag : usFlag;
     flex-direction: column;
     gap: 2px;
   }
-  .lang-dropdown:hover .lang-menu {
+  .lang-menu--open {
     display: flex;
   }
   .lang-option {
