@@ -116,6 +116,7 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
   <!-- Sticky services panel -->
   <aside class="services-sticky" id="services-sticky" aria-label="Services panel">
     <div class="ss-inner">
+      <button class="ss-close" id="ss-close-btn" aria-label="Close panel">✕</button>
       <p class="ss-eyebrow">💼 {lang === "es" ? "¿Te interesa algo así?" : "Interested in this?"}</p>
       <h3 class="ss-title">{lang === "es" ? "Mis servicios" : "My services"}</h3>
       <div class="ss-items">
@@ -166,6 +167,15 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
       </div>
     )
   }
+<script>
+  const closeBtn = document.getElementById('ss-close-btn');
+  const panel = document.getElementById('services-sticky');
+  if (closeBtn && panel) {
+    closeBtn.addEventListener('click', () => {
+      panel.style.display = 'none';
+    });
+  }
+</script>
 </section>
 
 <style>
@@ -385,6 +395,31 @@ const moreProjects = projects[lang].filter((p) => p.link !== currentLink).slice(
     gap: 24px;
     flex-wrap: wrap;
     list-style: none;
+  }
+
+  .ss-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    color: #f6f6f9;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    line-height: 1;
+  }
+  .ss-close:hover {
+    background: rgba(214,69,91,0.2);
+    border-color: rgba(214,69,91,0.5);
+    color: #D6455B;
   }
 
   /* ── Sticky services panel ── */
