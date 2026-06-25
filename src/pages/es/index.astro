@@ -21,6 +21,7 @@ import Footer from "../../components/footer/Footer.astro";
     <meta property="og:url" content="https://francochacon.github.io/es" />
     <meta property="og:site_name" content="Franco Chacón" />
     <meta property="og:title" content="Franco Chacón Portfolio" />
+    <link rel="canonical" href="https://francochacon.github.io/es" />
     <link rel="alternate" hreflang="en" href="https://francochacon.github.io/" />
     <link rel="alternate" hreflang="es" href="https://francochacon.github.io/es" />
     <link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/" />
@@ -32,7 +33,28 @@ import Footer from "../../components/footer/Footer.astro";
     <script
       src="https://kit.fontawesome.com/2898a0ac51.js"
       crossorigin="anonymous"></script>
-    <title>Portafolio | Franco Chacón</title>
+    <title>Franco Chacón | Ingeniero Químico + Data Analyst</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Franco Chacón",
+      "jobTitle": "Ingeniero Químico y Analista de Datos",
+      "url": "https://francochacon.github.io/es",
+      "image": "https://francochacon.github.io/img/preview-page.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salta",
+        "addressCountry": "AR"
+      },
+      "knowsAbout": ["Power BI", "DAX", "SQL", "Python", "Excel", "Análisis de datos", "Business Intelligence", "SAP"],
+      "sameAs": [
+        "https://www.linkedin.com/in/francochacon/",
+        "https://github.com/francochacon",
+        "https://www.upwork.com/freelancers/~01c688bcf95e6b2de2",
+        "https://es.fiverr.com/s/xX19qQZ",
+        "https://pph.me/francochacon"
+      ]
+    })} />
   </head>
   <body>
     <Header />

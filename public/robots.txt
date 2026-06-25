@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://francochacon.github.io/sitemap.xml

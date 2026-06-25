@@ -8,6 +8,7 @@ import Footer from "../components/footer/Footer.astro";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="google-site-verification" content="gCf6K31sE2d89qsBhu1RJFbhwncS-kQjRv3heGrCE_s" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
@@ -21,6 +22,7 @@ import Footer from "../components/footer/Footer.astro";
     <meta property="og:url" content="https://francochacon.github.io/" />
     <meta property="og:site_name" content="Franco Chacón" />
     <meta property="og:title" content="Franco Chacón Portfolio" />
+    <link rel="canonical" href="https://francochacon.github.io/" />
     <link rel="alternate" hreflang="en" href="https://francochacon.github.io/" />
     <link rel="alternate" hreflang="es" href="https://francochacon.github.io/es" />
     <link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/" />
@@ -32,7 +34,28 @@ import Footer from "../components/footer/Footer.astro";
     <script
       src="https://kit.fontawesome.com/2898a0ac51.js"
       crossorigin="anonymous"></script>
-    <title>Portfolio | Franco Chacón</title>
+    <title>Franco Chacón | Chemical Engineer + Data Analyst</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Franco Chacón",
+      "jobTitle": "Chemical Engineer & Data Analyst",
+      "url": "https://francochacon.github.io/",
+      "image": "https://francochacon.github.io/img/preview-page.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salta",
+        "addressCountry": "AR"
+      },
+      "knowsAbout": ["Power BI", "DAX", "SQL", "Python", "Excel", "Data Analysis", "Business Intelligence", "SAP"],
+      "sameAs": [
+        "https://www.linkedin.com/in/francochacon/",
+        "https://github.com/francochacon",
+        "https://www.upwork.com/freelancers/~01c688bcf95e6b2de2",
+        "https://es.fiverr.com/s/xX19qQZ",
+        "https://pph.me/francochacon"
+      ]
+    })} />
   </head>
   <body>
     <Header />
