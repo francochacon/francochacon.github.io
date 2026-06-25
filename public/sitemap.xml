@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://francochacon.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/projects" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/projects" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/projects" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/projects" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/projects" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/projects" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/services" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/services" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/store</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/store" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/store" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/store" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/store</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/store" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/store" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/store" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/argentina-mining-map</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/argentina-mining-map" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/argentina-mining-map" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/argentina-mining-map" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/argentina-mining-map</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/argentina-mining-map" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/argentina-mining-map" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/argentina-mining-map" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/chemical-storage-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/chemical-storage-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/chemical-storage-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/chemical-storage-platform" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/chemical-storage-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/chemical-storage-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/chemical-storage-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/chemical-storage-platform" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/mining-exports-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/mining-exports-dashboard" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/mining-exports-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/mining-exports-dashboard" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/mining-exports-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/mining-exports-dashboard" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/mining-exports-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/mining-exports-dashboard" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/superstore-sales-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/superstore-sales-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/superstore-sales-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/superstore-sales-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/superstore-sales-dashboard" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://francochacon.github.io/waste-valorization-kpi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/waste-valorization-kpi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/waste-valorization-kpi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/waste-valorization-kpi" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francochacon.github.io/es/waste-valorization-kpi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francochacon.github.io/waste-valorization-kpi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://francochacon.github.io/es/waste-valorization-kpi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francochacon.github.io/waste-valorization-kpi" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
